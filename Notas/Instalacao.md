@@ -18,3 +18,5 @@ Os mais comuns são:
 O interprete do Python pode ser descarregado desde [Python.org](https://www.python.org/). A ideia é começar utilizando a instalação mais básica durante as primeiras aulas. 
 
 Para usuarios Windows é **Altamente Recomendado** o uso do [Anaconda](https://www.anaconda.com/products/individual), um pacote que emula um ambiente virtual, neste já vem instalado o Python e alguns IDE's. Depois poderemos utilizar alguns dos IDE's disponiveis como o [Spyder](https://www.spyder-ide.org/). 
+
+Retono ao [sumario do manual](/Notas/Conteudo.md)
