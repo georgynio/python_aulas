@@ -1,6 +1,6 @@
-# Curso de programación en Python
+# Curso de programação em Python
 
-## Contenidos
+## Conteudos
 
 * [1. Introdução ao Python](01_Introducao/00_Resumo.md)
 * [2. Estruturas e funções](02_Estructuras_e_funcoes/00_Resumo.md)
