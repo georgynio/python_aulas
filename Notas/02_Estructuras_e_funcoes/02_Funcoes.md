@@ -115,3 +115,5 @@ RuntimeError: Que bagunça!
 ```
 
 Alternativamente, essa exceção pode ser capturada por um bloco `try-except`, evitando assim que o programa finalize.
+
+Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)

@@ -85,3 +85,6 @@ with open('outfile', 'wt') as out:
     print('Hello World', file=out)
     ...
 ```
+
+
+Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)

@@ -164,3 +164,6 @@ Faz o teste.
 
 **Nota:** a separação decimal é componto (.), pelo que se colocamos de forma errada o Python retornara uma mensagem de erro. Por exemplo `float(3,141592)` retorna um erro `ValueError`.
 
+
+
+Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)

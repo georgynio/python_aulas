@@ -80,3 +80,4 @@ Para sair do interprete do Python pode usar a combinação de teclas `ctrl + d` 
 
 
 
+Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)

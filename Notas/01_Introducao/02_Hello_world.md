@@ -344,3 +344,6 @@ Hola Mi nombre es Juana
 * `pow` calcula a potencia de um numero.
 * `type` retorna uma mensagem com o tipo da variavel.
 * etc.
+
+
+Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)

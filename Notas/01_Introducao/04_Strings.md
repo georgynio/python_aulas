@@ -201,3 +201,6 @@ As f-Strings são strings em que algumas expressões podem ser formatadas:
 
 **Nota: Esta função está ativa a partir do Python 3.6.**
 
+
+
+Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)

@@ -227,3 +227,5 @@ exceto items[2]: # ValueError
 ```
 
 Com grandes poderes sempre vem grandes responsabilidades. Só porque você pode não significa que você deve fazer esse tipo de coisa.
+
+Retono ao [sumario](/Notas/04_compreensao_listas/00_Resumo.md)

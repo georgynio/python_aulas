@@ -160,3 +160,6 @@ s['price'] # dicionário
 #vs
 s[2] # lista
 ```
+
+
+Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)

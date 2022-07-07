@@ -180,3 +180,6 @@ s1 | s2 # União dos conjuntos s1 e s2
 s1 & s2 # Definir interseção
 s1 - s2 # Diferença de conjuntos
 ```
+
+
+Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)

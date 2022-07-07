@@ -129,3 +129,6 @@ Decimal('3,4')
 Muitas vezes a pessoa *supõe* que o intérprete está fazendo alguma coisa. Se você pegar um lápis e papel e _desempenhar o papel de intérprete_ anotando o estado de cada variável e seguindo as instruções do programa passo a passo, você pode entender que as coisas não são como você pensava.
 
 Essas alternativas são úteis, mas um pouco primitivas. A melhor maneira de depurar um programa Python é usar o depurador.
+
+
+Retono ao [sumario](/Notas/03_Dados/00_Resumo.md)

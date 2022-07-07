@@ -160,3 +160,6 @@ t = sorted(s)               # mantem a lista s, t salva os valores ordenados
 
 As listas não são vetores ou matrices, como em MATLAB, Octave, R, etc. Para esse tipo de trabalho é altamente recomendado o uso do [numpy](https://numpy.org).
 
+
+
+Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)
