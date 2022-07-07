@@ -1,4 +1,4 @@
-# Programação en Python
+# Programação em Python
 
 Curso de fornecido para alunos do propgrama de pos graduação em Engenharia Ambiental, com foco no processo de analise de dados da qualidade do ar.
 
