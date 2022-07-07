@@ -21,3 +21,6 @@ Finalmente, daremos un poco más sistemáticamente algunos conceptos de la bibli
 * [7.6 Estilos de codeo](06_Estilo.md)
 * [7.7 La biblioteca matplotlib](07_Matplotlib.md)
 * [7.8 Cierre de la clase](08_Cierre.md)
+
+
+Retono ao [sumario do manual](/Notas/Conteudo.md)

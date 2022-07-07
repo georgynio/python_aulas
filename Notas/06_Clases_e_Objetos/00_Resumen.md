@@ -17,3 +17,6 @@ El ejercicio para la revisión de pares de esta semana es de programación orien
 * [9.5 Objetos, pilas y colas](05_Pilas_Colas.md)
 * [9.6 Teledetección](06_Teledeteccion.md)
 * [9.7 Cierre de la clase](07_Cierre.md)
+
+
+Retono ao [sumario do manual](/Notas/Conteudo.md)

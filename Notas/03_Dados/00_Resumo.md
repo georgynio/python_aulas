@@ -6,3 +6,6 @@ Para escrever programas úteis, precisamos aprender a trabalhar com dados. Nesta
 * [Sequências](02_Sequencias.md)
 * [Contadores do módulo _collections_](03_Contadores.md)
 * [Imprimindo com formato](04_Formato.md)
+
+
+Retono ao [sumario do manual](/Notas/Conteudo.md)

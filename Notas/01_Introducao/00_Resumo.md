@@ -7,3 +7,5 @@ Ainda nessa seção iremos aprender alguns conceitos básicos, edição e execu�
 * [Números](03_Numeros.md)
 * [Strings](04_Strings.md)
 * [Listas](05_Listas.md)
+
+Retono ao [sumario do manual](/Notas/Conteudo.md)

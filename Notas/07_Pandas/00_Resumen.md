@@ -13,3 +13,6 @@ En la última parte te proponemos analizar ondas de mareas en el Río de la Plat
 * [8.5 Introducción a Pandas](05_Pandas.md)
 * [8.6 Series temporales](06_Series_Temporales.md)
 * [8.7 Cierre de la clase](07_Cierre.md)
+
+
+Retono ao [sumario do manual](/Notas/Conteudo.md)
