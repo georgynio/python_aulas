@@ -1,24 +1,55 @@
-# Errores
+# Erros
 
-En esta sección hablamos sobre errores. Acá hay un [video](https://youtu.be/1nTWUPopXrI) sobre este tema.
+Até agora mensagens de erro foram apenas mencionadas, mas se você testou alungs exemplos, talvez tenha esbarrado em algumas. Existem pelo menos dois tipos distintos de erros: erros de sintaxe e exceções. Podemos encontrar um relatorio completo dos erros no site da [documentação](https://docs.python.org/pt-br/3/tutorial/errors.html).
 
-## Tres tipos de errores:
+## Três tipos de erros:
 
-Programando nos podemos encontrar con tres tipos de errores.
+Programando podemos encontrar três tipos de erros.
 
-Los *errores sintácticos* son los que se dan cuando escribimos incorrectamente. Por ejemplo si queremos escribir `x = (a + b) * c` pero en vez de eso escribimos `x = (a + b] * c`, el programa no va a correr.
+Os *erros sintáticos* são aqueles que ocorrem quando escrevemos incorretamente. Por exemplo, se quisermos escrever `x = (a + b) * c` mas em vez disso escrever `x = (a + b] * c`, o programa não será executado.
 
-Un segundo tipo de error lo forman los errores *en tiempo de ejecución*, que se dan cuando el programa empieza a ejecutarse pero se produce un error durante su ejecución. Por ejemplo si le pedimos al usuarie que ingrese su edad esperando un número entero e ingresa "veintiséis años", es probable que el programa dé un error. Si leemos un archivo CSV y una fila tiene datos faltantes, el programa puede dar un error. Este tipo de errores en Python generan _excepciones_ que, como veremos más adelante, pueden administrarse adecuadamente.
+```python 
+>>> x = (a + b] * c
+  File "<stdin>", line 1
+    x = (a + b] * c
+              ^
+SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
+```
 
-El tercer tipo de error es el más difícil de encontrar y de entender. Son los *errores semánticos*, que se dan cuando el programa no hace lo que está diseñado para hacer. Tienen que ver con el sentido de las instrucciones. En estos casos el programa se ejecuta pero da un resultado incorrecto o inesperado. En general, la mejor forma de encontrar estos errores es correr paso a paso el código que genera un resultado inesperado, tratando de entender dónde está la falla, usando el debugger. Veremos cómo usar el debugger la clase que viene, por ahora trabajaremos de forma un poco más primitiva.
+Um segundo tipo de erro são os erros de *tempo de execução*, que ocorrem quando o programa começa a ser executado, mas ocorre um erro durante a execução. Por exemplo, se pedirmos ao usuário para digitar sua idade esperando um número inteiro e ele digitar "vinte e seis anos", é provável que o programa dê um erro. Se lermos um arquivo CSV e uma linha tiver dados ausentes, o programa poderá dar um erro. Esses tipos de erros em Python geram _exceções_ que, como veremos mais adiante, podem ser tratadas adequadamente.
 
-## Debuggear a mano
+```python
+>>> idade = int(input('Coloque sua idade: '))
+Coloque sua idade: vinte
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'vinte'
+```
 
-Los errores (o bugs) son difíciles de rastrear y resolver. Especialmente errores que sólo aparecen bajo cierta combinación particular de condiciones que resulta en que el programa no pueda continuar o dé un resultado inesperado. Si tu programa corre, pero no da el resultado que esperás, o _se cuelga_ y no entendés porqué, tenés algunas herramientas concretas que te ayudan a buscar el origen del problema. A continuación veremos algunas metodologías específicas (aunque un poco primitivas) que permiten rastrear el origen del problema.
+O terceiro tipo de erro é o mais difícil de encontrar e entender. São os *erros de semântica*, que ocorrem quando o programa não faz o que foi projetado para fazer. Eles têm a ver com o significado das instruções. Nesses casos, o programa é executado, mas apresenta um resultado incorreto ou inesperado. Em geral, a melhor maneira de encontrar esses erros é percorrer o código que gera um resultado inesperado, tentando entender onde está o erro, usando o depurador.
 
-### ¿Qué dice un traceback?
+Por exemplo, calcula x = (2+3)*5
+```python
+# solução correta
+>>> x = (2+3)*5
+>>> x
+25
 
-Si te da un error, lo primero que podés hacer es intentar entender la causa del error usando como punto de partida el "traceback":
+# esquecemos dos parenteces
+>>> x = 2+3*5
+>>> x
+17
+
+```
+
+
+## Depurar manualmente
+
+Erros (ou bugs) são difíceis de rastrear e resolver. Especialmente erros que só aparecem sob uma certa combinação de condições que fazem com que o programa não consiga continuar ou dê um resultado inesperado. Se o seu programa roda, mas não dá o resultado esperado, ou _trava_ e você não entende o porquê, você tem algumas ferramentas específicas que o ajudam a encontrar a origem do problema. 
+
+### O que diz um traceback?
+
+Se você receber um erro, a primeira coisa que você pode fazer é tentar entender a causa do erro usando o "traceback" como ponto de partida:
 
 ```bash
 python3 blah.py
@@ -33,20 +64,21 @@ Traceback (most recent call last):
     x.append(3)
 AttributeError: 'int' object has no attribute 'append'
 ```
-La última línea dice algo como que "el objeto `int` no tiene un atributo `append` "- lo cual es obvio, pero ¿cómo llegamos ahí?
 
-La última línea es el motivo concreto del error.
+A última linha diz algo como "o objeto `int` não possui um atributo `append` "- o que é óbvio, mas como chegamos lá?
 
-Las líneas anteriores te dicen el camino que siguió el programa hasta llegar al error. En este caso: el error ocurrió en `x.append(3)` en la línea 4, dentro de la función `spam` del módulo `"blah.py"`, que fue llamado por la función `bar` en la línea 7 del mismo archivo, que fue llamada por... y así siguiendo.
+A última linha é o motivo específico do erro.
 
-Sin embargo a veces esto no proporciona suficiente información (por ejemplo, no sabemos el valor de cada parámetro usado en las llamadas).
+As linhas acima informam o caminho que o programa percorreu para chegar ao erro. Neste caso: o erro ocorreu em `x.append(3)` na linha 4, dentro da função `spam` do módulo `"blah.py"`, que foi chamado pela função `bar` na linha 7 do mesmo arquivo, que foi chamado por... e assim por diante.
 
-Una posibilidad que a veces da resultado es copiar el traceback en Google. Si estás usando una biblioteca de funciones que mucha gente usa (como `numpy` ó `math`) es muy probable que alguien se haya encontrado antes con el mismo problema que vos, y alguien más le haya explicado qué lo causa, o cómo evitarlo.
+No entanto, às vezes isso não fornece informações suficientes (por exemplo, não sabemos o valor de cada parâmetro usado nas chamadas).
 
-### Usá el modo [REPL](https://es.wikipedia.org/wiki/REPL) de Python
+Uma possibilidade que às vezes funciona é copiar o rastreamento para o Google. Se o erro for muito comum encontraremos muitas alternativas de solução. Se recomenda o uso do site https://pt.stackoverflow.com/, de preferencia o site em ingles.
+
+### Use o modo [REPL](https://en.wikipedia.org/wiki/REPL) do Python
 
 
-Si usás Python desde la línea de comandos, podés usarlo pasándole un `-i` como parámetro antes del script a ejecutar. Cuando el intérprete de Python termine de ejecutar el script se va a quedar en modo interactivo (en lugar de volver al sistema operativo). Podés averiguar en qué estado quedó el sistema. 
+Se você usa o Python na linha de comando, pode usá-lo passando um `-i` como parâmetro antes do script a ser executado. Quando o interpretador Python terminar de executar o script, ele permanecerá no modo interativo (em vez de retornar ao sistema operacional). Você pode descobrir em que estado o sistema estava.
 
 ```bash
 python3 -i blah.py
@@ -60,39 +92,40 @@ Traceback (most recent call last):
   File "blah.py", line 4, in spam
     x.append(3)
 AttributeError: 'int' object has no attribute 'append'
->>>     print( repr(x) )
+>>> print(repr(x))
+
 ```
 
-Este *parámetro* (el `-i`, que ya usamos antes) preserva el estado del intérprete al finalizar el script y te permite interrogarlo sobre el estado de las variables y obtener información que de otro modo perderías. En el ejemplo de recién interesa saber qué es `x` y cómo llegó a ese estado. Si estás usando un IDE esta posibilidad de interacción suele ocurrir naturalmente.
+Este *parâmetro* (o `-i`, que usamos antes) preserva o estado do interpretador no final do script e permite que você o questione sobre o estado das variáveis ​​e obtenha informações que, de outra forma, você perderia. No exemplo, queremos apenas saber o que é `x` e como ele chegou a esse estado. 
 
-### Debuggear con `print`
+### Depurar com `print`
 
-`print()` es una forma rápida y sencilla de permitir que el programa se ejecute (casi) normalmente mientras te da información del estado de las variables. Si elegís bien las variables que mostrar, es probable que digas "¡¡Ajá!!".
+`print()` é uma maneira rápida e fácil de deixar o programa rodar (quase) normalmente enquanto fornece informações sobre o estado das variáveis. Se você escolher as variáveis ​​a serem exibidas com sabedoria, provavelmente dirá "Aha!".
 
-*Sugerencia: es conveniente usar `repr()` para imprimir las variables*
+*Dica: É conveniente usar `repr()` para imprimir as variáveis*
 
-```python
+``` python
 def spam(x):
     print('DEBUG:', repr(x))
     ...
 ```
 
-`repr()` te muestra una representación técnicamente más precisa del valor de una variable, y no la representación *bonita* que solemos ver.
+`repr()` fornece uma representação tecnicamente mais precisa do valor de uma variável, e não a representação *bonita* que normalmente vemos.
 
-```python
+``` python
 >>> from decimal import Decimal
 >>> x = Decimal('3.4')
-# SIN `repr`
+# SEM `repr`
 >>> print(x)
 3.4
-# CON `repr`
+# COM `repr`
 >>> print(repr(x))
-Decimal('3.4')
+Decimal('3,4')
 >>>
 ```
 
-### Debuggear con lápiz y papel
+### Depurar com lápis e papel
 
-Muchas veces uno *asume* que el intérprete está haciendo algo. Si agarrás un lápiz y un papel y _hacés de intérprete_ anotando el estado de cada variable y siguiendo las instrucciones del programa paso a paso, es posible que entiendas que las cosas no son como creías.
+Muitas vezes a pessoa *supõe* que o intérprete está fazendo alguma coisa. Se você pegar um lápis e papel e _desempenhar o papel de intérprete_ anotando o estado de cada variável e seguindo as instruções do programa passo a passo, você pode entender que as coisas não são como você pensava.
 
-Estas alternativas son útiles pero un poco primitivas. La mejor forma de debuggear un programa en Python es usar el debugger.
+Essas alternativas são úteis, mas um pouco primitivas. A melhor maneira de depurar um programa Python é usar o depurador.

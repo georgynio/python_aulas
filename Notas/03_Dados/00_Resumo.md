@@ -5,5 +5,4 @@ Para escrever programas úteis, precisamos aprender a trabalhar com dados. Nesta
 * [Bugs](01_Bugs.md)
 * [Sequências](02_Sequencias.md)
 * [Contadores do módulo _collections_](03_Contadores.md)
-* [Imprimindo com formato](04_Format.md)
-* [árvores portenhas](05_Trees1.md)
+* [Imprimindo com formato](04_Formato.md)
