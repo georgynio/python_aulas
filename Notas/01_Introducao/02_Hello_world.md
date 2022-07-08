@@ -12,9 +12,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 ```
 
-
-
-### Modo iterativo
+## Modo iterativo
 
 Ao executar `python3` estamos entrando ao modo  *iterativo* e desde o começo podemos fazer testes.
 
@@ -36,7 +34,6 @@ Veamos en mayor detalle cómo funciona este REPL:
 
 - `...` indica que o interprete esta esperando a continuação da escrita do seu codigo.
 
-
 Vamos testar o  underline que vimos antes `_` (guarda o último resultado).
 
 ```python
@@ -50,7 +47,6 @@ Vamos testar o  underline que vimos antes `_` (guarda o último resultado).
 ```
 
 **Nota:** É valido apenas no modo iterativo.
-
 
 ### Criação de programas
 
@@ -69,6 +65,7 @@ Estes programas podem ser criados a partir de editores de texto tipo: `gedit`, `
 Este processo é bastante simples, precisamos apenas o terminal aberto. Nesta, devemos nos localizar na pasta onde o nosso script se encontra salvo. Para executar precisamos apenas de escrever `python` e o nome do script. Por exemplo:
 
 No terminal linux:
+
 ```bash
 bash % python hello.py
 hello world
@@ -77,7 +74,7 @@ bash %
 
 Ou numa terminal do Windows:
 
-```
+```bash
 C:\SomeFolder>hello.py
 hello world
 
@@ -85,8 +82,7 @@ C:\SomeFolder>c:\python36\python hello.py
 hello world
 ```
 
-**Nota:** No Windows as veces é preciso indicar o caminho do executavel do Python, por exemplo:  `c:\python36\python`. 
-
+**Nota:** No Windows as veces é preciso indicar o caminho do executavel do Python, por exemplo:  `c:\python36\python`.
 
 Normalmente aparecem erros na primeira vez da execução do script. Para isto podemos usar a opção `-i` para permanecer no interprete do Python, por exemplo, `python -i hello.py`. Essa opção é boa quando temos problemas com codigos que realizam calculos em varias etapas e precisamos testar algumas coisas.
 
@@ -102,7 +98,6 @@ Vamos resolver o seguinte problema:
 Então, o rei pediu para os matemáticos do reino fazerem as contas.
 
 Vamos ver qual seria a solução, indo apenas até o quadro 8:
-
 
 ```python
 # xadrez.py
@@ -325,6 +320,7 @@ Mi nombre es Juana
 ```
 
 Esse salto pode ser suprimido.
+
 ```python
 print('Hola', end=' ')
 print('Mi nombre es', 'Juana')
@@ -338,12 +334,11 @@ Hola Mi nombre es Juana
 
 ### Comandos interessantes:
 
-* `input()` lê o valor ingressado pelo usuario desde o terminal.
-* `pass` indica que quando o execução do programa chega nesta parte ele deve pular para o proximo trecho do codigo, sem fazer nada.
-* `round` arredonda o valor de um decimal.
-* `pow` calcula a potencia de um numero.
-* `type` retorna uma mensagem com o tipo da variavel.
-* etc.
+&check; `input()` lê o valor ingressado pelo usuario desde o terminal.\
+&check; `pass` indica que quando o execução do programa chega nesta parte ele deve pular para o proximo trecho do codigo, sem fazer nada.\
+&check; `round` arredonda o valor de um decimal.\
+&check; `pow` calcula a potencia de um numero.\
+&check; `type` retorna uma mensagem com o tipo da variavel.\
+&check; etc.
 
-
-Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)
+## Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)

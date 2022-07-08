@@ -2,7 +2,7 @@
 
 Nessa seção iremos aprender o uso do Python aplicado às operações matemáticas.
 
-### Tipos de números
+## Tipos de números
 
 O Python tem 4 tipos de números:
 
@@ -11,7 +11,8 @@ O Python tem 4 tipos de números:
 * Ponto flutuante
 * Números Complexos (com parte real e imaginária)
 
-### Booleanos (bool)
+## Booleanos (bool)
+
 Os números boleanos podem tomar um dos valores: `True` ou `False`.
 
 ```python
@@ -28,8 +29,7 @@ if d == 0:
     print('d is False')
 ```
 
-
-### Inteiros (int)
+## Inteiros (int)
 
 Podemos representar tanto numeros positivos quanto negativos:
 
@@ -37,7 +37,9 @@ Podemos representar tanto numeros positivos quanto negativos:
 a = 524
 b = -15487935649872655
 ```
+
 Representação em bases difrentes:
+
 ```python
 c = 0x7fa8      # Hexadecimal
 d = 0o253       # Octal
@@ -46,7 +48,7 @@ e = 0b10001111  # Binario
 
 Operacões suportadas:
 
-```
+```bash
 x + y      Adição
 x - y      Substração
 x * y      Multiplicação
@@ -57,9 +59,7 @@ x ** y     Exponenciação
 abs(x)     Valor absoluto
 ```
 
-
-
-### Ponto flutuante (float)
+## Ponto flutuante (float)
 
 O Python representa adequadamente numeros decimais e ainda aceita o uso da notação cientifica:
 
@@ -86,7 +86,7 @@ Isto não é exclusivo do Python, mas sim da computação e de como ela lida com
 
 Operações comuns:
 
-```
+```bash
 x + y      Adição
 x - y      Substração
 x * y      Multiplicação
@@ -110,12 +110,11 @@ e = math.log(x)
 
 Este modulo administra algumas constantes universais ( por exemplo: `math.e`, `math.pi`), entre outros.
 
-
-### Sinais de Comparação
+## Sinais de Comparação
 
 Estes retornam `True` ou `False`, indicando se a comparação é Verdadeira ou Falsa:
 
-```
+```bash
 x < y      Menor que
 x <= y     Menor ou igual a
 x > y      Maior que
@@ -125,7 +124,6 @@ x != y     Diferente de
 ```
 
 **Nota:** o `==` é usado para avaliar a igualdade de 2 elementos entanto o `=` se usa para asignar um valor a uma variável.
-
 
 Ainda temos as expresões booleanas:
 
@@ -164,6 +162,4 @@ Faz o teste.
 
 **Nota:** a separação decimal é componto (.), pelo que se colocamos de forma errada o Python retornara uma mensagem de erro. Por exemplo `float(3,141592)` retorna um erro `ValueError`.
 
-
-
-Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)
+## Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)

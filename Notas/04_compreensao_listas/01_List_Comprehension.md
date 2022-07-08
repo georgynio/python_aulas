@@ -2,7 +2,7 @@
 
 Uma tarefa que fazemos repetidamente é processar os elementos de uma lista. Nesta seção, apresentamos a definição de compreensão de lista, que é uma ferramenta poderosa para fazer exatamente isso.
 
-### Criar novas listas
+## Criar novas listas
 
 A compreensão de lista cria uma nova lista aplicando uma operação a cada elemento de uma sequência.
 
@@ -26,7 +26,7 @@ Outro exemplo:
 
 A sintaxe geral é: `[<expressão> for <variável> in <sequência>]`.
 
-### Filtros
+## Filtros
 
 A compreensão da lista pode ser usada para filtragem.
 
@@ -38,7 +38,7 @@ A compreensão da lista pode ser usada para filtragem.
 >>>
 ```
 
-### Casos de uso
+## Casos de uso
 
 A compreensão da lista é extremamente útil. Por exemplo, você pode coletar os valores de um campo específico de um dicionário:
 
@@ -58,7 +58,7 @@ Você também pode combinar compreensão de lista com redução de sequência:
 cost = sum([s['crates']*s['price'] for s in truck])
 ```
 
-### sintaxe geral
+## sintaxe geral
 
 ``` código
 [<expressão> for <variável> in <sequência> if <condição>]
@@ -73,7 +73,7 @@ for variavel in sequencia:
         resultado.append(expressao)
 ```
 
-### Digressão Histórica
+## Digressão Histórica
 
 A compreensão de listas vem da matemática (definição de conjuntos por compreensão).
 
@@ -85,4 +85,4 @@ a = {x^2 | x ∈ s, x > 0} # Matemática
 
 A maioria dos programadores não costuma pensar no lado matemático dessa ferramenta. Podemos vê-lo simplesmente como uma abreviação sofisticada para definir listas.
 
-Retono ao [sumario](/Notas/04_compreensao_listas/00_Resumo.md)
+## Retono ao [sumario](/Notas/04_compreensao_listas/00_Resumo.md)

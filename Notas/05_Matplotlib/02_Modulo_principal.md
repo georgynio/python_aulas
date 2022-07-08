@@ -1,8 +1,8 @@
 # 7.3 El módulo principal
- 
+
 En esta sección introducimos el concepto de **módulo principal**. Dejamos [este video](https://youtu.be/TsWym9qYs4M) con una introducción breve a esta sección y la siguiente.
 
-### Función principal
+## Función principal
 
 En muchos lenguajes de programación existe el concepto de método o función *principal*. 
 
@@ -21,9 +21,10 @@ class myprog {
     }
 }
 ```
+
 Se refiere a la primera función que es ejecutada cuando corremos un programa.
 
-### Módulo principal en Python
+## Módulo principal en Python
 
 Python no tiene una función o método principal. En su lugar existe un *módulo principal* y éste será el archivo con código fuente que se ejecuta primero.
 
@@ -34,7 +35,7 @@ bash % python3 prog.py
 
 El archivo que le pases al intérprete al invocarlo será el módulo principal. No importa cómo lo llames.
 
-### Chequear `__main__` 
+## Chequear `__main__`
 
 Es una práctica estándar usar la siguiente convención en módulos que son ejecutados como scripts principales: 
 
@@ -49,9 +50,7 @@ if __name__ == '__main__':
 
 Los comandos dentro del `if` constituyen el *programa principal*
 
-
-
-### Módulo principal vs. módulo importado
+## Módulo principal vs. módulo importado
 
 Cualquier archivo .py puede ejecutarse ya sea como el programa principal o como un módulo importado:  
 
@@ -74,7 +73,7 @@ if __name__ == '__main__':
     # Esto no se ejecuta en un módulo importado ...
 ```
 
-### Modelo de programa
+## Modelo de programa
 
 Éste es un modelo usual para escribir un programa en Python:
 
@@ -238,65 +237,4 @@ if __name__ == '__main__':
 ```
 
 _Observación: Este modelo es flexible en el sentido que te permite escribir programas que podés llamar desde la terminal pasándole parámetros o ejecutar directamente dentro de un intérprete usando `import` y llamando a su función `main` como veremos en los siguientes ejercicios._
-
-## Ejercicios
-
-Recordá trabajar siempre con las últimas versiones de tus archivos.
-
-### Ejercicio 7.4: Función principal
-Usando estas ideas, agregá a tu programa `informe_final.py` una función `f_principal()` que tome una lista de parámetros en la línea de comandos y produzca la misma salida que antes.
-
-```bash
-bash % python3 informe_final.py ../Data/camion.csv ../Data/precios.csv
-```
-
-También deberías poder ejecutarlo del siguiente modo dentro del intérprete interactivo de Python:
-
-```python
->>> import informe_final 
->>> informe_final.f_principal(['informe_final.py', '../Data/camion.csv', '../Data/precios.csv'])
-
-    Nombre    Cajones     Precio     Cambio
- ---------- ---------- ---------- ----------
-      Lima        100      $32.2       8.02
-   Naranja         50      $91.1      15.18
-     Caqui        150    $103.44       2.02
- Mandarina        200     $51.23      29.66
-   Durazno         95     $40.37      33.11
- Mandarina         50      $65.1      15.79
-   Naranja        100     $70.44      35.84
-
->>>
-```
-
-Copiá el archivo `costo_camion.py` al directorio de la clase actual y actualizalo para que ahora importe `informe_final` en vez de `informe_funciones`. Luego, modificalo para que incluya una función similar `f_principal()` que te permita hacer esto:
-
-```python
->>> import costo_camion
->>> costo_camion.f_principal(['costo_camion.py', '../Data/camion.csv'])
-Costo total: 47671.15
->>>
-```
-
-### Ejercicio 7.5: Hacer un script
-Finalmente, modificá tus programas `informe_final.py` y `costo_camion.py` para que puedan ser ejecutados como scripts desde la línea de comandos:
-
-```bash
-bash $ python3 informe_final.py ../Data/camion.csv ../Data/precios.csv
-    Nombre    Cajones     Precio     Cambio
- ---------- ---------- ---------- ----------
-      Lima        100      $32.2       8.02
-   Naranja         50      $91.1      15.18
-     Caqui        150    $103.44       2.02
- Mandarina        200     $51.23      29.66
-   Durazno         95     $40.37      33.11
- Mandarina         50      $65.1      15.79
-   Naranja        100     $70.44      35.84
-
-bash $ python3 costo_camion.py ../Data/camion.csv
-Costo total: 47671.15
-```
-
-_Aclaración:_  En el ejercicio anterior ya agregaste una función `f_principal()` a tu código. En este simplemente deberías verificar si `__name__ == '__main__'` y llamar a esa función para que se ejecute automáticamente cuando llames a tu programa desde la línea de comandos. 
-
 

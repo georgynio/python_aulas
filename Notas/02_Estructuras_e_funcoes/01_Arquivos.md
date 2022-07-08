@@ -1,9 +1,8 @@
 # Gerenciamento de archivos
 
-É de grande importância para qualquer programador saber manipular arquivos, seja para criar backups, consumir uma lista de alguma planilha ou qualquer motivo que seja. 
+É de grande importância para qualquer programador saber manipular arquivos, seja para criar backups, consumir uma lista de alguma planilha ou qualquer motivo que seja.
 
-### Arquivos de entrada e saida
-
+## Arquivos de entrada e saida
 
 Incialmente podemos usar a função `open`, para abrir o arquivo em modo leitura e escritura:
 
@@ -48,9 +47,9 @@ with open(nome_archivo, 'rt') as file:
 
 Essa estrutura fecha o arquivo ao terminar de executar os comandos do bloque identado.
 
-**Nota:** Em alguns casos devemos especificar o tipo de _ encoding _ agregando `encoding='utf8'` como parâmetro do comando `open`.
+**Nota:** Em alguns casos devemos especificar o tipo de \_encoding\_ agregando `encoding='utf8'` como parâmetro do comando `open`.
 
-### Comandos usuais para ler um arquivo
+## Comandos usuais para ler um arquivo
 
 Para ler um arquivo inteiro, de uma só vez, como uma string:
 
@@ -68,7 +67,7 @@ with open(nome_arquivo, 'rt') as file:
         # Processa cada linha
 ```
 
-### Comandos usuais para escrever um arquivo
+## Comandos usuais para escrever um arquivo
 
 Para escrever strings:
 
@@ -86,5 +85,4 @@ with open('outfile', 'wt') as out:
     ...
 ```
 
-
-Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)
+## Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)

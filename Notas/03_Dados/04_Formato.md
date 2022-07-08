@@ -1,6 +1,5 @@
 # Impressão com formato
 
-
 Quando você trabalha com dados, é comum você querer imprimir uma saída estruturada (tabelas, etc.). Por exemplo:
 
 ``` código
@@ -15,7 +14,7 @@ Quando você trabalha com dados, é comum você querer imprimir uma saída estru
  Laranja 100 70,44
 ```
 
-### Formato de string
+## Formato de string
 
 Uma ótima maneira de formatar uma string em Python (a partir da versão 3.6) é usar `f-strings`.
 
@@ -34,7 +33,7 @@ A parte `{expression:format}` será substituída. Normalmente `f-strings` são u
 print(f'{nome:>10s} {caixas:>10d} {preço:>10.2f}')
 ```
 
-### Códigos de formato
+## Códigos de formato
 
 Os códigos de formato (o que segue o `:` dentro do `{}`) são semelhantes aos usados ​​no `printf()` da linguagem C. Os mais comuns são:
 
@@ -58,7 +57,7 @@ Os modificadores permitem ajustar a largura a ser impressa ou a precisão decima
 :0.2f Float com dois dígitos de precisão
 ```
 
-### Formatação de dicionários
+## Formatação de dicionários
 
 Você pode usar o método `format_map()` para aplicar um formato aos valores de um dicionário:
 
@@ -75,7 +74,7 @@ Você pode usar o método `format_map()` para aplicar um formato aos valores de 
 
 Ele usa os mesmos códigos das `f-strings` mas pega os valores fornecidos pelo dicionário.
 
-### O método format()
+## O método format()
 
 Existe um método `format()` que permite formatar argumentos.
 
@@ -89,7 +88,7 @@ Existe um método `format()` que permite formatar argumentos.
 
 A verdade é que `format()` é um pouco longo para nós e preferimos usar `f-strings`.
 
-### Formato estilo C
+## Formato estilo C
 
 Você também pode usar o operador `%`.
 
@@ -104,5 +103,4 @@ Você também pode usar o operador `%`.
 
 Isso requer um único item ou uma tupla à direita. Os códigos também são inspirados no `printf()` de C. Tem a dificuldade que você tem que contar posições e todas as variáveis ​​vão juntas no final.
 
-
-Retono ao [sumario](/Notas/03_Dados/00_Resumo.md)
+## Retono ao [sumario](/Notas/03_Dados/00_Resumo.md)

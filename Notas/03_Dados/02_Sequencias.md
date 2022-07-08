@@ -1,7 +1,6 @@
 # Sequências
 
-
-### Tipo de sequências
+## Tipo de sequências
 
 Python tem três tipos de dados que são *sequências*.
 
@@ -54,7 +53,7 @@ Traceback (última chamada mais recente):
 TypeError: só pode concatenar tupla (não "lista") para tupla
 ```
 
-### Fatias (slicing)
+## Fatias (slicing)
 
 Pegar uma fatia é pegar uma subsequência de uma sequência.
 A sintaxe é `s[start:end]`, onde `start` e `end` são os índices da subsequência que você deseja.
@@ -71,7 +70,7 @@ a[:3] # [0,1,2]
 * Fatias *não* incluem o valor final. É como os intervalos semiabertos na matemática.
 * Se os índices forem omitidos, eles assumem seus valores padrão: o início ou o fim da lista.
 
-### Reatribuição de fatias
+## Reatribuição de fatias
 
 Nas listas, uma fatia pode ser reatribuída ou excluída.
 
@@ -89,7 +88,7 @@ a = [0,1,2,3,4,5,6,7,8]
 del a[2:4]                # [0,1,4,5,6,7,8]
 ```
 
-### Reduções de sequência
+## Reduções de sequência
 
 Existem algumas operações comuns que reduzem uma sequência a um único valor.
 
@@ -107,7 +106,7 @@ Existem algumas operações comuns que reduzem uma sequência a um único valor.
 >>>
 ```
 
-### Iterar sobre uma sequência
+## Iterar sobre uma sequência
 
 Os loops `for` iteram sobre os elementos de uma sequência.
 
@@ -132,7 +131,7 @@ for x in s: # `x` é uma variável iteradora
 
 A cada iteração, o valor anterior da variável (se houver) é substituído. Depois que o loop termina, a variável iteradora salva o ultimo valor.
 
-### O comando break
+## O comando break
 
 Você pode usar o comando `break` para quebrar um loop mais cedo.
 
@@ -147,7 +146,7 @@ instruções
 
 Quando o comando `break` é executado, ele sai do loop e passa para as próximas `instruções`. O comando `break` só se aplica ao loop mais interno. Se um loop estiver aninhado em outro loop, o comando não interromperá o loop externo.
 
-### O comando continue
+## O comando continue
 
 Para pular um elemento e passar para o próximo, use o comando `continue`.
 
@@ -161,7 +160,7 @@ for linha in linhas:
 
 Isso é útil quando o item encontrado não é de interesse ou precisa ser ignorado no processamento.
 
-### Ciclos sobre inteiros
+## Ciclos sobre inteiros
 
 Para iterar em um intervalo de inteiros, use `range()`.
 
@@ -190,7 +189,7 @@ for k in range(10,50,2):
 * `step` é opcional. Se não se indica o programa entende que é o padrão é `1`.
 * `range()` calcula os valores conforme você precisa deles. Na verdade, ele não armazena todo o intervalo de números na memória.
 
-### A função enumerar()
+## A função enumerar()
 
 A função `enumerate` adiciona um contador extra a uma iteração.
 
@@ -223,7 +222,7 @@ for x in s:
 
 Usando `enumerate` temos que digitar menos e o programa roda um pouco mais rápido.
 
-### Tuplas e laços for
+## Tuplas e laços for
 
 Você pode iterar com várias variáveis ​​de iteração.
 
@@ -238,7 +237,7 @@ for x, y in pontos:
 
 Quando você usa várias variáveis, cada tupla é *descompactada* em um conjunto de variáveis ​​de iteração. O número de variáveis ​​deve corresponder ao número de elementos em cada tupla.
 
-### A função zip()
+## A função zip()
 
 A função `zip` pega várias sequências e as combina em um iterador.
 
@@ -262,5 +261,4 @@ Um uso comum de `zip` é criar pares chave/valor e construir dicionários.
 d = dict(zip(colunas, valores))
 ```
 
-
-Retono ao [sumario](/Notas/03_Dados/00_Resumo.md)
+## Retono ao [sumario](/Notas/03_Dados/00_Resumo.md)

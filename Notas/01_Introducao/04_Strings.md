@@ -2,7 +2,7 @@
 
 São dados definidos entre aspas duplas (") ou simples ('), representado um texto, podendo conter letras, números, simbolos.
 
-### Representação de textos
+## Representação de textos
 
 O Python aceita diferentes formas de uso das aspas:
 
@@ -41,11 +41,11 @@ Normalmente as cadeias de caracterese ocupam apenas uma linha. Pelo que a aspas 
 
 Não há diferença entre aspas aspas simples (') e aspas duplas ("). Porém, ao fechar devemos usar o mesmo que usamos ao abrir.
 
-### Código de escape
+## Código de escape
 
 Significa que iremos inserir caracteres que tenham um significado especial. Estes começam com uma barra invertida, `\`. Usualmente encontraremos os seguintes:
 
-```
+```bash
 '\n'      Caracter ASCII Linefeed (LF) - este cria uma nova
 linha no output
 '\r'      Caracter ASCII Carriage Return (CR)
@@ -57,8 +57,7 @@ linha no output
 
 *Utilisa o `print()` e confere o resultado de usar esses codigos*.
 
-
-### Strings como listas
+## Strings como listas
 
 No Python as strings funcionan como os vetores en matemática, permitindo o acesso a cada carater. **O index começa desde o zero**. Os index negativos indicam que possicionamento começa desde o ultimo elemento.
 
@@ -72,8 +71,6 @@ d = a[-1]         # 'd' (fim do string)
 Aqui um exemplo da representação de indices no Python:
 ![indices](/src_aulas/Notas/01_Introducao/lista_ordem.png)
 
-
-
 Podemo também usar *porções* (slice) especificando um range de index com `:`.
 
 ```python
@@ -83,7 +80,7 @@ f = a[3:8]    # 'lo wo'
 g = a[-5:]    # 'world'
 ```
 
-### Operações com strings
+## Operações com strings
 
 Concatenação, longitude, pertenência e replicação.
 
@@ -105,7 +102,7 @@ g = 'hi' not in s       # True
 rep = s * 5             # 'HelloHelloHelloHelloHello'
 ```
 
-### Métodos das strings
+## Métodos das strings
 
 As strings em Python tem *métodos* com as quais podemos realisar varias operaçãoes.
 
@@ -133,7 +130,6 @@ t = s.replace('Hello' , 'Olá')   # 'Olá world'
 
 **Mais métodos:**
 
-
 ```python
 s.endswith(suffix)     # Confere se termina com o sufixo
 s.find(t)              # Primeira ocorrência de t em s (ou -1 se não estiver presente)
@@ -151,9 +147,9 @@ s.strip()              # Apaga (strip) os espaços em branco do inicio e final
 s.upper()              # Troca para mayúsculas
 ```
 
-### Mutabilidad de strings
+## Mutabilidad de strings
 
-OS strings são inmutaveis, sendo apenas de leitura.
+Os strings são inmutaveis, sendo apenas de leitura.
 Uma vez criados, o seu valor não pode ser mudado.
 
 ```python
@@ -167,7 +163,7 @@ TypeError: 'str' object does not support item assignment
 
 *Devemos inferir que as operações que manipulam strings criam novas strings para salvar os resultados.*
 
-### Conversão de strings
+## Conversão de strings
 
 Usa `str()` para mudar o valor para cadeia.
 
@@ -181,10 +177,9 @@ Usa `str()` para mudar o valor para cadeia.
 <class 'str'>
 ```
 
-### f-Strings
+## f-Strings
 
 As f-Strings são strings em que algumas expressões podem ser formatadas:
-
 
 ```python
 >>> nome = 'Laranja'
@@ -199,8 +194,6 @@ As f-Strings são strings em que algumas expressões podem ser formatadas:
 >>>
 ```
 
-**Nota: Esta função está ativa a partir do Python 3.6.**
+**Nota:** Esta função está ativa a partir do Python 3.6.
 
-
-
-Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)
+## Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)

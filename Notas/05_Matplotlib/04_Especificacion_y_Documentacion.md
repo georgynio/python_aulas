@@ -268,7 +268,7 @@ En este ejercicio vas a realizar dos implementaciones correspondientes a la func
 1. En la primera implementación te pedimos que uses un ciclo.
 2. En la segunda te pedimos que lo hagas sin ciclos: implementá la función de manera que trabaje en tiempo constante (es decir, usando una cantidad de operaciones que no depende de las entradas a la función.
 
-_Ayuda: Estas sumas se pueden escribir como diferencia de dos [números triangulares](https://es.wikipedia.org/wiki/N%C3%BAmero_triangular)._
+*Ayuda: Estas sumas se pueden escribir como diferencia de dos [números triangulares](https://es.wikipedia.org/wiki/N%C3%BAmero_triangular).*
 
 
 ##  Invariantes de ciclo
@@ -378,12 +378,8 @@ A continuación un ejemplo en el cual se modifica la variable recibida. En este 
 
 **Atención:** Salvo que sea explícitamente aclarado, una función no debe modificar los valores de sus parámetros. En el caso en que por una decisión de diseño o especificación se modifiquen los parámetros mutables recibidos, esto debe estar claramente documentado como parte de las poscondiciones.
 
-## Repaso
 
-Dejamos un par de videos. En el [primer video](https://youtu.be/k-QC8WAmWr0) discutimos brevemente la importancia de establecer contratos y explicamos cómo estos y los invariantes pueden ayudarnos a _demostrar matemáticamente_ que una función hace lo que creemos que hace. En el [segundo video](https://youtu.be/uRgd9y0QNpM) damos algunos ejemplos de invariantes de ciclos discutidos paso a paso y hablamos de pre- y post-condiciones.
-
-
-## Resumen 
+## Resumen
 
 - El **contrato** de una función especifica qué condiciones se deben cumplir para que la función pueda ser invocada (**precondición**), y qué condiciones se garantiza que serán válidas cuando la función termine su ejecución (**poscondición**).
 - La **documentación** tiene como objetivo explicar *qué* hace el código, y está dirigida a quien desee utilizar la función o módulo.
@@ -391,62 +387,4 @@ Dejamos un par de videos. En el [primer video](https://youtu.be/k-QC8WAmWr0) dis
 - Si una función modifica un valor mutable que recibe por parámetro, eso debe estar explícitamente aclarado en su documentación.
 - Los **comentarios** tienen como objetivo explicar *cómo* funciona el código y *por qué* se decidió implementarlo de esa manera, y están dirigidos a quien esté leyendo el código fuente.
 - Los **invariantes de ciclo** son las condiciones que deben cumplirse al comienzo de cada iteración de un ciclo.
-
-
-## Ejercicios
-
-### Ejercicio 7.10: Funciones y documentación
-Para cada una de las siguientes funciones:
-* Pensá cuál es el contrato de la función.
-* Agregale la documentación adecuada.
-* Comentá el código si te parece que aporta.
-* Detectá si hay invariantes de ciclo y comentalo al final de la función
-
-Guardá estos códigos con tus modificaciones en el archivo `documentacion.py`.
-
-```python
-def valor_absoluto(n):
-    if n >= 0:
-        return n
-    else:
-        return -n
-```
-
-```python
-def suma_pares(l):
-    res = 0
-    for e in l:
-        if e % 2 ==0:
-            res += e
-        else:
-            res += 0
-
-    return res
-```
-
-```python
-def veces(a, b):
-    res = 0
-    nb = b
-    while nb != 0:
-        #print(nb * a + res)
-        res += a
-        nb -= 1
-    return res
-```
-
-```python
-def collatz(n):
-    res = 1
-
-    while n!=1:
-        if n % 2 == 0:
-            n = n//2
-        else:
-            n = 3 * n + 1
-        res += 1
-
-    return res
-```
-
 

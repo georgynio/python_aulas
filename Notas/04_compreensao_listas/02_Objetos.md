@@ -1,10 +1,8 @@
 # Objetos
 
-
 Nesta seção, discutimos alguns problemas relacionados ao gerenciamento de memória, cópias de variáveis ​​e verificação de tipos. 
 
-
-### Atribuições
+## Atribuições
 
 Muitas operações em Python estão relacionadas a *atribuir* ou *salvar* valores.
 
@@ -18,7 +16,7 @@ d['key'] = value # Adicionar ao dicionário
 *Aviso: operações de atribuição **nunca faça uma cópia** do valor atribuído.*
 As atribuições são simplesmente cópias das referências (ou cópias do ponteiro, se preferir).
 
-### Exemplo de atribuição
+## Exemplo de atribuição
 
 Considere este trecho de código.
 
@@ -27,8 +25,6 @@ a = [1,2,3]
 b = a
 c = [a,b]
 ```
-
-
 
 Isso significa que modificar um valor modifica *todas* as referências.
 
@@ -45,8 +41,7 @@ Isso significa que modificar um valor modifica *todas* as referências.
 
 Observe como uma mudança na lista original aciona mudanças em todas as outras variáveis ​​(ai!). Isso ocorre porque nenhuma cópia foi feita. Todos são indicadores da mesma coisa.
 
-
-### Reatribuir valores
+## Reatribuir valores
 
 A reatribuição de valor *nunca* substitui a memória ocupada por um valor anterior.
 
@@ -61,13 +56,13 @@ print(b) # [1, 2, 3] Mantém o valor original
 
 Lembre-se: **Variáveis ​​são nomes, não locais na memória.**
 
-### Perigos
+## Perigos
 
 Se eles não explicarem isso para você, mais cedo ou mais tarde isso lhe trará problemas. Um exemplo típico é quando você altera um dado pensando que é uma cópia privada e isso inadvertidamente corrompe os dados em outra parte do programa.
 
 *Comentário: Esta é uma das razões pelas quais os tipos de dados primitivos (int, float, string) são imutáveis ​​(somente leitura).*
 
-### Identidade e referências
+## Identidade e referências
 
 Você pode usar o operador `is` para verificar se dois valores correspondem ao mesmo objeto.
 
@@ -104,7 +99,7 @@ Verdadeiro
 >>>
 ```
 
-### Cópias rasas
+## Cópias rasas
 
 Listas e dicionários têm métodos para fazer cópias (não apenas referências, mas duplicatas):
 
@@ -144,7 +139,7 @@ Olhe para este gráfico.
 
 A lista interna ainda é compartilhada.
 
-### Cópias profundas
+## Cópias profundas
 
 Às vezes, você precisará fazer uma cópia de um objeto, bem como de todos os objetos que ele contém. Chamamos isso de *cópia profunda*. Você pode usar a função `deepcopy` do módulo `copy` para isso:
 
@@ -160,7 +155,7 @@ Falso
 >>>
 ```
 
-### Nome, valores e tipos
+## Nome, valores e tipos
 
 Os nomes de variáveis ​​não têm um tipo associado. São apenas nomes. Mas os valores têm um tipo subjacente.
 
@@ -175,7 +170,7 @@ Os nomes de variáveis ​​não têm um tipo associado. São apenas nomes. Mas
 
 `type()` informa o tipo do valor.
 
-### Verificação de tipo
+## Verificação de tipo
 
 Você pode verificar se um objeto é uma instância de um determinado tipo.
 
@@ -193,7 +188,7 @@ if isinstance(a, (lista,tupla)):
 
 *Cuidado: Muitas verificações de tipo podem resultar em código excessivamente complexo. Você normalmente o usa para evitar erros comuns cometidos por outros usuários do seu código.*
 
-### Tudo é um objeto
+## Tudo é um objeto
 
 Números, strings, listas, funções, exceções, classes, instâncias, etc. são todos objetos. Isso significa que eles podem ser nomeados, podem ser passados ​​como dados, colocados em contêineres, etc. sem restrições. Não há objetos especiais em Python. Todos os objetos viajam de primeira classe.
 
@@ -228,4 +223,4 @@ exceto items[2]: # ValueError
 
 Com grandes poderes sempre vem grandes responsabilidades. Só porque você pode não significa que você deve fazer esse tipo de coisa.
 
-Retono ao [sumario](/Notas/04_compreensao_listas/00_Resumo.md)
+## Retono ao [sumario](/Notas/04_compreensao_listas/00_Resumo.md)

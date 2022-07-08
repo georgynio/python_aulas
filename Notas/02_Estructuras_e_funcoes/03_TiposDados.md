@@ -2,7 +2,7 @@
 
 Esta seção apresenta duas estruturas de dados elementares: tuplas e dicionários.
 
-### Tipos de dados primitivos
+## Tipos de dados primitivos
 
 Python tem poucos tipos de dados primitivos.
 
@@ -12,7 +12,7 @@ Python tem poucos tipos de dados primitivos.
 
 Já sabemos algo sobre esses tipos de dados do capítulo anterior.
 
-### Tipo None
+## Tipo None
 
 ``` python
 email_address = None
@@ -25,7 +25,7 @@ se email_address:
     send_email(email_address, msg)
 ```
 
-### Estruturas de dados
+## Estruturas de dados
 
 Programas reais têm dados mais complexos do que podemos armazenar em tipos primitivos. Por exemplo, informações sobre um pedido de frutas:
 
@@ -39,7 +39,7 @@ Podemos ver isso como um "objeto" com três partes:
 * Número ou quantidade (100, um número inteiro)
 * Preço (490,10, um float)
 
-### Tuplas
+## Tuplas
 
 Uma tupla é uma coleção com valores agrupados.
 
@@ -74,7 +74,7 @@ Você pode, no entanto, fazer uma nova tupla com base no conteúdo de outra, o q
 s = (s[0], 75, s[2])
 ```
 
-#### Pacote de tuplas
+### Pacote de tuplas
 
 Tuplas são frequentemente usadas para empacotar informações relacionadas em uma única *entidade*.
 
@@ -84,7 +84,7 @@ s = ('Maçãs', 100, 490,1)
 
 Uma tupla pode ser passada de um lugar para outro em um programa como um único objeto.
 
-#### Descompacte tuplas
+### Descompacte tuplas
 
 Para usar uma tupla em outro lugar, devemos descompactar seu conteúdo em diferentes variáveis.
 
@@ -102,7 +102,7 @@ Traceback (última chamada mais recente):
 ValueError: muitos valores para descompactar
 ```
 
-### Tuplas vs. listas
+## Tuplas vs. listas
 
 Tuplas parecem ser listas somente leitura. No entanto, as tuplas são frequentemente usadas para um único item que consiste em várias partes, enquanto as listas são frequentemente usadas para uma coleção de itens diferentes, geralmente do mesmo tipo.
 
@@ -112,7 +112,7 @@ record = ('Maçãs', 100, 490.1) # Uma tupla representando um registro dentro de
 símbolos = [ 'Maçãs', 'Peras', 'Tangerinas' ] # Uma lista representando três frutas diferentes.
 ```
 
-### Dicionários
+## Dicionários
 
 Um dicionário é uma função que envia *chaves* para *valores*. As chaves servem como índices para acessar os valores.
 
@@ -124,7 +124,7 @@ s = {
 }
 ```
 
-#### Operações usuais
+## Operações usuais
 
 Para obter o valor armazenado em um dicionário usamos as chaves.
 
@@ -151,7 +151,7 @@ para deletar um valor, usamos o comando `del`.
 >>>
 ```
 
-#### Por que dicionários?
+## Por que dicionários?
 
 Os dicionários são úteis quando existem *muitos* valores diferentes e esses valores podem ser modificados ou manipulados. Como o acesso aos elementos é feito por *chave*, não é necessário lembrar uma posição para determinados dados, o que muitas vezes cumpre um objetivo fundamental: tornar o código mais legível (e, portanto, menos propenso a erros).
 
@@ -160,6 +160,5 @@ s['price'] # dicionário
 #vs
 s[2] # lista
 ```
-
 
 Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)

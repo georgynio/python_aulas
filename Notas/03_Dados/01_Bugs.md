@@ -16,7 +16,7 @@ Os *erros sintáticos* são aqueles que ocorrem quando escrevemos incorretamente
 SyntaxError: closing parenthesis ']' does not match opening parenthesis '('
 ```
 
-Um segundo tipo de erro são os erros de *tempo de execução*, que ocorrem quando o programa começa a ser executado, mas ocorre um erro durante a execução. Por exemplo, se pedirmos ao usuário para digitar sua idade esperando um número inteiro e ele digitar "vinte e seis anos", é provável que o programa dê um erro. Se lermos um arquivo CSV e uma linha tiver dados ausentes, o programa poderá dar um erro. Esses tipos de erros em Python geram _exceções_ que, como veremos mais adiante, podem ser tratadas adequadamente.
+Um segundo tipo de erro são os erros de *tempo de execução*, que ocorrem quando o programa começa a ser executado, mas ocorre um erro durante a execução. Por exemplo, se pedirmos ao usuário para digitar sua idade esperando um número inteiro e ele digitar "vinte e seis anos", é provável que o programa dê um erro. Se lermos um arquivo CSV e uma linha tiver dados ausentes, o programa poderá dar um erro. Esses tipos de erros em Python geram *exceções* que, como veremos mais adiante, podem ser tratadas adequadamente.
 
 ```python
 >>> idade = int(input('Coloque sua idade: '))
@@ -29,6 +29,7 @@ ValueError: invalid literal for int() with base 10: 'vinte'
 O terceiro tipo de erro é o mais difícil de encontrar e entender. São os *erros de semântica*, que ocorrem quando o programa não faz o que foi projetado para fazer. Eles têm a ver com o significado das instruções. Nesses casos, o programa é executado, mas apresenta um resultado incorreto ou inesperado. Em geral, a melhor maneira de encontrar esses erros é percorrer o código que gera um resultado inesperado, tentando entender onde está o erro, usando o depurador.
 
 Por exemplo, calcula x = (2+3)*5
+
 ```python
 # solução correta
 >>> x = (2+3)*5
@@ -42,10 +43,9 @@ Por exemplo, calcula x = (2+3)*5
 
 ```
 
-
 ## Depurar manualmente
 
-Erros (ou bugs) são difíceis de rastrear e resolver. Especialmente erros que só aparecem sob uma certa combinação de condições que fazem com que o programa não consiga continuar ou dê um resultado inesperado. Se o seu programa roda, mas não dá o resultado esperado, ou _trava_ e você não entende o porquê, você tem algumas ferramentas específicas que o ajudam a encontrar a origem do problema. 
+Erros (ou bugs) são difíceis de rastrear e resolver. Especialmente erros que só aparecem sob uma certa combinação de condições que fazem com que o programa não consiga continuar ou dê um resultado inesperado. Se o seu programa roda, mas não dá o resultado esperado, ou *trava* e você não entende o porquê, você tem algumas ferramentas específicas que o ajudam a encontrar a origem do problema.
 
 ### O que diz um traceback?
 
@@ -73,10 +73,9 @@ As linhas acima informam o caminho que o programa percorreu para chegar ao erro.
 
 No entanto, às vezes isso não fornece informações suficientes (por exemplo, não sabemos o valor de cada parâmetro usado nas chamadas).
 
-Uma possibilidade que às vezes funciona é copiar o rastreamento para o Google. Se o erro for muito comum encontraremos muitas alternativas de solução. Se recomenda o uso do site https://pt.stackoverflow.com/, de preferencia o site em ingles.
+Uma possibilidade que às vezes funciona é copiar o rastreamento para o Google. Se o erro for muito comum encontraremos muitas alternativas de solução. Se recomenda o uso do site da [stackoverflow](https://pt.stackoverflow.com/), de preferencia o site em ingles.
 
 ### Use o modo [REPL](https://en.wikipedia.org/wiki/REPL) do Python
-
 
 Se você usa o Python na linha de comando, pode usá-lo passando um `-i` como parâmetro antes do script a ser executado. Quando o interpretador Python terminar de executar o script, ele permanecerá no modo interativo (em vez de retornar ao sistema operacional). Você pode descobrir em que estado o sistema estava.
 
@@ -96,7 +95,7 @@ AttributeError: 'int' object has no attribute 'append'
 
 ```
 
-Este *parâmetro* (o `-i`, que usamos antes) preserva o estado do interpretador no final do script e permite que você o questione sobre o estado das variáveis ​​e obtenha informações que, de outra forma, você perderia. No exemplo, queremos apenas saber o que é `x` e como ele chegou a esse estado. 
+Este *parâmetro* (o `-i`, que usamos antes) preserva o estado do interpretador no final do script e permite que você o questione sobre o estado das variáveis ​​e obtenha informações que, de outra forma, você perderia. No exemplo, queremos apenas saber o que é `x` e como ele chegou a esse estado.
 
 ### Depurar com `print`
 
@@ -126,9 +125,8 @@ Decimal('3,4')
 
 ### Depurar com lápis e papel
 
-Muitas vezes a pessoa *supõe* que o intérprete está fazendo alguma coisa. Se você pegar um lápis e papel e _desempenhar o papel de intérprete_ anotando o estado de cada variável e seguindo as instruções do programa passo a passo, você pode entender que as coisas não são como você pensava.
+Muitas vezes a pessoa *supõe* que o intérprete está fazendo alguma coisa. Se você pegar um lápis e papel e *desempenhar o papel de intérprete* anotando o estado de cada variável e seguindo as instruções do programa passo a passo, você pode entender que as coisas não são como você pensava.
 
 Essas alternativas são úteis, mas um pouco primitivas. A melhor maneira de depurar um programa Python é usar o depurador.
 
-
-Retono ao [sumario](/Notas/03_Dados/00_Resumo.md)
+## Retono ao [sumario](/Notas/03_Dados/00_Resumo.md)

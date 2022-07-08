@@ -2,7 +2,7 @@
 
 Nesta seção vamos lidar com listas, dicionários e conjuntos.
 
-### Panorama
+## Panorama
 
 Os programas geralmente trabalham com muitos objetos.
 
@@ -15,7 +15,7 @@ Em Python existem três opções principais para escolher.
 * Dicionários. Dados confusos.
 * Conjuntos. Coleção bagunçada de elementos únicos.
 
-### Listas como contêineres
+## Listas como contêineres
 
 Use listas quando a ordem dos dados for importante. Lembre-se de que as listas podem conter qualquer tipo de objeto.
 Por exemplo, uma lista de tuplas.
@@ -31,7 +31,7 @@ truck[0] # ('Pera', 100, 490.1)
 truck[2] # ('Limão', 150, 83.44)
 ```
 
-#### Construindo uma lista
+## Construindo uma lista
 
 Como construir uma lista do zero.
 
@@ -56,7 +56,7 @@ com open('../Data/truck.csv', 'rt') como f:
         registros.append((linha[0], int(linha[1]), float(linha[2])))
 ```
 
-### Dicionários como contêineres
+## Dicionários como contêineres
 
 Os dicionários são úteis se quisermos pesquisar rapidamente (por teclas).
 Por exemplo, um dicionário de preços de gaveta.
@@ -80,7 +80,7 @@ Assim, podemos pesquisar os dados:
 >>>
 ```
 
-### Construção de dicionários
+## Construção de dicionários
 
 Exemplo de construção de um dicionário do zero.
 
@@ -104,7 +104,7 @@ com open('../Data/prices.csv', 'rt') como f:
         preços[linha[0]] = float(linha[1])
 ```
 
-### Pesquisas em um dicionário
+## Pesquisas em um dicionário
 
 Você pode verificar se existe uma chave:
 
@@ -115,7 +115,7 @@ senão:
     # NÃO
 ```
 
-### Teclas compostas
+## Teclas compostas
 
 Quase qualquer valor pode ser usado como chave em um dicionário Python. A principal restrição é que uma chave deve ser do tipo imutável.
 Por exemplo, tuplas:
@@ -138,10 +138,9 @@ Então, podemos acessar o dicionário assim:
 
 *Listas, conjuntos e dicionários não podem ser usados ​​como chaves de dicionário, pois são mutáveis.*
 
-### Conjuntos
+## Conjuntos
 
 Um conjunto é uma coleção de elementos únicos sem ordem e sem repetição.
-
 
 ``` python
 citrino = { 'Laranja','Limão','Tangerina' }
@@ -181,5 +180,4 @@ s1 & s2 # Definir interseção
 s1 - s2 # Diferença de conjuntos
 ```
 
-
-Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)
+## Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)

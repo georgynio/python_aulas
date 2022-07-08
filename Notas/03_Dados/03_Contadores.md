@@ -2,7 +2,7 @@
 
 O módulo `collections` oferece objetos úteis para manipulação de dados.
 
-### Exemplo: Contar coisas
+## Exemplo: Contar coisas
 
 Digamos que você queira fazer uma tabela com o número total de caixas para cada fruta.
 
@@ -19,7 +19,7 @@ caminhao = [
 
 Existem duas entradas `Orange` e duas `Pear` nesta lista. Essas gavetas devem ser combinadas de alguma forma.
 
-### Contadores
+## Contadores
 
 Solução: Use um `Contador`.
 
@@ -32,8 +32,4 @@ for nome, n_gavetas, preco in caminhao:
 total_drawers['Orange'] # 150
 ```
 
-
-
-
-
-Retono ao [sumario](/Notas/03_Dados/00_Resumo.md)
+## Retono ao [sumario](/Notas/03_Dados/00_Resumo.md)
