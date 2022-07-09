@@ -67,9 +67,9 @@ Este processo é bastante simples, precisamos apenas o terminal aberto. Nesta, d
 No terminal linux:
 
 ```bash
-bash % python hello.py
+bash$ python hello.py
 hello world
-bash %
+bash$
 ```
 
 Ou numa terminal do Windows:
@@ -120,7 +120,7 @@ print('Equivale a elevar 2 à', posisao-1)
 Ao executar o programa obtemos:
 
 ```bash
-bash % python3 xadrez.py
+bash$ python3 xadrez.py
 1 1 0
 2 2 1
 3 4 2
@@ -171,6 +171,20 @@ estatura = 1.80   # valido
 _estatura = 1.80  # valido
 estatura_2 = 1.80 # valido
 2estatura = 1.80  # não valido
+```
+
+### Palavras reservadas
+
+São palavras que o interpretador busca e usa para receber instruções. Ao todo são 31 palavras reservadas na sintaxe:
+
+```bash
+and del from not while
+as elif global or with
+assert else if pass yield
+break except import print
+class exec in raise
+continue finally is return
+def for lambda try
 ```
 
 ### Tipos

@@ -21,8 +21,8 @@ Uma ótima maneira de formatar uma string em Python (a partir da versão 3.6) é
 ``` python
 >>> nome = 'Laranja'
 >>> gavetas = 100
->>> preço = 91,1
->>> f'{nome:>10s} {caixas:>10d} {preço:>10.2f}'
+>>> preco = 91,1
+>>> f'{nome:>10s} {caixas:>10d} {preco:>10.2f}'
 'Laranja 100 91,10'
 >>>
 ```

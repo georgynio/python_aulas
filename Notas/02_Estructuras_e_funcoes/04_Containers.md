@@ -21,7 +21,7 @@ Use listas quando a ordem dos dados for importante. Lembre-se de que as listas p
 Por exemplo, uma lista de tuplas.
 
 ``` python
-caminhão = [
+caminhao = [
     ('Pera', 100, 490,1),
     ('Laranja', 50, 91,3),
     ('Limão', 150, 83,44)
@@ -49,9 +49,9 @@ Um exemplo de como carregar registros de um arquivo.
 ``` python
 registros = [] # inicia com uma lista vazia
 
-com open('../Data/truck.csv', 'rt') como f:
+with open('../Data/truck.csv', 'rt') as f:
     next(f) # Pula o cabeçalho
-    para linha em f:
+    for linha in f:
         linha = linha.split(',')
         registros.append((linha[0], int(linha[1]), float(linha[2])))
 ```
@@ -62,7 +62,7 @@ Os dicionários são úteis se quisermos pesquisar rapidamente (por teclas).
 Por exemplo, um dicionário de preços de gaveta.
 
 ``` python
-preços = {
+precos = {
    'Pera': 513,25,
    'Limão': 87,22,
    'Laranja': 93,37,
@@ -73,9 +73,9 @@ preços = {
 Assim, podemos pesquisar os dados:
 
 ``` python
->>> preços['Laranja']
+>>> precos['Laranja']
 93,37
->>> preços['pêra']
+>>> precos['pêra']
 513,25
 >>>
 ```
@@ -85,23 +85,23 @@ Assim, podemos pesquisar os dados:
 Exemplo de construção de um dicionário do zero.
 
 ``` python
-preços = {} # Começamos com um dicionário vazio
+precos = {} # Começamos com um dicionário vazio
 
 #adiciona elementos
-preços['Pera'] = 513,25
-preços['Limão'] = 87,22
-preços['Laranja'] = 93,37
+precos['Pera'] = 513,25
+precos['Limão'] = 87,22
+precos['Laranja'] = 93,37
 ```
 
 Um exemplo de como construir um dicionário a partir do conteúdo de um arquivo.
 
 ``` python
-preços = {} # Começamos com um dicionário vazio
+precos = {} # Começamos com um dicionário vazio
 
-com open('../Data/prices.csv', 'rt') como f:
-    para linha em f:
+with open('../Data/prices.csv', 'rt') as f:
+    for linha in f:
         linha = linha.split(',')
-        preços[linha[0]] = float(linha[1])
+        precos[linha[0]] = float(linha[1])
 ```
 
 ## Pesquisas em um dicionário
@@ -109,9 +109,9 @@ com open('../Data/prices.csv', 'rt') como f:
 Você pode verificar se existe uma chave:
 
 ``` python
-se digitar d:
+if digitar in d:
     # E ISSO É
-senão:
+else:
     # NÃO
 ```
 

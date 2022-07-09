@@ -37,8 +37,6 @@ t = ['a', 'b']
 s + t           # [1, 2, 3, 'a', 'b']
 ```
 
-![Ordem de uma lista](/Notas/01_Introducao/lista_ordem.png)
-
 As listas tem indices que começam desde o 0.
 
 ```python
@@ -158,5 +156,17 @@ t = sorted(s)               # mantem a lista s, t salva os valores ordenados
 ```
 
 As listas não são vetores ou matrices, como em MATLAB, Octave, R, etc. Para esse tipo de trabalho é altamente recomendado o uso do [numpy](https://numpy.org).
+
+## String é uma sequência
+
+Em strings podemos acessar os elementos *code points* usando um índice e a notação variavel[ index ]. O índice varia de 0 até o tamanho da *string* menos 1. Se ele for negativo, a contagem é na ordem inversa. O quadro a seguir ilustra melhor:
+
+~~~
++---+---+---+---+---+---+
+| P | y | t | h | o | n |
++---+---+---+---+---+---+
+  0   1   2   3   4   5   <-- [indice]
+ -6  -5  -4  -3  -2  -1   <-- [indice negativo]
+~~~
 
 ## Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)
