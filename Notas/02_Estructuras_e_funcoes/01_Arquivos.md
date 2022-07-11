@@ -1,6 +1,6 @@
 # Gerenciamento de archivos
 
-É de grande importância para qualquer programador saber manipular arquivos, seja para criar backups, consumir uma lista de alguma planilha ou qualquer motivo que seja.
+É de grande importância para qualquer programador saber manipular arquivos, seja para criar backups, consumir uma lista de alguma planilha ou qualquer motivo que seja. 
 
 ## Arquivos de entrada e saida
 
@@ -84,5 +84,7 @@ with open('outfile', 'wt') as out:
     print('Hello World', file=out)
     ...
 ```
+
+***Nota:*** Maior informação pode ser encontrada na docomentação[leitura e escrita de arquivos](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) do python.
 
 ## Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)

@@ -80,8 +80,8 @@ Se não especificarmos o tipo de exceção que queremos capturar, acabaremos cap
 
 ``` python
 valid_number=False
-enquanto não valid_number:
-    tentar:
+if not valid_number:
+    try:
         a = input('Digite um inteiro: ')
         n = int(a)
         valid_number = True

@@ -1,5 +1,7 @@
 # Sequências
 
+Um tipo `sequencial` é um que suporta o operador de associção (`in`), da função de tamanho (`len()`), fatias (`[]`) e é iterável.
+
 ## Tipo de sequências
 
 Python tem três tipos de dados que são *sequências*.

@@ -180,4 +180,6 @@ s1 & s2 # Definir interseção
 s1 - s2 # Diferença de conjuntos
 ```
 
+***Nota:*** Maior informação pode ser encontrada na documentação do [collections](https://docs.python.org/pt-br/3/library/collections.html).
+
 ## Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)
