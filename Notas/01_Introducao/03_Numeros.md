@@ -1,6 +1,6 @@
 # Números
 
-Nessa seção iremos aprender o uso do Python aplicado às operações matemáticas.
+Nessa seção iremos aprender o uso do Python aplicado às operações matemáticas. Podemos encontrar mais informação da documentação [tipos embutidos](https://docs.python.org/pt-br/3/library/stdtypes.html) do Python.
 
 ## Tipos de números
 
@@ -38,25 +38,38 @@ a = 524
 b = -15487935649872655
 ```
 
-Representação em bases difrentes:
+Representação do número `15874` em bases difrentes:
 
 ```python
-c = 0x7fa8      # Hexadecimal
-d = 0o253       # Octal
-e = 0b10001111  # Binario
+a = 15874               # decimal
+b = 0x3e02              # hexadecimal
+c = 0o37002             # octal
+d = 0b11111000000010    # binario
+
 ```
 
 Operacões suportadas:
 
 ```bash
-x + y      Adição
-x - y      Substração
-x * y      Multiplicação
-x / y      Divisão (retorna um float)
-x // y     Divisão inteira (retorna um int)
-x % y      Módulo (retorna o resto)
-x ** y     Exponenciação
-abs(x)     Valor absoluto
+x + y       Adição
+x - y       Substração
+x * y       Multiplicação
+x / y       Divisão (retorna um float)
+x // y      Divisão inteira (retorna um int)
+x % y       Módulo (retorna o resto)
+x ** y      Exponenciação
+-x          Muda o sinal de x
+abs(x)      Valor absoluto
+pow(x, y)   Eleva x a y, mesmo que faz o operador **
+```
+
+Conversão de Inteiros
+
+```bash
+bin(x)      Representação binaria do número x
+hex(x)      Representação hexadecimal do número x
+int(x)      Representação inteiro do número x, 'se o número for decimal vai retornar erro de tipo'
+oct(x)      Representação octal do número x
 ```
 
 ## Ponto flutuante (float)
@@ -80,24 +93,11 @@ False
 >>>
 ```
 
-Isto não é exclusivo do Python, mas sim da computação e de como ela lida com números de ponto flutuante. Os computadores não conseguem representar com precisão exata algumas frações (como 0.98 e 0.1). Desse modo, números de ponto flutuante são automaticamente arredondados para o mais próximo que se encaixe na possibilidade do binário, o que resulta em um pequeno erro de precisão.
+**Normalmente, computadores representam números de ponto-flutuante usando base 2, isto significa que alguns decimais podem ser representados de forma exata (como 0.5), mas outros apenas de uma forma aproximada (como 0.1 e 0.2). Alem do mais, a representação utiliza um número fixo de bits ; logo, existe um limite ao número de dígitos que podem ser mantidos.**
 
 *No geral, esse erro é muito pequeno para ser considerado relevante, mas há situações em que não podemos desconsiderá-lo.*
 
-Operações comuns:
-
-```bash
-x + y      Adição
-x - y      Substração
-x * y      Multiplicação
-x / y      Divisão (retorna um float)
-x // y     Divisão inteira (retorna um int)
-x % y      Módulo (retorna o resto)
-x ** y     Potência
-abs(x)     Valor absoluto
-```
-
-Normalmente o Python consegue realizar esses calculos sem problemas, porém, calculos mais complexos são auxiliados com o módulo `math`.
+Normalmente o Python consegue realizar calculos sem problemas, porém, calculos mais complexos são auxiliados com o módulo `math`.
 
 ```python
 import math
@@ -108,7 +108,7 @@ d = math.tan(x)
 e = math.log(x)
 ```
 
-Este modulo administra algumas constantes universais ( por exemplo: `math.e`, `math.pi`), entre outros.
+Este modulo também administra algumas constantes universais ( por exemplo: `math.e`, `math.pi`), entre outros.
 
 ## Sinais de Comparação
 

@@ -164,7 +164,7 @@ print(b)
 
 ### Variável
 
-É um objeto (nome) capaz de representar e reter um valor ou expressão. Estes nomes podem ter a estrutura que o programador desejar, tendo apenas a restrição de não começar por um numero, usar carater alfanumericos ou espaços em branco. 
+É um objeto (nome) capaz de representar e reter um valor ou expressão. Estes nomes podem ter a estrutura que o programador desejar, tendo apenas a restrição de não começar por um numero, usar carater alfanumericos ou espaços em branco.
 
 ```python
 estatura = 1.80   # valido
@@ -175,17 +175,22 @@ estatura_2 = 1.80 # valido
 
 ### Palavras reservadas
 
-São palavras que o interpretador busca e usa para receber instruções. Ao todo são 31 palavras reservadas na sintaxe:
+São palavras que o interpretador busca e usa para receber instruções.
 
 ```bash
-and del from not while
-as elif global or with
-assert else if pass yield
-break except import print
-class exec in raise
-continue finally is return
-def for lambda try
+and         as          assert      break
+class       continue    def         del
+elif        else        except      False
+finally     for         from        global
+if          import      in          is
+lambda      None        nonlocal    not
+or          pass        raise       return
+True        try         while       with
+yield
+
 ```
+
+***Nota:*** Tenha cuidado com o uso do underscore(`_`)  pois ele é comumente utilizado por programadores internacionais.
 
 ### Tipos
 
@@ -199,10 +204,9 @@ altura = 'Muy, muy alto' # Cadena de caracteres
 
 **Tipado dinâmico:** que significa que o proprio Python infere o tipo de variavel sem a necessidade da indicação do usuario e pode mudar durante a execução do programa.
 
-
 ### Python distingue entre maiusculas e minusculas
 
-Caracteristica do Python que pode ajudar na hora de enfatizar em alguma caracateristica de alguma variável. 
+Caracteristica do Python que pode ajudar na hora de enfatizar em alguma caracateristica de alguma variável.
 
 ```python
 nombre = 'David'

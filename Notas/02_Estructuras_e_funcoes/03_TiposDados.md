@@ -21,7 +21,7 @@ email_address = None
 `None` é frequentemente usado como um curinga para reservar o lugar para um valor opcional ou ausente. Em condicionais, ele é avaliado como 'False'.
 
 ``` python
-se email_address:
+if email_address:
     send_email(email_address, msg)
 ```
 

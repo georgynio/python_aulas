@@ -1,6 +1,6 @@
 # Cadenas (strings)
 
-São dados definidos entre aspas duplas (") ou simples ('), representado um texto, podendo conter letras, números, simbolos.
+São dados definidos entre aspas duplas (") ou simples ('), representado um texto, podendo conter letras, números, simbolos. Podemos encontrar a documentação no site [Operações comuns de strings](https://docs.python.org/pt-br/3/library/string.html).
 
 ## Representação de textos
 
@@ -39,7 +39,16 @@ a solidão, os caminhos, a chuva...
 
 Normalmente as cadeias de caracterese ocupam apenas uma linha. Pelo que a aspas triplas deixam escrever varias linhas.
 
-Não há diferença entre aspas aspas simples (') e aspas duplas ("). Porém, ao fechar devemos usar o mesmo que usamos ao abrir.
+Não há diferença entre aspas aspas simples (') e aspas duplas ("). Porém, ao fechar devemos usar o mesmo que usamos ao abrir. Se quisermos usar aspas dentro de uma string de aspas normal,caso sejam diferentes podem ser usados normalmente. Caso contrario, podemos usar `\`.
+por exemplo:
+
+```python
+a = "Aspas simples 'dentro de aspas duplas'"
+b = 'Aspas simples 'dentro de aspas simples''   # errado
+b = 'Aspas simples \'dentro de aspas simples\'' # correto
+```
+
+Confere o que acontece com as aspas duplas.
 
 ## Código de escape
 
@@ -57,6 +66,32 @@ linha no output
 
 *Utilisa o `print()` e confere o resultado de usar esses codigos*.
 
+Se desejamos escrever multiplas linhas podemos usar a `\`.
+
+```python
+
+a = ('PEDRA NEGRA SOBRE PEDRA BRANCA (Cesar Vallejo) \n'\
+    'Morrerei em Paris com aguaceiros\n'\
+    'num dia de que já tenho a lembrança.\n'\
+    'Morrerei em Paris - daqui não saio -\n'\
+    'numa quinta-feira, como hoje, de outono.\n\n'\
+
+    'Quinta-feira será, pois hoje, quinta-feira,\n'\
+    'em que estes versos proso, dei os úmeros\n'\
+    'à pouca sorte, e nunca como hoje\n'\
+    'voltei,com todo o meu caminho, a ver-me só.\n\n'\
+
+    'Morreu César Vallejo, espancavam-no\n'\
+    'todos sem que lhes fizesse nada;\n'\
+    'davam-lhe forte com um pau e forte\n\n'\
+
+    'com uma corda também; são testemunhos\n'\
+    'as quintas-feiras e os ossos úmeros,\n'\
+    'a solidão, os caminhos, a chuva...\n')
+```
+
+*Avalia o resultado utilizando a função `print()`.
+
 ## Strings como listas
 
 No Python as strings funcionan como os vetores en matemática, permitindo o acesso a cada carater. **O index começa desde o zero**. Os index negativos indicam que possicionamento começa desde o ultimo elemento.
@@ -67,9 +102,6 @@ b = a[0]          # 'H'
 c = a[4]          # 'o'
 d = a[-1]         # 'd' (fim do string)
 ```
-
-Aqui um exemplo da representação de indices no Python:
-![indices](/src_aulas/Notas/01_Introducao/lista_ordem.png)
 
 Podemo também usar *porções* (slice) especificando um range de index com `:`.
 
@@ -165,7 +197,7 @@ TypeError: 'str' object does not support item assignment
 
 ## Conversão de strings
 
-Usa `str()` para mudar o valor para cadeia.
+Nem todos os objetos fornecem uma representação que possa ser reproduzida; neste caso eles forncem uma string fechada por tags "<>". Como o exemplo do `type(c)`.
 
 ```python
 >>> x = 42
@@ -175,7 +207,14 @@ Usa `str()` para mudar o valor para cadeia.
 >>> c = str(x) #verificando se realmente muda o inteiro para string
 >>> type(c)
 <class 'str'>
+>>> "{0} {0!s} {0!r} {0!a}". format(decimal.Decimal('93.4'))
+"93.4 93.4 Decimal('93.4') Decimal('93.4')"
+>>> filme = 'ภาพยนตร์'
+>>> "{0}!a".format(filme)
+"'\\u0e20\\u0e32\\u0e1e\\u0e22\\u0e19\\u0e15\\u0e23\\u0e4c'"
 ```
+
+* O `r` força uma forma representacional e `a` força uma forma representacional mas usando apenas caracteres ASCII.
 
 ## f-Strings
 
