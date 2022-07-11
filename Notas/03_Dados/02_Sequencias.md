@@ -171,7 +171,7 @@ for i in range(100):
     #i = 0,1,...,99
 ```
 
-A sintaxe é `range([start,] end [,step])` (o que está entre colchetes é opcional).
+A sintaxe é `range([start], [end], [step])` (o que está entre colchetes é opcional).
 
 ``` python
 for i in range(100):

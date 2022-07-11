@@ -1,6 +1,6 @@
 # Contadores do módulo _collections_
 
-O módulo `collections` oferece objetos úteis para manipulação de dados.
+O módulo [collections](https://docs.python.org/pt-br/3/library/collections.html?highlight=collections#module-collections) oferece objetos úteis para manipulação de dados.
 
 ## Exemplo: Contar coisas
 

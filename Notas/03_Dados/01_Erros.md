@@ -1,4 +1,4 @@
-# Erros
+# Erros e exceções
 
 Até agora mensagens de erro foram apenas mencionadas, mas se você testou alungs exemplos, talvez tenha esbarrado em algumas. Existem pelo menos dois tipos distintos de erros: erros de sintaxe e exceções. Podemos encontrar um relatorio completo dos erros no site da [documentação](https://docs.python.org/pt-br/3/tutorial/errors.html).
 
@@ -97,7 +97,7 @@ AttributeError: 'int' object has no attribute 'append'
 
 Este *parâmetro* (o `-i`, que usamos antes) preserva o estado do interpretador no final do script e permite que você o questione sobre o estado das variáveis ​​e obtenha informações que, de outra forma, você perderia. No exemplo, queremos apenas saber o que é `x` e como ele chegou a esse estado.
 
-### Depurar com `print`
+### Depurar com `print()`
 
 `print()` é uma maneira rápida e fácil de deixar o programa rodar (quase) normalmente enquanto fornece informações sobre o estado das variáveis. Se você escolher as variáveis ​​a serem exibidas com sabedoria, provavelmente dirá "Aha!".
 
