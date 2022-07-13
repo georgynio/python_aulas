@@ -1,4 +1,4 @@
-# 8.2 Manejo de fechas y horas
+# Manejo de fechas y horas
 
 Esta sección tiene un breve [video introductorio](https://youtu.be/exTngw8oOp0) sobre el módulo `datetime`.
 
@@ -353,34 +353,4 @@ El método `strptime()` toma dos argumentos:
 Los códigos de formato `%d`, `%B`, `%Y` significan  `day`, `month` (full name) y `year` respectivamente.
 
 Visitá [la documentación](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior) para más detalles.
-
-## Ejercicios:
-
-### Ejercicio 8.1: Segundos vividos
-Escribí una función llamada `vida_en_segundos(fecha_nac)` a la que le pasás tu fecha de nacimiento y te devuelve la cantidad de segundos que viviste (asumiendo que naciste a las 00:00hs de tu fecha de nacimiento). La función debe tomar como entrada una cadena en formato 'dd/mm/AAAA' (día, mes, año con 2, 2 y 4 dígitos, separados con barras normales) y devolver un `float`.
-
-Guardá este código en el archivo `vida.py`.
-
-### Ejercicio 8.2: Cuánto falta
-Un conocido canal Argentino tiene por costumbre anunciar la cantidad de días que faltan para la próxima primavera.
-
-![Figura](./cronica.jpg)
-
-
-Escribí un programa que asista a los técnicos del canal indicándoles, al correr el programa el número que deben poner en la placa.
-
-### Ejercicio 8.3: Fecha de reincorporación
-Si tenés una licencia por xaternidad que empieza el 26 de septiembre de 2020 y dura 200 días, ¿qué día te reincorporás al trabajo?
-
-### Ejercicio 8.4: Días hábiles
-Escribí una función `dias_habiles(inicio, fin, feriados)` que calcule los días hábiles entre dos fechas dadas. La función debe tener como argumentos el día inicial, el día final, y una lista con las fechas correspondientes a los feriados que haya en ese lapso, y debe devolver una lista con las fechas de días hábiles del período, incluyendo la fecha inicial y la fecha final indicadas. Las fechas de entrada y salida deben manejarse en formato de texto.
-
-Consideramos día hábil a un día que no es feriado ni sábado ni domingo.
-
-Probala entre el 20 de septiembre de 2020  y el 10 de octubre del mismo año, sabiendo que no hubo feriados en el medio.
-Probala entre ese día y fin del 2020 considerando los siguientes feriados de Argentina:
-
-`feriados = ['12/10/2020', '23/11/2020', '7/12/2020', '8/12/2020', '25/12/2020']`
-
-
 

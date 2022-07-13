@@ -10,7 +10,7 @@ Podemos ver a diferença entre documentação e comentários no
 função `choose_code`:
 
 ``` python
-def escolha_código():
+def escolha_codigo():
     '''Retorna um código de 4 dígitos escolhido aleatoriamente'''
     digitos = ('0','1','2','3','4','5','6','7','8','9')
     codigo = ""
@@ -23,7 +23,32 @@ def escolha_código():
     return codigo
 ```
 
-### Código de autodocumentação
+A documentação pode ser consultado na linha de comando
+
+```python
+>>> help(escolha_codigo)
+```
+
+O que retorna, na tela do terminal.
+
+```bash
+Help on function escolha_codigo in module __main__:
+
+escolha_codigo()
+    Retorna um código de 4 dígitos escolhido aleatoriamente
+(END)
+
+```
+
+Podemos também verificar a documentação com ajuda do `print`.
+
+```python
+>>> print(escolha_codigo.__doc__)
+Retorna um código de 4 dígitos escolhido aleatoriamente
+>>>
+```
+
+### Autodocumentação
 
 Em teoria, se nosso código pudesse transmitir eficientemente todos esses
 conceitos, a documentação seria menos necessária. De fato, existe uma técnica de programação chamada *código autodocumentado*, em que a ideia principal é escolher os nomes das funções e variáveis ​​de tal forma que a documentação seja menos essencial.
@@ -104,7 +129,6 @@ def index(lista, elemento):
 ## Resumo
 
 - A **documentação** tem como objetivo explicar *o que* o código faz, e destina-se a qualquer pessoa que queira utilizar a função ou módulo.
-- Se uma função modifica um valor mutável que recebe como parâmetro, isso deve ser declarado explicitamente em sua documentação.
 - Os **comentários** destinam-se a explicar *como* o código funciona e *por que* foi decidido implementá-lo dessa forma, e destinam-se a qualquer pessoa que esteja lendo o código-fonte.
 
 ## Retono ao [sumario](/Notas/05_Matplotlib/00_Resumo.md)

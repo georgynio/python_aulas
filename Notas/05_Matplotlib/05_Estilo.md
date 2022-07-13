@@ -1,232 +1,202 @@
-# 7.6 Estilos de codeo
+# estilos de codificação
 
-## PEP 8 - La guía de estilo para Python
+## PEP 8 - O guia de estilo para Python
 
-La comunidad de usuaries de Python ha adoptado una guía de estilo que facilita la lectura del código y la consistencia entre programas de distintos usuaries. Esta guía no es de seguimiento obligatorio, pero es altamente recomendable. El documento completo se denomina PEP 8 y está escrito originalmente en [inglés](https://www.python.org/dev/peps/pep-0008/), aunque hay alguna traducción al [castellano](http://recursospython.com/pep8es.pdf). 
+A comunidade de usuários do Python adotou um guia de estilo que torna o código mais fácil de ler e consistente entre programas de diferentes usuários. Este guia não é obrigatório, mas é altamente recomendado. O documento completo chama-se PEP 8 e foi escrito originalmente em [inglês](https://www.python.org/dev/peps/pep-0008/), embora haja alguma tradução para [português](https://wiki.python.org.br/GuiaDeEstilo).
 
-A continuación presentamos un resumen con solo algunas recomendaciones.
+Aqui está um resumo com apenas algumas recomendações.
 
-### Indentación
-Utilizar siempre 4 espacios y nunca mezclar tabuladores y espacios.
+### Recuo
 
-Si se continúa una línea hay dos opciones aceptables:
+Sempre use 4 espaços e nunca misture tabulações e espaços.
 
-```python
-# Correcto
-# opción 1, indentar a la apertura del paréntesis:
-foo = funcion_que_crea_bar(variable_1, variable2,
-                           variable_3, variable_4)
+Se uma linha for continuada, existem duas opções aceitáveis:
 
-# opcion 2, agregar 4 espacios:
-foo = funcion_que_crea_bar(
-    variable_1, variable2,
-    variable_3)
+``` python
+# Correto
+# opção 1, recue o parêntese de abertura:
+foo = function_that_creates_bar(variável_1, variável2,
+                           variável_3, variável_4)
+
+# opção 2, adicione 4 espaços:
+foo = function_that_creates_bar(
+    variável_1, variável2,
+    variável_3)
 ```
 
-```python
-# Incorrecto, en cualquier lado.
-foo = funcion_que_crea_bar(variable_1, variable2,
-              variable_3)
+``` python
+# Errado, em qualquer lugar.
+foo = function_that_creates_bar(variável_1, variável2,
+              variável_3)
 ```
 
-### Tamaño máximo de línea
-Las líneas deben limitarse a un máximo de 79 caracteres.
+### Tamanho máximo da linha
 
-### Líneas en blanco
-Separar las definiciones de las clases y funciones con dos líneas en blanco. Los métodos dentro de clases se separan con una línea en blanco. Se recomienda utilizar líneas en blanco para separar partes del código, por ejemplo dentro de una función, que realizan tareas diferenciadas.
+As linhas devem ser limitadas a um máximo de 79 caracteres.
 
-### Imports
-Los imports de distintos módulos deben estar en líneas diferentes:
+### linhas em branco
 
-```python
-# Sí: 
+- Separe as definições das classes e funções com duas linhas em branco.
+- Os métodos dentro das classes são separados por uma linha em branco.
+- Recomenda-se usar linhas em branco para separar partes do código, por exemplo, dentro de uma função, que executam tarefas diferentes.
+
+### Importações
+
+As importações de módulos diferentes devem estar em linhas diferentes:
+
+``` python
+# Sim:
 import os
 import sys
 ```
 
-```python
-# No:
+``` python
+# Não:
 import os, sys
 ```
 
-Sí se pueden poner en una línea los elementos que se importan de un mismo módulo:
+Sim, os elementos que são importados do mesmo módulo podem ser colocados em uma linha:
 
-```python
+``` python
 from subprocess import Popen, PIPE
 ```
 
-Los imports deben ponerse siempre al principio del archivo, justo después de los comentarios y de la documentación del archivo y antes de la definición de las variables globales y las constantes.
+As importações devem ser sempre colocadas no início do arquivo, logo após os comentários e documentação do arquivo, e antes da definição das variáveis ​​e constantes globais.
 
-Los imports deben agruparse en el siguiente orden:
+As importações devem ser agrupadas na seguinte ordem:
 
-1. bibliotecas o módulos estándar. 
-2. bibliotecas o módulos de terceros.
-3. bibliotecas o módulos locales o propios.
+1. bibliotecas ou módulos padrão.
+2. bibliotecas ou módulos de terceiros.
+3. bibliotecas ou módulos locais ou proprietários.
 
-Cada grupo de imports debe estar separado por una línea en blanco.
+Cada grupo de importações deve ser separado por uma linha em branco.
 
-### Espacios en blanco en expresiones
-Evitar espacios en blanco extra en:
+### Espaços em branco em expressões
 
-Dentro de paréntesis, corchetes o llaves.
-```python
-# Sí: 
-spam(ham[1], {eggs: 2})
+Evite espaço em branco extra em:
+
+Dentro de parênteses, colchetes ou chaves.
+
+``` python
+# Sim:
+spam(ham[1], {ovos: 2})
 ```
 
-```python
-# No:  
-spam( ham[ 1 ], { eggs: 2 })
+``` python
+# Não:
+spam(presunto[ 1 ], { ovos: 2 })
 ```
 
-Antes de una coma.
-```python
-# Sí: 
-if x == 4: print x, y; x, y = y, x 
+Antes de uma vírgula.
+
+``` python
+# Sim:
+if x == 4: print x, y; x, y = y, x
 ```
 
-```python
-# No: 
-if x == 4 : print x , y ; x , y = y , x
+``` python
+# Não:
+if x == 4: print x, y; x, y = y, x
 ```
 
-Antes del paréntesis de una llamada a una función.
-```python
-# Sí: 
+Antes dos parênteses de uma chamada de função.
+
+``` python
+# Sim:
 spam(1)
 ```
 
-```python
-# No, ese espacio es espantoso
+``` python
+# Não, esse espaço é horrível
 spam (1)
 ```
 
-Antes del corchete de un índice o clave.
-```python
-# Sí: 
-dict['key'] = list[index]
+Antes do colchete de um índice ou chave.
+
+``` python
+# Sim:
+dict['chave'] = lista[index]
 ```
 
-```python
-# No, ese espacio es igual de espantoso que el anterior
-dict ['key'] = list [index]
+``` python
+# Não, esse espaço é tão assustador quanto o anterior
+dict ['chave'] = lista [index]
 ```
 
-Siempre separá los operadores binarios con un espacio simple a ambos lados: asignación (=), asignación aumentada (+=, -= , etc.), comparación (==, <, >, !=, <>, <=, >=, in, not in, is, is not), booleanos (and, or, not).
+Sempre separe os operadores binários com um único espaço em ambos os lados: atribuição (=), atribuição aumentada (+=, -= , etc.), comparação (==, <, >, !=, <>, <=, > = , in, not in, is, is not), booleanos (and, or, not).
 
-Usá espacios alrededor de operadores artiméticos:
+Use espaços em torno de operadores aritméticos:
 
-```python
-# Sí:
-i = i + 1
-submitted += 1
+``` python
+# Sim:
+e = e + 1
+enviado += 1
 x = x * 2 - 1
-hypot2 = x * x + y * y
+hipot2 = x * x + y * y
 c = (a + b) * (a - b)
 ```
 
-```python
-# No:
+``` python
+# Não:
 i=i+1
-submitted +=1
-x = x*2 - 1 #no es recomendado pero a veces lo usamos
-hypot2 = x*x + y*y
+enviado +=1
+x = x*2 - 1 #não recomendado, mas às vezes usamos
+hipot2 = x*x + y*y
 c = (a+b) * (a-b)
 ```
 
+### Convenções de nomenclatura
 
+As convenções de nomenclatura em Python são uma bagunça e provavelmente nunca teremos tudo consistente. No entanto, damos a você algumas das recomendações atuais sobre nomes. Novos módulos devem ser escritos respeitando-os, embora a consistência interna seja preferível para bibliotecas que já possuem partes feitas...
 
-### Convenciones de nombres
+### Estilos de nomenclatura
 
-Las convenciones de nombres en Python son un lío y probablemente nunca lograremos que todo sea consistente. Sin embargo, te damos algunas de las recomendaciones actuales sobre nombres. Los nuevos módulos deberían ser escritos respetándolos, aunque la consistencia interna es preferible para bibliotecas que ya tengan partes hechas...
+Existem muitos estilos para nomear variáveis, funções, etc. É útil reconhecer qual estilo está sendo usado, independentemente de para que está sendo usado.
 
-### Estilos de nombres
+Aqui estão alguns estilos:
 
-Hay muchos estilos para nombrar variable, funciones, etc. Es útil reconocer qué estilo se está usando, independientemente de para qué se está usando.
+* b (letra simples, minúscula)
+* B (letra simples, maiúscula)
+* minúsculas
+* minúsculas_com_sublinhados
+* LETRAS MAIÚSCULAS
+* MAIÚSCULAS_WITH_UNDERSCARDS
+* Maiúsculas (também chamado de estilo camelo por causa das corcovas)
+* mixedCase (diferente do camel na inicial)
+* With_Caps_And_Underscores (horrível!)
 
-Éstos son algunos estilos:
+**Recomenda-se** não usar acentos ou caracteres especiais de qualquer tipo para evitar problemas de compatibilidade. Os nomes de funções e variáveis ​​devem ser escritos em letras minúsculas, eventualmente usando sublinhados para melhorar a legibilidade.
 
-* b (una sola letra, en minúscula)
-* B (una sola letra, en mayúscula)
-* minusculas
-* minusculas_con_guiones_bajos
-* MAYUSCULAS
-* MAYUSCULAS_CON_GUIONES_BAJOS
-* PalabrasConMayusculas (también llamado estilo camello por las jorobas)
-* mixedCase (difiere del camello en la inicial)
-* Con_Mayusculas_Y_Guiones_Bajos (horrible!)
+### Há muito mais!
 
-Se recomienda no usar acentos ni caracteres especiales de ningún tipo para evitar problemas de compatibilidadd. Los nombres de funciones y variables deberían estar escritos en minúsculas, eventualmente usando guiones bajos para mejorar la legibilidad. 
+Este é apenas um breve resumo, veja [PEP 8](https://www.python.org/dev/peps/pep-0008/) para todas as informações sobre estilos recomendados em Python.
 
-### Hay mucho más!
+## Zen do Python
 
-Esto es solo un breve resumen, mirá el [PEP 8](https://www.python.org/dev/peps/pep-0008/) para tener toda la información sobre estilo recomendado en Python.
+Já que estamos falando de PEPs, queremos mencionar o PEP 20 (PEP significa Python Enhancement Proposals), também conhecido como [Zen of Python](https://en.wikipedia.org/wiki/Zen_of_Python)
 
-## El código no es solo leído: el código de percibe
+O Zen of Python é uma coleção de princípios de software que influenciam o design da linguagem. O texto, que copiamos abaixo, pode ser encontrado no site oficial do Python e também é incluído como surpresa no interpretador do Python ao escrever a instrução `import this`.
 
-Más allá de los gustos por los diferentes estilos posibles, es importante recordar que hay una métrica que no falla nunca para evaluar la calidad de un código: _la cantidad de puteadas por minuto de un lector externo_. 
+**Zen de Python**
 
-![WTF](./wtf.jpg)
+>Bonito é melhor do que feio.\
+>Explícito é melhor que implícito.\
+> Simples é melhor que complexo.\
+>Complexo é melhor que complicado.\
+>Flat é melhor do que aninhado.\
+>O espaçamento é melhor do que denso.\
+>A legibilidade é importante.\
+>Casos especiais não são especiais o suficiente para quebrar as regras.\
+>No entanto, a praticidade supera a pureza.\
+>Os erros nunca devem passar silenciosamente.\
+>A menos que estejam explicitamente silenciados.\
+>Em face da ambiguidade, evite a tentação de adivinhar.\
+>Deve haver uma, e de preferência apenas uma, maneira óbvia de fazer isso.\
+>Embora esse caminho não seja óbvio, a menos que você seja holandês.\
+>Agora está melhor do que nunca.\
+>Embora nunca seja muitas vezes melhor do que *agora*.\
+>Se a implementação for difícil de explicar, é uma má ideia.\
+>Se a implementação for fácil de explicar, pode ser uma boa ideia.\
+>Os namespaces são uma ótima ideia, vamos fazer mais deles!
 
-Las reglas de estilo pueden ser discutidas, acatadas o no, en diferentes contextos. Es importante entender que un programador enfrentado a un código en Python no solo lee el código sino que percibe su diseño en el espacio, el uso de bloques y espacios, de indentaciones y mayúsculas. El diseño gráfico del código es una parte importante de las herramientas de transmisión de la información que permite nuestro archivo.
-
-Creeamos estas ideas con tres citas en inglés, extraídas de [este excelente artículo](https://optimal-codestyle.github.io/) de Aleksandr Skobelev que expresan la convicción de que el código en un lenguaje de programación no se escribe solamente para ser ejecutado por una computadora sino principalmente para ser leído y _percibido_ por otras personas:
-
-> Usually, when evaluating the text of a program in terms of its _ease of perception_, the term _readability_ is used. Strictly speaking, they are not exactly the same thing, because, as will be shown later, the process of *perceiving a program* is more than just reading. 
-> -- <cite> Aleksandr Skobelev, Fundamentals of Optimal Code Style. </cite>
-
-> First, we want to establish the idea that a computer language is not just a way of getting a computer to perform operations but rather that it is a novel formal medium for expressing ideas about methodology. Thus, programs must be written for people to read, and only incidentally for machines to execute.
-> -- <cite>Harold Abelson and Gerald Jay Sussman, Structure and Interpretation of Computer Programs. </cite>
-
-> Indeed, the ratio of time spent reading vs. writing is well over 10:1… Because this ratio is so high, we want the reading of code to be easy, even if it makes the writing harder.
-> -- <cite>Robert C. Martin, Clean Code: A Handbook of Agile Software Craftsmanship. </cite>
-
-
-## Zen de Pyhton
-
-Ya que estamos hablando de los PEPs, queremos mencionar el PEP 20 (PEP viene de Python Enhancement Proposals), también conocido como el [Zen de Python](https://es.wikipedia.org/wiki/Zen_de_Python)
-
-El Zen de Python es una colección de principios de software que influyen en el diseño del lenguaje. El texto, que copiamos a continuación se puede encontrar en el sitio oficial de Python y también se incluye como sorpresa en  el intérprete de Python al escribir la instrucción `import this`.​
-
-**Zen de Pyhton**
-
->Bello es mejor que feo.
-
->Explícito es mejor que implícito.
-
->Simple es mejor que complejo.
-
->Complejo es mejor que complicado.
-
->Plano es mejor que anidado.
-
->Espaciado es mejor que denso.
-
->La legibilidad es importante.
-
->Los casos especiales no son lo suficientemente especiales como para romper las reglas.
-
->Sin embargo la practicidad le gana a la pureza.
-
->Los errores nunca deberían pasar silenciosamente.
-
->A menos que se silencien explícitamente.
-
->Frente a la ambigüedad, evitá la tentación de adivinar.
-
->Debería haber una, y preferiblemente solo una, manera obvia de hacerlo.
-
->A pesar de que esa manera no sea obvia a menos que seas Holandés.
-
->Ahora es mejor que nunca.
-
->A pesar de que nunca es muchas veces mejor que *justo* ahora.
-
->Si la implementación es difícil de explicar, es una mala idea.
-
->Si la implementación es fácil de explicar, puede que sea una buena idea.
-
->Los espacios de nombres son una gran idea, ¡hagamos más de ellos!
-
-
-
+## Retono ao [sumario](/Notas/05_Matplotlib/00_Resumo.md)
