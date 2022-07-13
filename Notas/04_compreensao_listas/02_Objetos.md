@@ -1,8 +1,16 @@
 # Objetos
 
-Nesta seção, discutimos alguns problemas relacionados ao gerenciamento de memória, cópias de variáveis ​​e verificação de tipos. 
+Nesta seção, discutimos alguns problemas relacionados ao gerenciamento de memória, cópias de variáveis ​​e verificação de tipos.
 
 ## Atribuições
+
+A atribuição de valores é a passagem de informação a determinada variável. A linguagem Python tem definido que o sinal que conhecemos pelo nome de igual (=) será o operador de atribuição.
+
+A estrutura de uma atribuição é a seguinte:
+
+```python
+<variável> = <valor>
+```
 
 Muitas operações em Python estão relacionadas a *atribuir* ou *salvar* valores.
 
@@ -13,7 +21,7 @@ s.append(value) # Anexa a uma lista
 d['key'] = value # Adicionar ao dicionário
 ```
 
-*Aviso: operações de atribuição **nunca faça uma cópia** do valor atribuído.*
+*Aviso: **nunca faça uma cópia** do valor atribuído.*
 As atribuições são simplesmente cópias das referências (ou cópias do ponteiro, se preferir).
 
 ## Exemplo de atribuição
@@ -64,13 +72,17 @@ Se eles não explicarem isso para você, mais cedo ou mais tarde isso lhe trará
 
 ## Identidade e referências
 
+```bash
+Em python, uma variável é apenas um NOME que REFERENCIA a um OBJETO.
+```
+
 Você pode usar o operador `is` para verificar se dois valores correspondem ao mesmo objeto.
 
 ``` python
 >>> para = [1,2,3]
 >>> b = a
 >>> a is b
-Verdadeiro
+True
 >>>
 ```
 
@@ -91,11 +103,11 @@ Observação: Para ver se dois valores são iguais, é melhor usar o `==`. O com
 >>> b = a
 >>> c = [1,2,3]
 >>> a is b
-Verdadeiro
+True
 >>> a is c
-Falso
+False
 >>> a == c
-Verdadeiro
+True
 >>>
 ```
 
@@ -107,14 +119,14 @@ Listas e dicionários têm métodos para fazer cópias (não apenas referências
 >>> a = [2,3,[100,101],4]
 >>> b = list(a) # Faça uma cópia
 >>> a is b
-Falso
+False
 ```
 
 Agora `b` é uma nova lista.
 
 ``` python
 >>> a.append(5)
->>> para
+>>> a
 [2, 3, [100, 101], 4, 5]
 >>> b
 [2, 3, [100, 101], 4]
@@ -128,7 +140,7 @@ Apesar disso, os elementos de `a` e `b` ainda são compartilhados.
 [100.101.102]
 >>>
 >>> a[2] is b[2]
-Verdadeiro
+True
 >>>
 ```
 
@@ -145,13 +157,13 @@ A lista interna ainda é compartilhada.
 
 ``` python
 >>> a = [2,3,[100,101],4]
->>> importar copy
+>>> import copy
 >>> b = copy.deepcopy(a)
 >>> a[2].append(102)
 >>> b[2]
 [100,101]
 >>> a[2] is b[2]
-Falso
+False
 >>>
 ```
 
@@ -163,9 +175,9 @@ Os nomes de variáveis ​​não têm um tipo associado. São apenas nomes. Mas
 >>> a = 42
 >>> b = 'Olá Mundo'
 >>> type(a)
-<digite 'int'>
+<class 'int'>
 >>> type(b)
-<digite 'str'>
+<class 'str'>
 ```
 
 `type()` informa o tipo do valor.

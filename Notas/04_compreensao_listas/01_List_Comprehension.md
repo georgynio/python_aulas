@@ -1,6 +1,13 @@
 # Compreensão da lista
 
-Uma tarefa que fazemos repetidamente é processar os elementos de uma lista. Nesta seção, apresentamos a definição de compreensão de lista, que é uma ferramenta poderosa para fazer exatamente isso.
+
+*List comprehension* foi concebida na [PEP 202](https://peps.python.org/pep-0202/) e é uma forma concisa de criar e manipular listas. Sua sintaxe básica é:
+
+```python
+[<expressão> for <item> in <lista>]
+```
+
+Em outras palavras: aplique a `expressão` em cada `item` da `lista`.
 
 ## Criar novas listas
 
@@ -49,7 +56,7 @@ frutas = [s['name'] for s in truck]
 Ou você pode fazer consultas (*consultas*) como se as sequências fossem bancos de dados.
 
 ``` python
-a = [s for s in caminhao se s['price'] > 100 e s['crates'] > 50]
+a = [s for s in caminhao if s['price'] > 100 e s['crates'] > 50]
 ```
 
 Você também pode combinar compreensão de lista com redução de sequência:
@@ -58,9 +65,9 @@ Você também pode combinar compreensão de lista com redução de sequência:
 cost = sum([s['crates']*s['price'] for s in truck])
 ```
 
-## sintaxe geral
+## sintaxe geral da compreensão de lista e sequência
 
-``` código
+```python
 [<expressão> for <variável> in <sequência> if <condição>]
 ```
 
@@ -73,11 +80,11 @@ for variavel in sequencia:
         resultado.append(expressao)
 ```
 
-## Digressão Histórica
+## Contexto histórico
 
 A compreensão de listas vem da matemática (definição de conjuntos por compreensão).
 
-``` código
+``` bash
 a = [x * x for x in s if x > 0] # Python
 
 a = {x^2 | x ∈ s, x > 0} # Matemática
