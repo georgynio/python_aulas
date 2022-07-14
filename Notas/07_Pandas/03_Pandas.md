@@ -16,167 +16,183 @@ As caracteristicas desta biblioteca são:
 
 ## Leitura de dados
 
-Pandas permite que você leia vários formatos de tabelas de dados diretamente. Tente o seguinte código, para ler um arquivo CSV:
+Antes de começar vamos conferir se temos a biblioteca pandas instalada, ao pedir a lista de bibliotecas do pip ele não estara presente. Por exemplo:
+
+```python
+🦖 ragy ❄️  python_aulas 🎁  🐋 -> pip list
+Package           Version
+----------------- -------
+asttokens         2.0.5
+backcall          0.2.0
+decorator         5.1.1
+executing         0.8.3
+ipython           8.4.0
+jedi              0.18.1
+matplotlib-inline 0.1.3
+numpy             1.23.1
+parso             0.8.3
+pexpect           4.8.0
+pickleshare       0.7.5
+pip               22.1.2
+prompt-toolkit    3.0.30
+ptyprocess        0.7.0
+pure-eval         0.2.2
+Pygments          2.12.0
+python-dateutil   2.8.2
+pytz              2022.1
+setuptools        62.3.4
+six               1.16.0
+stack-data        0.3.0
+traitlets         5.3.0
+wcwidth           0.2.5
+wheel             0.37.1
+```
+
+Se não estiver instalado, é só usar o `pip`.
+
+```python
+pip install pandas
+```
+
+Pandas permite que você leia vários formatos de tabelas de dados diretamente. Os dados que iremos utilizar nesta serie de exemplos estão disponiveis [no site energia e ambiente](http://energiaeambiente.org.br/qualidadedoar).
+
+Tente o seguinte código, para ler um arquivo CSV:
 
 ```python
 import pandas as pd
 import os
 
-directorio = '../Data'
-archivo = 'arbolado-en-espacios-verdes.csv'
-fname = os.path.join(directorio,archivo)
-df = pd.read_csv(fname)
+diretorio = 'dados'
+arquivo = '2020ES.csv'
+fname = os.path.join(diretorio, arquivo)
+df = pd.read_csv(fname, encoding='cp1252')
 ```
 
-La variable `df` es de tipo `DataFrame` y contiene todos los datos del archivo csv estructurados adecuadamente.
+A variável `df` é do tipo `DataFrame` e contém todos os dados do arquivo csv devidamente estruturados.
 
-Con `df.head()` podés ver las primeras líneas de datos. Si a `head` le pasás un número como parámetro podés seleccionar cuántas líneas querés ver. Análogamente con `df.tail(n)` verás las últimas `n` líneas de datos.
+```python
+>>> type(df)
+pandas.core.frame.DataFrame
+
+```
+
+Com `df.head()` você pode ver as primeiras linhas de dados. Se você passar um número para `head` como parâmetro, você pode selecionar quantas linhas deseja ver. Da mesma forma com `df.tail(n)` você verá as últimas `n` linhas de dados.
 
 ```python
 >>> df.head()
-
-   long       lat      id_arbol ...          origen       coord_x       coord_y
-0 -58.477564 -34.645015    1  ...           Exótico  98692.305719  98253.300738
-1 -58.477559 -34.645047    2  ...           Exótico  98692.751564  98249.733979
-2 -58.477551 -34.645091    3  ...           Exótico  98693.494639  98244.829684
-3 -58.478129 -34.644567    4  ...  Nativo/Autóctono  98640.439091  98302.938142
-4 -58.478121 -34.644598    5  ...  Nativo/Autóctono  98641.182166  98299.519997
+         Data   Hora   Estacao Codigo Poluente  Valor Unidade        Tipo
+0  2020-01-01  00:30  Carapina   ES01     MP10   10.0   ug/m3  automatica
+1  2020-01-01  01:30  Carapina   ES01     MP10   14.0   ug/m3  automatica
+2  2020-01-01  02:30  Carapina   ES01     MP10   12.0   ug/m3  automatica
+3  2020-01-01  03:30  Carapina   ES01     MP10    4.0   ug/m3  automatica
+4  2020-01-01  04:30  Carapina   ES01     MP10    8.0   ug/m3  automatica
 ```
 
-Usando `df.columns` pandas te va a devolver un índice con los nombres de las columnas del DataFrame. Recordá que en la [Sección 3.7](../03_Datos/07_Arboles1.md#descripción-de-la-base) describimos la base de datos. A su vez, `df.index` te mostrará el índice. En este caso el índice es numérico y se corresponde con el número de la línea leida del archivo. En principio no es muy interesante para analizar cuestiones de árboles, simplemente tenemos las filas numeradas. Veremos otros ejemplos donde el índice puede contener información vital (una categoría, un timestamp, etc).
+Usar `df.columns` retornará uma índice com os nomes das colunas DataFrame.
 
 ```python
 >>> df.columns
-Index(['long', 'lat', 'id_arbol', 'altura_tot', 'diametro', 'inclinacio',
-       'id_especie', 'nombre_com', 'nombre_cie', 'tipo_folla', 'espacio_ve',
-       'ubicacion', 'nombre_fam', 'nombre_gen', 'origen', 'coord_x',
-       'coord_y'],
+Index(['Data', 'Hora', 'Estacao', 'Codigo', 'Poluente', 'Valor', 'Unidade',
+       'Tipo'],
       dtype='object')
 >>> df.index
-RangeIndex(start=0, stop=51502, step=1)
+RangeIndex(start=0, stop=231970, step=1)
 ```
 
 Otra herramienta útil para inspeccionar los datos recién levantados es `describe()`. Para ver mejor una parte, podemos seleccionar algunas columnas de interés antes de pedirle la descripción.
 
 ```python
->>> df[['altura_tot', 'diametro', 'inclinacio']].describe()
-         altura_tot      diametro    inclinacio
-count  51502.000000  51502.000000  51502.000000
-mean      12.167100     39.395616      3.472215
-std        7.640309     31.171205      7.039495
-min        0.000000      1.000000      0.000000
-25%        6.000000     18.000000      0.000000
-50%       11.000000     32.000000      0.000000
-75%       18.000000     54.000000      5.000000
-max       54.000000    500.000000     90.000000
+>>> df['Valor'].describe()
+count    231970.000000
+mean         82.121727
+std         170.106764
+min           0.000000
+25%           5.810000
+50%          17.000000
+75%          44.980000
+max        2637.340000
+Name: Valor, dtype: float64
 ```
 
-## Selección
+## Seleção
 
-Una de las operaciones primitivas más importantes es la selección de fragmentos de las tablas de datos, ya sean filas, columnas o rangos de filas y columnas.
-
-Por ejemplo con `df['nombre_com']` veremos la columna (que es una serie) de nombres comunes de los árboles en la base. Podemos usar `unique` para ver una vez cada nombre:
+Uma das operações primitivas mais importantes é a seleção de fragmentos de tabelas de dados, sejam linhas, colunas ou intervalos de linhas e colunas.
 
 ```python
->>> df['nombre_com'].unique()
-array(['Washingtonia (Palmera washingtonia)', 'Ombú', 'Catalpa', 'Ceibo',
-       'Brachichiton (Árbol botella, Brachichito)', 'Álamo plateado',
-       'Acacia de constantinopla', 'Acacia', 'Roble sedoso (Grevillea)',
-        ...
-       'Jazmín del Paraguay', 'Plumerillo rojo', 'Árbol fuccia',
-       'Canela de venado', 'Boj cepillo', 'Caranday'], dtype=object)
+>>> df['Estacao'].unique()
+array(['Carapina', 'Enseada do Suá', 'Vila Velha - Ibes', 'Cariacica',
+       'Cidade Continental', 'Laranjeiras', 'Jardim Camburi',
+       'Vitória Centro', 'Vila Velha - Centro'], dtype=object)
 ```
 
-Podemos preguntar cuáles se llaman de cierta manera ('Ombú' en este caso), como hacíamos con los ndarrays en numpy:
+Podemos perguntar se algum elemento se encontra em alguma coluna específica:
 
 ```python
->>> df['nombre_com'] == 'Ombú'
-0        False
-1        False
-2        False
-3         True
-...
+>>> df['Estacao'] == 'Carapina'
+0          True
+1          True
+2          True
+3          True
+4          True
+          ...  
+231965    False
+231966    False
+231967    False
+231968    False
+231969    False
+Name: Estacao, Length: 231970, dtype: bool
 ```
 
-Observá que esto generó una serie. Podemos sumar los `True` de esta serie para contar la cantidad de Ombús:
+Se quisermos saber a quantidade de observações específicas podemos usar `value_counts()`
 
 ```python
->>> (df['nombre_com'] == 'Ombú').sum()
-590
+>>> df['Estacao'].value_counts()
+Enseada do Suá         50965
+Vila Velha - Ibes      41997
+Cariacica              33272
+Vitória Centro         29451
+Laranjeiras            25454
+Cidade Continental     19414
+Jardim Camburi         14211
+Vila Velha - Centro     8789
+Carapina                8417
+Name: Estacao, dtype: int64
 ```
 
-Si queremos hacer lo mismo para otras especies podemos usar `value_counts()`
-
-```python
->>> cant_ejemplares = df['nombre_com'].value_counts()
->>> cant_ejemplares.head(10)
-Eucalipto               4112
-Tipa blanca             4031
-Jacarandá               3255
-Palo borracho rosado    3150
-Casuarina               2719
-Fresno americano        2166
-Plátano                 1556
-Ciprés                  1467
-Ceibo                   1149
-Pindó                   1068
-Name: nombre_com, dtype: int64
-```
-
-De esta forma obtenemos, en orden decreciente, los nombres comunes y las cantidades de las especies más frecuentes en la base de datos.
+Desta forma obtemos, em ordem decrescente, os nomes comuns e as quantidades das espécies mais frequentes na base de dados.
 
 ### Filtros booleanos
 
-La serie booleana que obtuvimos con `df['nombre_com'] == 'Ombú'` puede usarse para seleccionar esas filas del DataFrame. Probemos con Jacarandá:
-
 ```python
->>> df_jacarandas = df[df['nombre_com'] == 'Jacarandá']
-```
+>>> novo_df = df[df['Estacao']=='Laranjeiras']
+>>> novo_df
+              Data   Hora      Estacao Codigo Poluente  Valor Unidade        Tipo
+154065  2020-01-01  00:30  Laranjeiras   ES05      SO2   1.57   ug/m3  automatica
+154066  2020-01-01  01:30  Laranjeiras   ES05      SO2   2.15   ug/m3  automatica
+154067  2020-01-01  02:30  Laranjeiras   ES05      SO2   1.64   ug/m3  automatica
+154068  2020-01-01  03:30  Laranjeiras   ES05      SO2   1.31   ug/m3  automatica
+154069  2020-01-01  04:30  Laranjeiras   ES05      SO2   4.02   ug/m3  automatica
+...            ...    ...          ...    ...      ...    ...     ...         ...
+179514  2020-12-22  11:30  Laranjeiras   ES05       O3  40.57   ug/m3  automatica
+179515  2020-12-22  12:30  Laranjeiras   ES05       O3  41.84   ug/m3  automatica
+179516  2020-12-22  13:30  Laranjeiras   ES05       O3  32.33   ug/m3  automatica
+179517  2020-12-22  14:30  Laranjeiras   ES05       O3  29.88   ug/m3  automatica
+179518  2020-12-22  15:30  Laranjeiras   ES05       O3  27.75   ug/m3  automatica
 
-Análogamente, podemos seleccionar algunas columnas de interés y generar vistas (ojo, en estos casos no estamos copiando la información):
-
-```python
->>> cols = ['altura_tot', 'diametro', 'inclinacio']
->>> df_jacarandas = df_jacarandas[cols]
->>> df_jacarandas.tail()
-       altura_tot  diametro  inclinacio
-51104           7        97           4
-51172           8        28           8
-51180           2        30           0
-51207           3        10           0
-51375          17        40          20
-
->>> df_jacarandas.describe()
-        altura_tot     diametro   inclinacio
-count  3255.000000  3255.000000  3255.000000
-mean     10.369585    28.804301     6.549923
-std       5.905744    19.166388     8.459921
-min       1.000000     1.000000     0.000000
-25%       6.000000    14.000000     0.000000
-50%      10.000000    25.000000     4.000000
-75%      15.000000    41.000000    10.000000
-max      49.000000   159.000000    70.000000
-```
-
-Observá que cuando le pedimos los últimos datos de `df_jacarandas` nos mostró los últimos 5 jacarandás de la base de datos, respetando los números de índice de la tabla original (..., 51207, 51375).
-
-Si vas a querer modificar `df_jacarandas` es conveniente crear una copia de los datos de `df` en lugar de simplemente una vista. Esto se puede hacer con el método `copy()` como en el siguiente ejemplo.
-
-```python
->>> df_jacarandas = df[df['nombre_com'] == 'Jacarandá'][cols].copy()
+[25454 rows x 8 columns]
 ```
 
 ### Scatterplots
 
-Pandas también permite [hacer gráficos bonitos](https://pandas.pydata.org/docs/user_guide/visualization.html). Es realmente sencillo:
+Pandas vem integrado com a biblioteca gráfica, que permite realisar [plots bonitos](https://pandas.pydata.org/docs/user_guide/visualization.html). De forma mais eficiente:
 
 ```python
-df_jacarandas.plot.scatter(x = 'diametro', y = 'altura_tot')
+df.plot.scatter(x='Data', y='Valor')
 ```
 
-Hay otro módulo para hacer gráficos que interactúa muy bien con pandas y se llama [Seaborn](https://seaborn.pydata.org/). Está basado en matplotlib, y ofrece una interfaz de alto nivel para realizar gráficos estadísticos atractivos e informativos. En criollo: "usar pandas para manejar los datos y seaborn para visualizarlos, es la posta".
+Existe outro módulo gráfico que interage muito bem com os pandas e se chama [Seaborn](https://seaborn.pydata.org/), este é analogo ao `ggplot` do `R`. Ele é baseado no matplotlib e oferece uma interface de alto nível para criar gráficos estatísticos atraentes e informativos.
 
-Fijate que seaborn entiende los DataFrames y las columnas y su sintaxis es muy similar a la de pandas:
+Observe que o seaborn entende DataFrames e colunas e sua sintaxe é muito semelhante aos pandas:
 
 ```python
 import seaborn as sns
