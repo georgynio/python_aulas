@@ -4,9 +4,7 @@ Nesta aula, apresentamos o módulo `datetime` para lidar com dados relacionados 
 
 * [Gestão de datas e horários](01_Datas.md)
 * [Gerenciando arquivos e pastas](02_Arquivos_e_Diretorios.md)
-* [Classificando arquivos em Python](03_Odernando_arquivos.md)
-* [Introdução aos Pandas](04_Pandas.md)
-* [Séries Temporais](05_Series_temporais.md)
+* [Introdução aos Pandas](03_Pandas.md)
+* [Séries Temporais](04_Series_temporais.md)
 
-
-Retono ao [sumario do manual](/Notas/Conteudo.md)
+## Retono ao [sumario do manual](./../Conteudo.md)

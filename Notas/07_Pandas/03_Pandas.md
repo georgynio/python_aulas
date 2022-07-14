@@ -1,16 +1,22 @@
-# 8.5 Introducción a Pandas
+# Introdução aos Pandas
 
-La  biblioteca Pandas es una extensión de NumPy para manipulación y análisis de datos. En particular, ofrece estructuras de datos y operaciones para manipular tablas de datos (numéricos y de otros tipos) y series temporales. Se distribuye como software libre.
+Em programação de computadores, pandas é uma biblioteca de software criada para a linguagem Python para manipulação e análise de dados. Em particular, oferece estruturas e operações para manipular tabelas numéricas e séries temporais.
 
-Ésta es una breve introducción a [Pandas](https://pandas.pydata.org/docs/getting_started/index.html). Para información más completa, te recomendamos consultar [la documentación oficial](https://pandas.pydata.org/docs/user_guide/10min.html).
+Esta é uma breve introdução ao [Pandas](https://pandas.pydata.org/docs/getting_started/index.html). Para obter informações mais completas, recomendamos que você consulte [a documentação oficial](https://pandas.pydata.org/docs/user_guide/10min.html).
 
-Esta biblioteca tiene dos tipos de datos fundamentales: los `DataFrames` que almacenan tablas de datos y las `series` que contienen secuencias de datos.
+As caracteristicas desta biblioteca são:
 
-Esta sección tiene un breve [video introductorio](https://youtu.be/aQhssTeFnYY) sobre las posibilidades que ofrece la biblioteca Pandas.
+- Usa o objeto `DataFrame` para manipulação de dados, com indexação integrada.
+- Le e escreve dados entre diferentes estruturas de dados e formatos de arquivo.
+- Trabalha de forma eficiente com matrizes.
+- Insere e deleta colunas em conjuntos de dados.
+- Possui ferramentas para fundir(merging) ou juntar(join) conjuntos de dados.
+- Funciona eficientemente com séries temporais (time series).
+- Auxilia na filtração e limpeza de dados.
 
-## Lectura de datos
+## Leitura de dados
 
-Pandas permite leer diversos formatos de tablas de datos directamente. Probá el siguiente código, para leer un archivo CSV:
+Pandas permite que você leia vários formatos de tabelas de dados diretamente. Tente o seguinte código, para ler um arquivo CSV:
 
 ```python
 import pandas as pd
@@ -36,7 +42,6 @@ Con `df.head()` podés ver las primeras líneas de datos. Si a `head` le pasás 
 3 -58.478129 -34.644567    4  ...  Nativo/Autóctono  98640.439091  98302.938142
 4 -58.478121 -34.644598    5  ...  Nativo/Autóctono  98641.182166  98299.519997
 ```
-
 
 Usando `df.columns` pandas te va a devolver un índice con los nombres de las columnas del DataFrame. Recordá que en la [Sección 3.7](../03_Datos/07_Arboles1.md#descripción-de-la-base) describimos la base de datos. A su vez, `df.index` te mostrará el índice. En este caso el índice es numérico y se corresponde con el número de la línea leida del archivo. En principio no es muy interesante para analizar cuestiones de árboles, simplemente tenemos las filas numeradas. Veremos otros ejemplos donde el índice puede contener información vital (una categoría, un timestamp, etc).
 
@@ -322,6 +327,7 @@ s2 = s1.cumsum()
 Observá que estamos usando random del módulo numpy, no de random. La función `np.random.randint(-1,2,120)` genera un array de longitud 120 con valores -1, 0, 1 (no incluye extremo derecho del rango de valores).
 
 Podemos ver el gráfico sencillamente:
+
 ```python
 s2.plot()
 ```
@@ -333,6 +339,7 @@ w = 5 # ancho en minutos de la ventana
 s3 = s2.rolling(w).mean()
 s3.plot()
 ```
+
 Podés ver ambas curvas en un mismo gráfico para ver más claramente el efecto del suavizado:
 
 ```python
@@ -341,111 +348,4 @@ df_series_23.plot()
 ```
 
 Fijate que los datos de la curva suavizada empiezan más tarde, porque al principio no hay datos sobre los cuales hacer promedio. El parámetro  `min_periods = 1` del método `rolling` te permite controlar esto. Probalo.
-
-
-### Ejemplo: 12 personas caminando 8 horas
-
-En el siguiente ejemplo creamos un índice que contenga un elemento por minuto a partir del comienzo de la clase y durante 8 horas. Armamos también una lista de nombres.
-
-```python
-horas = 8
-idx = pd.date_range('20200923 14:00', periods = horas*60, freq = 'min')
-nombres = ['Pedro', 'Santiago', 'Juan', 'Andrés','Bartolomé','Tiago','Isca','Tadeo','Mateo','Felipe','Simón','Tomás']
-```
-
-Luego usamos el módulo random de numpy para generar pasos para cada persona a cada minuto. Los acumulamos con `cumsum` y los acomodamos en un DataFrame, usando el índice generado antes y poniéndoles nombres adecuados a cada columna:
-
-```python
-df_walks = pd.DataFrame(np.random.randint(-1,2,[horas*60,12]).cumsum(axis=0), index = idx, columns = nombres)
-df_walks.plot()
-```
-
-Ahora suavizamos los datos, usando `min_periods` para no perder los datos de los extremos.
-
-```python
-w = 45
-df_walk_suav = df_walks.rolling(w, min_periods = 1).mean() # datos suavizados
-nsuav = ['S_' + n for n in nombres]
-df_walk_suav.columns = nsuav # cambio el nombre de las columnas
-                             # para los datos suavizados
-df_walk_suav.plot()
-```
-
-### Guardando datos
-
-Guardar una serie o un DataFrame en el disco es algo realmente sencillo. Probá, por ejemplo, el efecto del comando `df_walk_suav.to_csv('caminata_apostolica.csv')`.
-
-## Incorporando el Arbolado lineal
-
-### Ejercicio 8.7: Lectura y selección
-Vamos a trabajar ahora con el archivo ['arbolado-publico-lineal-2017-2018.csv'](https://data.buenosaires.gob.ar/dataset/arbolado-publico-lineal). Descargalo y guardalo en tu directorio '../Data/'.
-
-Levantalo y armá un DataFrame `df_lineal` que tenga solamente las siguiente columnas:
-
-```python
-cols_sel = ['nombre_cientifico', 'ancho_acera', 'diametro_altura_pecho', 'altura_arbol']
-```
-
-Imprimí las diez especies más frecuentes con sus respectivas cantidades.
-
-Trabajaremos con las siguientes especies seleccionadas:
-
-```python
-especies_seleccionadas = ['Tilia x moltkei', 'Jacaranda mimosifolia', 'Tipuana tipu']
-```
-
-Una forma de seleccionarlas es la siguiente:
-
-```python
-df_lineal_seleccion = df_lineal[df_lineal['nombre_cientifico'].isin(especies_seleccionadas)]
-```
-
-### Ejercicio 8.8: Boxplots
-El siguiente comando realiza un [boxplot](https://es.wikipedia.org/wiki/Diagrama_de_caja) de los diámetros de los árboles agrupados por especie.
-
-```python
-df_lineal_seleccion.boxplot('diametro_altura_pecho', by = 'nombre_cientifico')
-```
-Realizá un gráfico similar pero de los altos en lugar de los diámetros de los árboles.
-
-### Ejemplo de pairplot
-
-Otro gráfico interesante que resume muy bien la información es el *pairplot* de seaborn que es una grilla cuadrada de subplots.
-
-Probá el siguiente código:
-
-```python
-sns.pairplot(data = df_lineal_seleccion[cols_sel], hue = 'nombre_cientifico')
-```
-
-![Figura](./Figure200027.png)
-
-
-El gráfico va a tener una fila (y columna) por cada variable numérica en el DataFrame pasado como `data`. En la diagonal del gŕafico, va a haber kdeplots (kernel density estimation plots, una versión suavizada de los histogramas) y fuera de la diagonal scatterplots combinando todos los pares de variables (cada combinación aparece dos veces, una sobre y otra debajo de la diagonal).
-
-El `hue` selecciona la variable categórica a usar para distinguir subgrupos y asociarles colores. En la diagonal de este ejemplo (y en los scatterplots también) se ve por ejemplo que las Tipas suelen ser más anchas y más altas que los Tilos y los Jacarandás.
-
-Pregunta: ¿Por qué el ancho_acera no tiene lugar en el gráfico?
-
-*Te recomendamos pegarle una mirada a [esta página](http://seaborn.pydata.org/introduction.html) donde vas a poder ver un poco más sobre el potencial de seaborn.*
-
-### Ejercicio 8.9: Comparando especies en parques y en veredas
-Al comienzo de la materia estuvimos trabajando con el dataset de árboles en parques. Ahora estuvimos analizando otro dataset: el de árboles en veredas.
-Ahora queremos estudiar si hay diferencias entre los ejemplares de una misma especie según si crecen en un sitio o en otro. Queremos hacer un boxplot del diámetro a la altura del pecho para las Tipas (su nombre científico es *tipuana tipu*), que crecen en ambos tipos de ambiente. Para eso tendremos que juntar datos de dos bases de datos diferentes.
-
-Nos vamos en meter en un lío. El GCBA usa en un dataset 'altura_tot', 'diametro' y 'nombre_cie' para las alturas, diámetros y nombres científicos de los ejemplares, y en el otro dataset usa 'altura_arbol', 'diametro_altura_pecho' y 'nombre_cientifico' para los mismos datos.
-
-Es más, los nombres científicos varían de un dataset al otro. 'Tipuana Tipu' se transforma en 'Tipuana tipu' y 'Jacarandá mimosifolia' en 'Jacaranda mimosifolia'. Obviamente son cambios menores pero suficientes para desalentar al usuarie desprevenide.
-
-En este ejercicio te proponemos los siguientes pasos para comparar los diámetros a la altura del pecho de las tipas en ambos tipos de entornos. Guardá este trabajo en un archivo `arbolado_parques_veredas.py`.
-
-1. Abrí ambos datasets a los que llamaremos df_parques y df_veredas.
-2. Para cada dataset armate otro seleccionando solamente las filas correspondientes a las tipas (llamalos df_tipas_parques y df_tipas_veredas, respectivamente) y las columnas correspondientes al diametro a la altura del pecho y alturas. Hacelo como copias (usando `.copy()` como hicimos más arriba) para poder trabajar en estos nuevos dataframes sin modificar los dataframes grandes originales. Renombrá las columnas que muestran la altura y el diámetro a la altura del pecho para que se llamen igual en ambos dataframes, para ello explorá el comando [`rename`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html).
-3. Agregale a cada dataframe (df_tipas_parques y df_tipas_veredas) una columna llamada 'ambiente' que en un caso valga siempre 'parque' y en el otro caso 'vereda'.
-4. Juntá ambos datasets con el comando `df_tipas = pd.concat([df_tipas_veredas, df_tipas_parques])`. De esta forma tenemos en un mismo dataframe la información de las tipas distinguidas por ambiente.
-5. Creá un boxplot para los diámetros a la altura del pecho de la tipas distinguiendo los ambientes (`boxplot('diametro_altura_pecho',by = 'ambiente')`).
-6. Repetí para alturas.
-7. ¿Qué tendrías que cambiar para repetir el análisis para otras especies? ¿Convendría definir una función?
-
-
 

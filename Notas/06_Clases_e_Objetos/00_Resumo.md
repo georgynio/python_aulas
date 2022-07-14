@@ -6,5 +6,4 @@ Nesta aula vamos entrar em **programação orientada a objetos**. Vamos ver os c
 * [Herança](02_Heranca.md)
 * [Métodos especiais](03_Metodos_especiais.md)
 
-
-## Retono ao [sumario do manual](/Notas/Conteudo.md)
+## Retono ao [sumario do manual](./../Conteudo.md)

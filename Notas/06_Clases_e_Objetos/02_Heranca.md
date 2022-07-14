@@ -159,4 +159,4 @@ class Filho (Mae, Pai):
 
 A classe `Filho` herda características de ambos os pais. 
 
-## Retono ao [sumario](/Notas/05_Matplotlib/00_Resumo.md)
+## Retono ao [sumario](./00_Resumo.md)

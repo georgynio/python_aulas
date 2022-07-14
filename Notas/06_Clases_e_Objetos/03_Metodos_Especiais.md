@@ -199,4 +199,4 @@ else:
 x = getattr(obj, 'x', None)
 ```
 
-## Retono ao [sumario](/Notas/05_Matplotlib/00_Resumo.md)
+## Retono ao [sumario](./00_Resumo.md)

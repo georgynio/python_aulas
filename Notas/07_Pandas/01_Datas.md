@@ -1,8 +1,18 @@
 # Manipulação de datas e horários
 
+Este módulo se apresenta mais importante do que parece, pois, ele vai nos auxiliar quando tratarmos com datas e quisermos realizar graficos no tempo.
+
 ## O módulo de data e hora
 
-A seguir apresentamos o módulo `datetime` que nos permite trabalhar com datas e horas. Este módulo define um novo tipo de objeto: `datetime` (sim, com o mesmo nome do módulo), que nos permite representar um instante de tempo (data e hora). Também define objetos do tipo `date` para representar apenas uma data e do tipo `time` para armazenar e trabalhar com horários.
+A seguir apresentamos o módulo `datetime` que nos permite trabalhar com datas e horas. Este módulo define um novo tipo de objeto: `datetime` (sim, com o mesmo nome do módulo). Também define objetos do tipo `date` para representar apenas uma data e do tipo `time` para trabalhar com horários.
+
+```python
+>>> dia = datetime.datetime(2020,12,11)
+>>> print(dia)
+2020-12-11 00:00:00
+>>> type(dia)
+<class 'datetime.datetime'>
+```
 
 ### Exemplo: Obter data e hora atuais
 
@@ -73,7 +83,7 @@ Em sistemas operacionais derivados do Unix (Mac OS X, Linux, etc.) o número de 
 ```python
 >>> from datetime import date
 >>>
->>> timestamp = date.fromtimestamp(1326244364)
+>>> timestamp = date.fromtimestamp(1326244264)
 >>> print('Data =', timestamp)
 Data = 2012-01-10
 ```
@@ -241,11 +251,9 @@ Você pode obter o tempo medido em segundos usando o método `total_seconds()`.
 segundos totaiss = 93630.1
 ```
 
-> Você também pode adicionar datas e horas usando o operador `+`. Você também pode multiplicar ou dividir um objeto `timedelta` por inteiros ou floats.
-
 ## Formato para datas e horas
 
-Existem várias formas de representar o tempo, que variam de acordo com o lugar, a organização, etc. Por exemplo, na Argentina costumamos usar `dd/mm/aaaa`, enquanto nas culturas anglo-saxônicas é mais comum usar `mm/dd/aaaa`.
+Existem várias formas de representar o tempo, que variam de acordo com o lugar, a organização, etc. Por exemplo, nas culturas anglo-saxônicas o de uso comum é `mm/dd/aaaa`.
 
 Em Python temos os métodos `strftime()` e `strptime()` para lidar com isso.
 
@@ -317,4 +325,4 @@ Os códigos de formato `%d`, `%B`, `%Y` representam `day`, `month` (nome complet
 
 Consulte [a documentação](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior) para obter mais detalhes.
 
-## Retono ao [sumario](/Notas/07_Pandas/00_Resumo.md)
+## Retono ao [sumario](./00_Resumo.md)

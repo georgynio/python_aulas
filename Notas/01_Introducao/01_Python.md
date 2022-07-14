@@ -81,4 +81,4 @@ Nota: para sair do modo ajuda aperta a tecla `q`.
 
 Para sair do interprete do Python pode usar a combinação de teclas `ctrl + d` ou escreva `exit()`.
 
-## Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)
+## Retono ao [sumario](./00_Resumo.md)

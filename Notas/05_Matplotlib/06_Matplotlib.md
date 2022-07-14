@@ -302,4 +302,4 @@ Exemplo:
 
 ![POWER](./plot_subplots/plot_subplot_axes_02.png)
 
-## Retono ao [sumario](/Notas/05_Matplotlib/00_Resumo.md)
+## Retono ao [sumario](./00_Resumo.md)

@@ -19,4 +19,4 @@ El ejercicio para la revisión de pares de esta semana es de programación orien
 * [9.7 Cierre de la clase](07_Cierre.md)
 
 
-Retono ao [sumario do manual](/Notas/Conteudo.md)
+## Retono ao [sumario do manual](./../Conteudo.md)

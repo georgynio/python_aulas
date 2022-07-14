@@ -9,4 +9,4 @@ Ainda nessa seção iremos aprender alguns conceitos básicos, edição e execu�
 * [Strings](04_Strings.md)
 * [Listas](05_Listas.md)
 
-Retono ao [sumario do manual](/Notas/Conteudo.md)
+Retono ao [sumario do manual](./../Conteudo.md)

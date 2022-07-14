@@ -272,4 +272,4 @@ finally:
 
 Uma estrutura como essa resulta em um gerenciamento seguro dos recursos disponíveis (seguros, arquivos, hardware, etc.)
 
-## Retono ao [sumario](/Notas/05_Matplotlib/00_Resumo.md)
+## Retono ao [sumario](./00_Resumo.md)

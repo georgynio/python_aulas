@@ -169,4 +169,4 @@ Em strings podemos acessar os elementos *code points* usando um índice e a nota
  -6  -5  -4  -3  -2  -1   <-- [indice negativo]
 ~~~
 
-## Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)
+## Retono ao [sumario](./00_Resumo.md)

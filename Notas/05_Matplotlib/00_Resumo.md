@@ -11,4 +11,4 @@ Na apartado final desta unidade iremos falar um pouco mais sistematicamente de a
 * [Estilos de codificação](/Notas/05_Matplotlib/05_Estilo.md)
 * [A biblioteca matplotlib](/Notas/05_Matplotlib/06_Matplotlib.md)
 
-## Retornar para [resumo do manual](/Notas/Conteudo.md)
+## Retono ao [sumario do manual](./../Conteudo.md)

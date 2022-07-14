@@ -129,4 +129,4 @@ Muitas vezes a pessoa *supõe* que o intérprete está fazendo alguma coisa. Se 
 
 Essas alternativas são úteis, mas um pouco primitivas. A melhor maneira de depurar um programa Python é usar o depurador.
 
-## Retono ao [sumario](/Notas/03_Dados/00_Resumo.md)
+## Retono ao [sumario](./00_Resumo.md)

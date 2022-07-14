@@ -87,4 +87,4 @@ with open('outfile', 'wt') as out:
 
 ***Nota:*** Maior informação pode ser encontrada na docomentação[leitura e escrita de arquivos](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) do python.
 
-## Retono ao [sumario](/Notas/02_Estructuras_e_funcoes/00_Resumo.md)
+## Retono ao [sumario](./00_Resumo.md)

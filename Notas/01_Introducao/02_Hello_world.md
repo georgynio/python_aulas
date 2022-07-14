@@ -146,7 +146,6 @@ b = a * 2
 print(b)
 ```
 
-
 ### Comentarios
 
 Os comentarios formam parte do programa, iniciam com `#` e automaticamente se comenta a linha completa. Esta ferramenta ajuda a entender o funcionamento do codigo, pois ele pode ter uma explicação completa da funcionalidade das linhas que vem depois.
@@ -359,4 +358,4 @@ Hola Mi nombre es Juana
 &check; `type` retorna uma mensagem com o tipo da variavel.\
 &check; etc.
 
-## Retono ao [sumario](/Notas/01_Introducao/00_Resumo.md)
+## Retono ao [sumario](./00_Resumo.md)
