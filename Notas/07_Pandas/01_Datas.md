@@ -1,63 +1,52 @@
-# Manejo de fechas y horas
+# Manipulação de datas e horários
 
-Esta sección tiene un breve [video introductorio](https://youtu.be/exTngw8oOp0) sobre el módulo `datetime`.
+## O módulo de data e hora
 
+A seguir apresentamos o módulo `datetime` que nos permite trabalhar com datas e horas. Este módulo define um novo tipo de objeto: `datetime` (sim, com o mesmo nome do módulo), que nos permite representar um instante de tempo (data e hora). Também define objetos do tipo `date` para representar apenas uma data e do tipo `time` para armazenar e trabalhar com horários.
 
-## El módulo datetime
+### Exemplo: Obter data e hora atuais
 
-A continuación introducimos el módulo `datetime` que permite trabajar con fechas y horas. Este módulo define un nuevo tipo de objeto: `datetime` (sí, con el mismo nombre del módulo), que permite representar un instante temporal (fecha y hora). También  define objetos de tipo `date`  para representar sólo una fecha y de tipo `time` para guardar y trabajar con horarios. Finalmente, en esta breve introducción al módulo `datetime` mencionamos el tipo `timedelta` que se usa para representar diferencias entre instantes de tiempos, es decir, duraciones y trabajar con ellas.
+``` python
+>>> import datetime 
 
-### Ejemplo: Obtener fecha y hora actuales
-
-```python
->>> import datetime
-
->>> fecha_hora = datetime.datetime.now()
->>> print(fecha_hora)
-2020-09-24 10:03:18.636670
+>>> date_time = datetime.datetime.now()
+>>> print(date_time)
+2022-07-13 18:39:05.741169
 ```
 
-Lo que hicimos fue importar el módulo **datetime** y usar el método `now()` de la clase `datetime` del módulo (con el mismo nombre) para crear el objeto `fecha_hora` que va a contener la fecha y la hora actuales.
+### Exemplo: Obter data atual
 
+Podemos obter apenas a data:
 
-### Ejemplo: Obtener fecha actual
-
-Análogamente, podemos obtener solo la fecha:
-
-```python
->>> fecha = datetime.date.today()
->>> print(fecha)
-2020-09-24
+``` python
+>>> data = datetime.date.today()
+>>> print(data)
+2022-07-13
 ```
 
-Acá usamos el método `today()` de la clase `date` para obtener la fecha actual.
+**O que há dentro do módulo datetime?**
 
-**¿Qué hay dentro del módulo datetime?**
+Em Python podemos usar a função `dir()` para obter uma lista de todos os atributos de um módulo.
 
-En Python podemos usar la función `dir()` para obtener una lista de todos los atributos de un módulo.
-
-```python
+``` python
 >>> print(dir(datetime))
 ['MAXYEAR', 'MINYEAR', '__builtins__', '__cached__', '__doc__', '__file__',
  '__loader__', '__name__', '__package__', '__spec__', '_divide_and_round',
  'date', 'datetime', 'datetime_CAPI', 'time', 'timedelta', 'timezone', 'tzinfo']
 ```
 
-
-Nos vamos a concentrar en lo más usado de `datetime`:
+Vamos nos concentrar no mais usado de `datetime`:
 
 * date
 * time
 * datetime
 * timedelta
 
+## A classe datetime.date
 
-## La clase datetime.date
+Você pode gerar objetos do tipo data com a classe `date`. Um objeto desta classe representa uma data (ano, mês, dia).
 
-Podés generar objetos de tipo fecha con la clase `date`. Un objeto de esta clase representa una fecha (año, mes, día).
-
-
-### Ejemplo: Un objeto para representar una fecha
+### Exemplo: Um objeto para representar uma data
 
 ```python
 >>> d = datetime.date(2019, 4, 13)
@@ -65,11 +54,9 @@ Podés generar objetos de tipo fecha con la clase `date`. Un objeto de esta clas
 2019-04-13
 ```
 
-El comando `date()` de este ejemplo construye un objeto de tipo `date`. Este _constructor_ toma tres argumentos: año, mes y día.
+O comando `date()` neste exemplo constrói um objeto do tipo `date`. Este _construtor_ recebe três argumentos: ano, mês e dia.
 
-La variable `d` es un objeto de tipo `date` (es decir, representa una fecha).
-
-También podríamos importar directamente la clase `date` del módulo `datetime`:
+Também poderíamos importar diretamente a classe `date` do módulo `datetime`:
 
 ```python
 >>> from datetime import date
@@ -79,111 +66,99 @@ También podríamos importar directamente la clase `date` del módulo `datetime`
 2019-04-13
 ```
 
-### Ejemplo: Obtener la fecha a partir de un timestamp
+### Exemplo: Obter a data de um timestamp
 
-En los sistemas operativos derivados de Unix (Mac OS X, Linux, etc.) se toma como medida de tiempo el número de segundos transcurridos desde el primero de enero de 1970 a las 0 horas UTC hasta el momento a representar. Se lo conoce como Unix timestamp. Podés convertir un timestamp a fecha usando el método `fromtimestamp()`.
-
+Em sistemas operacionais derivados do Unix (Mac OS X, Linux, etc.) o número de segundos decorridos desde o primeiro de janeiro de 1970 às 0 horas UTC até o momento a ser representado é tomado como medida de tempo. É conhecido como Unix timestamp. Você pode converter um timestamp em uma data usando o método `fromtimestamp()`.
 
 ```python
 >>> from datetime import date
 >>>
 >>> timestamp = date.fromtimestamp(1326244364)
->>> print('Fecha =', timestamp)
-Fecha = 2012-01-10
+>>> print('Data =', timestamp)
+Data = 2012-01-10
 ```
 
-Esto es importante porque las fechas de modificación de los archivos usan timestamps por ejemplo.
+### Exemplo: Obtenha o ano, mês e dia separadamente
 
-### Ejemplo: Obtener el año, el mes y el día por separado.
-
-Así podés obtener el año, el mes, el día y el día de la semana:
-
-```python
+``` python
 from datetime import date
 
-hoy = date.today()
+hoje = date.today()
 
-print('Año actual:', hoy.year)
-print('Mes actual:', hoy.month)
-print('Día actual:', hoy.day)
-print('Día de la semana:', hoy.weekday()) # va de 0 a 6 empezando en lunes
+print('Ano atual:', hoje.year)
+print('Mês atual:', hoje.month)
+print('Dia atual:', hoje.day)
+print('Day of the week:', hoje.weekday()) # vai de 0 a 6 começando na segunda
 ```
 
-## La clase datetime.time
+## A classe datetime.time
 
-Un objeto de la clase `time` representa la hora local (de como este configurada tu computadora). No nos vamos a meter en esta clase con los [husos horarios](https://es.wikipedia.org/wiki/Huso_horario) (conocido también como timezones), pero si vas a usar datos provistos por otres, es importante que sepas si está expresado en tu hora local, en la hora local de otro lugar o en [UTC](https://es.wikipedia.org/wiki/Tiempo_universal_coordinado).
+Um objeto da classe `time` representa a hora local (independentemente da configuração do seu computador).
 
-### Ejemplo: Representar la hora con un objeto `time`
+### Exemplo: Representando o tempo com um objeto `time`
 
-La clase  `time` se usa para representar horarios. A continuación damos algunos ejemplos de constructores de esta clase (un constructor es una forma de construir un objeto de una clase dada, una forma de inicializarlo, digamos).
+A classe `time` é usada para representar tempos.
 
-```python
+``` python
 >>> from datetime import time
 >>>
->>> a = time()       # time(hour = 0, minute = 0, second = 0)
+>>> a = time() # time(hora = 0, minuto = 0, segundo = 0)
 >>> print('a =', a)
 a = 00:00:00
 
 >>> b = time(11, 34, 56)
->>> print('b =', b)
+>>> print('b=', b)
 b = 11:34:56
 
 >>> c = time(hour = 11, minute = 34, second = 56)
->>> print('c =', c)
-c = 11:34:56
+>>> print('c=',c)
+c=11:34:56
 
->>> d = time(11, 34, 56, 234566)  # time(hour, minute, second, microsecond)
->>> print('d =', d)
+>>> d = time(11, 34, 56, 234566) # time(hora, minuto, segundo, microssegundo)
+>>> print('d=',d)
 d = 11:34:56.234566
 ```
 
+### Exemplo: obter horas, minutos, segundos e microssegundos
 
-### Ejemplo: Obtener horas, minutos, segundos y micro-segundos
+Depois de criar um objeto `time`, você pode extrair seus atributos assim:
 
-Una vez que creaste un objeto `time`, podés extraer sus atributos así:
-
-```python
+``` python
 from datetime import time
 
-a = time(11, 34, 56)
+a = tempo (11, 34, 56)
 
-print('hour =', a.hour)
-print('minute =', a.minute)
-print('second =', a.second)
-print('microsecond =', a.microsecond)
+print('hora =', a.hour)
+print('minuto =', a.minute)
+print('segundo =', a.second)
+print('microsegundo =', a.microsecond)
 ```
 
-Como no le pasaste ningún valor para el argumento `microsecond`, éste va a tomar el valor predeterminado, que es `0`.
+## A classe datetime.datetime
 
-## La clase datetime.datetime
+Como já mencionado, o módulo `datetime` possui uma classe de mesmo nome que permite armazenar informações de data e hora em um único objeto.
 
-Como ya mencionamos, el módulo `datetime` tiene una clase con su mismo nombre que permite almacenar información de fecha y hora en un solo objeto.
+### Exemplo: objeto datetime
 
-### Ejemplo: Objeto datetime
-
-```python
+``` python
 >>> from datetime import datetime
 
->>> # datetime(year, month, day)
+>>> # datetime(ano, mês, dia)
 >>> a = datetime(2020, 4, 21)
 >>> print(a)
 2020-04-21 00:00:00
 
->>> # datetime(year, month, day, hour, minute, second, microsecond)
+>>> # datetime(ano, mês, dia, hora, minuto, segundo, microssegundo)
 >>> b = datetime(2021, 4, 21, 6, 53, 31, 342260)
 >>> print(b)
 2021-04-21 06:53:31.342260
 ```
 
-Los primeros tres argumentos, `year`, `month` y `day` del constructor `datetime()` son obligatorios. Los otros tienen a 0 como valor por omisión.
+### Exemplo: Obter ano, mês, dia, hora, minuto, timestamp de um datetime
 
-### Ejemplo: Obtener año, mes, día, hora, minutos, timestamp de un datetime
+O código a seguir gera um objeto `datetime` com valores passados ​​como parâmetros, e então imprime as informações.
 
-El siguiente código genera un objeto `datetime` con valores pasados por parámetro y luego imprime la información.
-
-En particular, muestra cómo convertir una fecha a timestamp. En general los timestamps son enteros y no tienen en cuenta las décimas de segundos.
-
-```python
+``` python
 from datetime import datetime
 
 a = datetime(2021, 4, 21, 6, 53, 31, 342260)
@@ -195,13 +170,13 @@ print('minuto =', a.minute)
 print('timestamp =', a.timestamp())
 ```
 
-## La clase datetime.timedelta
+## A classe datetime.timedelta
 
-Un objeto `timedelta` representa una duración, es decir, la diferencia entre dos instantes de tiempo.
+Um objeto `timedelta` representa uma duração, ou seja, a diferença entre dois instantes de tempo.
 
-### Ejemplo: Diferencia entre fechas y horarios
+### Exemplo: Diferença entre datas e horas
 
-```python
+``` python
 >>> from datetime import datetime, date
 
 >>> t1 = date(year = 2021, month = 4, day = 21)
@@ -223,12 +198,9 @@ tipo de t3 = <class 'datetime.timedelta'>
 tipo de t6 = <class 'datetime.timedelta'>
 ```
 
-Observá que `t3` y `t6` son de tipo `<class 'datetime.timedelta'>`.
+### Exemplo: Diferença entre objetos timedelta
 
-
-### Ejemplo: Diferencia entre objetos timedelta
-
-```python
+``` python
 >>> from datetime import timedelta
 
 >>> t1 = timedelta(weeks = 1, days = 2, hours = 1, seconds = 33)
@@ -239,12 +211,11 @@ Observá que `t3` y `t6` son de tipo `<class 'datetime.timedelta'>`.
 2 days, 13:55:39
 ```
 
-`t3` también es de tipo `<class 'datetime.timedelta'>`.
+`t3` também é do tipo `<class 'datetime.timedelta'>`.
 
+### Exemplo: Imprimir objetos timedelta negativos
 
-### Ejemplo: Imprimir objetos timedelta negativos
-
-```python
+``` python
 >>> from datetime import timedelta
 
 >>> t1 = timedelta(seconds = 21)
@@ -258,37 +229,33 @@ Observá que `t3` y `t6` son de tipo `<class 'datetime.timedelta'>`.
 0:00:34
 ```
 
+### Exemplo: duração em segundos
 
-### Ejemplo: Duración en segundos
+Você pode obter o tempo medido em segundos usando o método `total_seconds()`.
 
-Podés obtener el tiempo medido en segundos usando el método `total_seconds()`.
-
-```python
+``` python
 >>> from datetime import timedelta
 
 >>> t = timedelta(days = 1, hours = 2, seconds = 30, microseconds = 100000)
->>> print('segundos totales =', t.total_seconds())
-segundos totales = 93630.1
+>>> print('segundos totais =', t.total_seconds())
+segundos totaiss = 93630.1
 ```
 
-También podés sumar fechas y horarios usando el operador `+`. También podés multiplicar o dividir un objeto `timedelta` por números enteros o floats.
+> Você também pode adicionar datas e horas usando o operador `+`. Você também pode multiplicar ou dividir um objeto `timedelta` por inteiros ou floats.
 
+## Formato para datas e horas
 
-## Formato para fechas y horas
+Existem várias formas de representar o tempo, que variam de acordo com o lugar, a organização, etc. Por exemplo, na Argentina costumamos usar `dd/mm/aaaa`, enquanto nas culturas anglo-saxônicas é mais comum usar `mm/dd/aaaa`.
 
-Hay diversas formas de representar el tiempo, que varían según el lugar, la organización, etc. Por ejemplo, en Argentina solemos usar `dd/mm/yyyy`, mientras que en las culturas anglosajonas  es más común usar `mm/dd/yyyy`.
+Em Python temos os métodos `strftime()` e `strptime()` para lidar com isso.
 
-En Python tenemos los métodos `strftime()` y `strptime()` para manejar esto.
+### Python strftime() - converte um objeto datetime em uma string
 
+O método `strftime()` é definido nas classes `date`, `datetime` e `time`. Esse método cria uma string de formato desses objetos.
 
-### Python strftime() - convertir un objeto datetime a string
+### Exemplo: formato de data usando strftime()
 
-El método `strftime()` está definido en las clases `date`, `datetime` y `time`. Este método crea una cadena con formato a partir estos objetos.
-
-
-### Ejemplo: Formato de fecha usando strftime()
-
-```python
+``` python
 >>> from datetime import datetime
 
 >>> now = datetime.now()
@@ -310,47 +277,44 @@ s2: 24/09/2020, 14:40:06
 
 ```
 
+Aqui, `%Y`, `%m`, `%d`, `%H` etc. são códigos de formato. O método `strftime()` pega um ou mais códigos de formato e retorna a string formatada com base nesses códigos.
 
-Acá, `%Y`, `%m`, `%d`, `%H` etc. son códigos de formato. El método `strftime()`toma uno o más códigos de formato y devuelve la cadena con formato basado en esos códigos.
+No programa acima, `t`, `s1` e `s2` são strings. E os códigos de formato são:
 
-En el programa de arriba, `t`, `s1` y `s2` son cadenas. Y los códigos de formato son:
-
-* `%Y` - año [0001,..., 2018, 2019,..., 9999]
-* `%m` - mes [01, 02, ..., 11, 12]
-* `%d` - día [01, 02, ..., 30, 31]
+* `%Y` - ano [0001,..., 2018, 2019,..., 9999]
+* `%m` - mês [01, 02, ..., 11, 12]
+* `%d` - dia [01, 02, ..., 30, 31]
 * `%H` - hora [00, 01, ..., 22, 23
 * `%M` - minuto [00, 01, ..., 58, 59]
 * `%S` - segundo [00, 01, ..., 58, 59]
 
+Para saber mais sobre `strftime()`, visite [a documentação](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior).
 
-Para aprender más sobre `strftime()` visitá [la documentación](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior).
+### Python strptime() - converte uma string em um objeto datetime
 
+O método `strptime()` cria um objeto `datetime` de uma string.
 
-### Python strptime() - convertir una cadena a un objeto datetime
+### Exemplo: strptime()
 
-El método `strptime()` crea un objeto `datetime` a partir de una cadena.
-
-
-### Ejemplo: strptime()
-
-```python
+``` python
 >>> from datetime import datetime
 
->>> cadena_con_fecha= '21 September, 2021'
->>> print('date_string =', cadena_con_fecha)
-date_string = 21 September, 2021
+>>> string_with_date= '21 de setembro de 2021'
+>>> print('data_string =', string_with_date)
+date_string = 21 de setembro de 2021
 
->>> date_object = datetime.strptime(cadena_con_fecha, '%d %B, %Y')
->>> print('date_object =', date_object)
-date_object = 2021-09-21 00:00:00
+>>> date_object = datetime.strptime(string_with_date, '%d %B, %Y')
+>>> print('data_object =', data_object)
+data_object = 21-09-2021 00:00:00
 ```
 
-El método `strptime()` toma dos argumentos:
+O método `strptime()` recebe dois argumentos:
 
-* una cadena que representa una fecha y hora
-* un código de formato correspondiente al primer argumento
+* uma string representando uma data e hora
+* um código de formato correspondente ao primeiro argumento
 
-Los códigos de formato `%d`, `%B`, `%Y` significan  `day`, `month` (full name) y `year` respectivamente.
+Os códigos de formato `%d`, `%B`, `%Y` representam `day`, `month` (nome completo) e `year` respectivamente.
 
-Visitá [la documentación](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior) para más detalles.
+Consulte [a documentação](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior) para obter mais detalhes.
 
+## Retono ao [sumario](/Notas/07_Pandas/00_Resumo.md)
