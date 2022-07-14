@@ -197,7 +197,7 @@ Observe que o seaborn entende DataFrames e colunas e sua sintaxe é muito semelh
 ```python
 import seaborn as sns
 
-sns.scatterplot(data = df_jacarandas, x = 'diametro', y = 'altura_tot')
+sns.scatterplot(data = novo_df, x = 'Hora', y = 'Valor')
 ```
 
 ### Filtros por índice y por posición
