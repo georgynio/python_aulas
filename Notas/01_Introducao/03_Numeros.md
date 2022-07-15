@@ -1,6 +1,6 @@
 # Números
 
-Nessa seção iremos aprender o uso do Python aplicado às operações matemáticas. Podemos encontrar mais informação da documentação [tipos embutidos](https://docs.python.org/pt-br/3/library/stdtypes.html) do Python.
+Nessa seção será apresentado o uso do Python aplicado às operações matemáticas. Mais informações, acesse à documentação [tipos embutidos](https://docs.python.org/pt-br/3/library/stdtypes.html) do Python.
 
 ## Tipos de números
 
@@ -20,7 +20,7 @@ a = True
 b = False
 ```
 
-Outra forma de representar o booleano são os valores `1` e `0`. Graças a esta caracteristica podemos usa-los em algumas operaçãoes.
+Outra forma de representar o booleano são os valores `1` (`True`) e `0` (`False`). Graças a esta caracteristica podemos usar-los em algumas operaçãoes.
 
 ```python
 c = 4 + True # 5
@@ -31,7 +31,7 @@ if d == 0:
 
 ## Inteiros (int)
 
-Podemos representar tanto numeros positivos quanto negativos:
+Podemos representar tanto números positivos quanto negativos:
 
 ```python
 a = 524
@@ -66,7 +66,7 @@ pow(x, y)   Eleva x a y, mesmo que faz o operador **
 Conversão de Inteiros
 
 ```bash
-bin(x)      Representação binaria do número x
+bin(x)      Representação binária do número x
 hex(x)      Representação hexadecimal do número x
 int(x)      Representação inteiro do número x, 'se o número for decimal vai retornar erro de tipo'
 oct(x)      Representação octal do número x
@@ -74,7 +74,7 @@ oct(x)      Representação octal do número x
 
 ## Ponto flutuante (float)
 
-O Python representa adequadamente numeros decimais e ainda aceita o uso da notação cientifica:
+O Python representa adequadamente numeros decimais e ainda aceita o uso da notação científica:
 
 ```python
 a = 37.45
@@ -93,11 +93,11 @@ False
 >>>
 ```
 
-**Normalmente, computadores representam números de ponto-flutuante usando base 2, isto significa que alguns decimais podem ser representados de forma exata (como 0.5), mas outros apenas de uma forma aproximada (como 0.1 e 0.2). Alem do mais, a representação utiliza um número fixo de bits ; logo, existe um limite ao número de dígitos que podem ser mantidos.**
+**Normalmente, computadores representam números de ponto-flutuante usando base 2, isto significa que alguns decimais podem ser representados de forma exata (como 0.5), mas outros apenas de uma forma aproximada (como 0.1 e 0.2). Além do mais, a representação utiliza um número fixo de bits ; logo, existe um limite ao número de dígitos que podem ser mantidos.**
 
-*No geral, esse erro é muito pequeno para ser considerado relevante, mas há situações em que não podemos desconsiderá-lo.*
+> *No geral, esse erro é muito pequeno para ser considerado relevante, porém existem situações em que não podemos desconsiderá-lo.*
 
-Normalmente o Python consegue realizar calculos sem problemas, porém, calculos mais complexos são auxiliados com o módulo `math`.
+Normalmente o Python consegue realizar cálculos sem problemas, porém, cálculos mais complexos são auxiliados com o módulo `math`.
 
 ```python
 import math
@@ -108,7 +108,7 @@ d = math.tan(x)
 e = math.log(x)
 ```
 
-Este modulo também administra algumas constantes universais ( por exemplo: `math.e`, `math.pi`), entre outros.
+Este módulo também administra algumas constantes universais ( por exemplo: `math.e`, `math.pi`), entre outros.
 
 ## Sinais de Comparação
 
@@ -123,7 +123,7 @@ x == y     Igual a
 x != y     Diferente de
 ```
 
-**Nota:** o `==` é usado para avaliar a igualdade de 2 elementos entanto o `=` se usa para asignar um valor a uma variável.
+**Nota:** o `==` é usado para avaliar a igualdade de 2 elementos, noentanto, o `=` se usa para designar um valor a uma variável.
 
 Ainda temos as expresões booleanas:
 
@@ -141,11 +141,11 @@ if not (b < a or b > c):
 
 ### Conversão de números
 
-Os tipos de dados do Python podem ser trocados indo de decimal para inteiro ou contrario:
+Os tipos de dados do Python podem ser trocados indo de decimal para inteiro ou vice-versa:
 
 ```python
-a = int(x)    # Convertir x a int
-b = float(x)  # Convertir x a float
+a = int(x)    # Converter x para int
+b = float(x)  # Converter x para float
 ```
 
 Faz o teste.
@@ -160,6 +160,6 @@ Faz o teste.
 >>>
 ```
 
-**Nota:** a separação decimal é componto (.), pelo que se colocamos de forma errada o Python retornara uma mensagem de erro. Por exemplo `float(3,141592)` retorna um erro `ValueError`.
+**Nota:** a separação decimal é com ponto (.), se colocarmos de forma errada o Python retornara uma mensagem de erro. Por exemplo `float(3,141592)` retorna um erro `ValueError`.
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

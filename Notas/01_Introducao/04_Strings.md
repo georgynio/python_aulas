@@ -1,6 +1,6 @@
-# Cadenas (strings)
+# Cadeia de caracteres (strings)
 
-São dados definidos entre aspas duplas (") ou simples ('), representado um texto, podendo conter letras, números, simbolos. Podemos encontrar a documentação no site [Operações comuns de strings](https://docs.python.org/pt-br/3/library/string.html).
+São dados definidos entre aspas duplas (") ou simples ('), representando um texto, podendo conter letras, números e simbolos. Podemos encontrar a documentação no site [Operações comuns de strings](https://docs.python.org/pt-br/3/library/string.html).
 
 ## Representação de textos
 
@@ -37,10 +37,10 @@ a solidão, os caminhos, a chuva...
 '''
 ```
 
-Normalmente as cadeias de caracterese ocupam apenas uma linha. Pelo que a aspas triplas deixam escrever varias linhas.
+Normalmente as cadeias de caracteres entre aspas simples e duplas ocupam apenas uma linha. Porém, textos entre aspas triplas podem ocupar várias linhas.
 
-Não há diferença entre aspas aspas simples (') e aspas duplas ("). Porém, ao fechar devemos usar o mesmo que usamos ao abrir. Se quisermos usar aspas dentro de uma string de aspas normal,caso sejam diferentes podem ser usados normalmente. Caso contrario, podemos usar `\`.
-por exemplo:
+- Não há diferença entre aspas aspas simples (') e aspas duplas ("). Porém, ao fechar devemos usar o mesmo que usamos ao abrir.
+- Se quisermos usar aspas dentro de uma string que já contém aspas, e estas aspas forem do mesmo tipo inicial, deve-se acerescentar uma `\` antes da novas aspas, por exemplo:
 
 ```python
 a = "Aspas simples 'dentro de aspas duplas'"
@@ -64,7 +64,7 @@ linha no output
 '\\'      Contrabarra
 ```
 
-*Utilisa o `print()` e confere o resultado de usar esses codigos*.
+> *Utilize o `print()` no texto abaixo e verifique o funcionamento dos códigos de escape*.
 
 Se desejamos escrever multiplas linhas podemos usar a `\`.
 
@@ -90,11 +90,9 @@ a = ('PEDRA NEGRA SOBRE PEDRA BRANCA (Cesar Vallejo) \n'\
     'a solidão, os caminhos, a chuva...\n')
 ```
 
-*Avalia o resultado utilizando a função `print()`.
-
 ## Strings como listas
 
-No Python as strings funcionan como os vetores en matemática, permitindo o acesso a cada carater. **O index começa desde o zero**. Os index negativos indicam que possicionamento começa desde o ultimo elemento.
+No Python as strings funcionam como os vetores em matemática, permitindo o acesso a cada caracter. **O index começa desde o zero**. Os index negativos indicam que possicionamento começa desde o último elemento.
 
 ```python
 a = 'Hello world'
@@ -103,7 +101,7 @@ c = a[4]          # 'o'
 d = a[-1]         # 'd' (fim do string)
 ```
 
-Podemo também usar *porções* (slice) especificando um range de index com `:`.
+Podemos também usar *porções* (slice) especificando um range de index com `:`.
 
 ```python
 d = a[:5]     # 'Hello'
@@ -121,11 +119,11 @@ Concatenação, longitude, pertenência e replicação.
 a = 'Hello' + 'World'   # 'HelloWorld'
 b = 'Say ' + a          # 'Say HelloWorld'
 
-# longitude (len)
+# comprimento (len)
 s = 'Hello'
 len(s)                  # 5
 
-# Test de pertenência (in, not in)
+# Test de pertinência (in, not in)
 t = 'e' in s            # True
 f = 'x' in s            # False
 g = 'hi' not in s       # True
@@ -136,16 +134,16 @@ rep = s * 5             # 'HelloHelloHelloHelloHello'
 
 ## Métodos das strings
 
-As strings em Python tem *métodos* com as quais podemos realisar varias operaçãoes.
+As strings em Python tem *métodos* com as quais podemos realizar várias operaçãoes.
 
-Exemplo: apaga (strip) os espaços em branco do inicio e final.
+Exemplo: apagar (`strip`) os espaços em branco do inicio e final.
 
 ```python
 s = '  Hello '
 t = s.strip()     # 'Hello'
 ```
 
-Exemplo: Trocar entre mayúsculas e minúsculas.
+Exemplo: Trocar entre maiúsculas e minúsculas.
 
 ```python
 s = 'Hello'
@@ -175,14 +173,14 @@ s.lower()              # Muda para minúsculas
 s.replace(old,new)     # Troca o texto
 s.split([delim])       # Divide a strings em menores
 s.startswith(prefix)   # Confere se inicia com um prefixo
-s.strip()              # Apaga (strip) os espaços em branco do inicio e final
-s.upper()              # Troca para mayúsculas
+s.strip()              # Apaga (strip) os espaços em branco do início e final
+s.upper()              # Troca para maiúsculas
 ```
 
 ## Mutabilidad de strings
 
-Os strings são inmutaveis, sendo apenas de leitura.
-Uma vez criados, o seu valor não pode ser mudado.
+Os strings são inmutáveis, sendo apenas de leitura.
+Uma vez criados, o seu valor não pode ser alterado.
 
 ```python
 >>> s = 'Hello World'
@@ -197,7 +195,7 @@ TypeError: 'str' object does not support item assignment
 
 ## Conversão de strings
 
-Nem todos os objetos fornecem uma representação que possa ser reproduzida; neste caso eles forncem uma string fechada por tags "<>". Como o exemplo do `type(c)`.
+Nem todos os objetos fornecem uma representação que possa ser reproduzida; neste caso eles fornecem uma string fechada por tags "<>". Como o exemplo do `type(c)`.
 
 ```python
 >>> x = 42
@@ -214,7 +212,7 @@ Nem todos os objetos fornecem uma representação que possa ser reproduzida; nes
 "'\\u0e20\\u0e32\\u0e1e\\u0e22\\u0e19\\u0e15\\u0e23\\u0e4c'"
 ```
 
-* O `r` força uma forma representacional e `a` força uma forma representacional mas usando apenas caracteres ASCII.
+- O `r` força uma forma representacional e `a` força uma forma representacional mas usando apenas caracteres ASCII.
 
 ## f-Strings
 
@@ -235,4 +233,4 @@ As f-Strings são strings em que algumas expressões podem ser formatadas:
 
 **Nota:** Esta função está ativa a partir do Python 3.6.
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

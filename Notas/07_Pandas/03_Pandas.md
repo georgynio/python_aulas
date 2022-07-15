@@ -200,19 +200,18 @@ import seaborn as sns
 sns.scatterplot(data = novo_df, x = 'Hora', y = 'Valor')
 ```
 
-### Filtros por índice y por posición
+### Filtra por índice e posição
 
-Como ya mencionamos, el índice de `df` no tiene una semántica interesante. Veamos, en cambio, que la serie que generamos con `cant_ejemplares = df['nombre_com'].value_counts()` sí lo tiene:
+Como já mencionamos, o índice de `df` não possui semântica interessante. Vamos ver, em vez disso, que a série que geramos com `number_instances = df['name_com'].value_counts()` tem:
 
 ```python
->>> cant_ejemplares.index
-Index(['Eucalipto', 'Tipa blanca', 'Jacarandá', 'Palo borracho rosado',
-       'Casuarina', 'Fresno americano', 'Plátano', 'Ciprés', 'Ceibo', 'Pindó',
-       ...
-       'Naranjo dulce', 'Peltophorum', 'Ligustrina de California',
-       'Afrocarpus', 'Caranday', 'Esterculea', 'Boj cepillo', 'Sesbania',
-       'Ligustrum', 'Árbol del humo'],
-      dtype='object', length=337)
+>>> estacoes = df['Estacao'].value_counts()
+>>> estacoes.index
+Index(['Enseada do Suá', 'Vila Velha - Ibes', 'Cariacica', 'Vitória Centro',
+       'Laranjeiras', 'Cidade Continental', 'Jardim Camburi',
+       'Vila Velha - Centro', 'Carapina'],
+      dtype='object')
+
 ```
 
 `cant_ejemplares` es una serie (es como un DataFrame de una sola columna). Tiene los nombres de las especies como índice y sus respectivas cantidades como dato asociado.

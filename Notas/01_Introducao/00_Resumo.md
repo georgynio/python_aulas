@@ -1,7 +1,6 @@
 # 1. Introdução a  Python
 
-Iremos apresentar o Python.
-Ainda nessa seção iremos aprender alguns conceitos básicos, edição e execução de programas simples.
+Nesta seção iremos apresentar alguns conceitos básicos do Python, bem como edição e execução de programas simples.
 
 * [Python](01_Python.md)
 * ["Olá mundo!"](02_Hello_world.md)
@@ -9,4 +8,4 @@ Ainda nessa seção iremos aprender alguns conceitos básicos, edição e execu�
 * [Strings](04_Strings.md)
 * [Listas](05_Listas.md)
 
-Retono ao [sumario do manual](./../Conteudo.md)
+Retorno ao [sumário do manual](./../Conteudo.md)
