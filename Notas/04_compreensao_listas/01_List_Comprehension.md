@@ -92,4 +92,4 @@ a = {x^2 | x ∈ s, x > 0} # Matemática
 
 A maioria dos programadores não costuma pensar no lado matemático dessa ferramenta. Podemos vê-lo simplesmente como uma abreviação sofisticada para definir listas.
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

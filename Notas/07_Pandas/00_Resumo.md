@@ -7,4 +7,4 @@ Nesta aula, apresentamos o módulo `datetime` para lidar com dados relacionados 
 * [Introdução aos Pandas](03_Pandas.md)
 * [Séries Temporais](04_Series_temporais.md)
 
-## Retono ao [sumario do manual](./../Conteudo.md)
+## Retorno ao [sumário do manual](./../Conteudo.md)

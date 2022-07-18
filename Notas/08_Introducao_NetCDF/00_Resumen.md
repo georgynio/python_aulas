@@ -1,22 +1,14 @@
-# 9. Clases y objetos
-En esta clase vamos a meternos con la **programación orientada a objetos**. Vamos a ver los conceptos de clases y objetos. Hasta ahora los programas que escribimos usaron sólo tipos de datos nativos de Python, con la instrucción `class` vamos a definir nuevas clases. Vamos a ir más allá y a hablar del concepto de herencia, una herramienta comúnmente usada para escribir programas extensibles. Por último, vamos a referirnos a algunos *métodos especiales* de los objetos de Python.
+# netCDF4
 
-En los ejercicios vamos a ver los conceptos de pilas y colas. En particular, la *pila de llamadas* nos prepara el camino para poder estudiar en un par de clases el concepto de recursión.
+O Network Common Data Form (NetCDF) é comumente usado para armazenar dados cientificos multidimensionais (variáveis)como: temperatura, umidade, precipitação e velocidade e direção do vento. Cada variável pode ser expressada a partir de uma dimensão.
 
-Cerramos esta clase con un ejercicio optativo que involucra conceptos de teledetección y de aprendizaje automático.
+> Pode ser lido por diferentes modulos do Python. Os mais populares são: [netCDF4](https://unidata.github.io/netcdf4-python/#version-160), [xarray](https://docs.xarray.dev/en/stable/) e [scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.io.netcdf_file.html?highlight=netcdf).
+> Maior informação sobre os arquivos [netCDF](https://docs.unidata.ucar.edu/nug/current/index.html).
 
-El ejercicio para la revisión de pares de esta semana es de programación orientada a objetos (modelar una torre de control).
+Nesta seção apresentaremos apenas uma sintese do uso do `netCDF4` e `xarray`
 
-
-
-
-* [9.1 Introducción](01_Intro.md)
-* [9.2 Clases](02_Clases.md)
-* [9.3 Herencia](03_Herencia.md)
-* [9.4 Métodos especiales](04_Métodos_Especiales.md)
-* [9.5 Objetos, pilas y colas](05_Pilas_Colas.md)
-* [9.6 Teledetección](06_Teledeteccion.md)
-* [9.7 Cierre de la clase](07_Cierre.md)
+* [netCDF4](01_netCDF4.md)
+* [xarray](02_xarray.md)
 
 
-## Retono ao [sumario do manual](./../Conteudo.md)
+## Retorno ao [sumário do manual](./../Conteudo.md)

@@ -1,10 +1,8 @@
-# 9.3 Herencia
+# xarray
 
-Esta sección tiene [un video](https://youtu.be/n7CxhdOmHb8) donde introducimos el tema de herencia.
+Pacote de codigo aberto orientado para o trabalho simplificado como arrays multidimensionais. Implementado em cima do modulo array do NumPy, este modulo é inspirado no modulo pandas. Ele é particularmente adaptado para trabalhar com arquivos netCDF, que foram a fonte do modelo de dados do xarray, e se integra perfeitamente ao [dask](https://www.dask.org/) para computação paralela.
 
-La herencia entre clases es una herramienta muy usada para escribir programas extensibles. Exploraremos esta idea a continuación.
-
-### Introducción
+## Introdução
 
 Se usa herencia para crear objetos más especializados a partir de objetos existentes.
 
@@ -15,6 +13,7 @@ class Padre:
 class Hijo(Padre):
     ...
 ```
+
 Se dice que `Hijo` es una clase derivada o subclase. La clase `Padre` es conocida como la clase base, o superclase. La expresión `class Hijo(Padre):` significa que estamos creando una clase llamada `Hijo` que es derivada de la clase `Padre`. 
 
 

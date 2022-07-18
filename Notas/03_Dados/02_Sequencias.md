@@ -263,4 +263,4 @@ Um uso comum de `zip` é criar pares chave/valor e construir dicionários.
 d = dict(zip(colunas, valores))
 ```
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

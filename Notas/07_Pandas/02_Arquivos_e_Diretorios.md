@@ -166,4 +166,4 @@ for root, dirs, files in os.walk("."):
       print(os.path.join(root, name))
 ```
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

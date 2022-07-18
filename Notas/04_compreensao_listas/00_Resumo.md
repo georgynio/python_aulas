@@ -3,4 +3,4 @@
 * [Listas e Pesquisa Linear](01_IteradoresLista.md)
 * [Objetos](02_Objetos.md)
 
-## Retono ao [sumario do manual](./../Conteudo.md)
+## Retorno ao [sumário do manual](./../Conteudo.md)

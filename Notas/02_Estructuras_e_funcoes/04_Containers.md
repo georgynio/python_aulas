@@ -182,4 +182,4 @@ s1 - s2 # Diferença de conjuntos
 
 ***Nota:*** Maior informação pode ser encontrada na documentação do [collections](https://docs.python.org/pt-br/3/library/collections.html).
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

@@ -161,4 +161,4 @@ s['price'] # dicionário
 s[2] # lista
 ```
 
-Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

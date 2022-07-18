@@ -76,4 +76,4 @@ Então os nossos "patos" serão as `linhas`  que iremos passar para a função `
 
 As bibliotecas de código costumam ser mais úteis se forem flexíveis. Não restrinja as opções desnecessariamente. Com maior flexibilidade geralmente está associado maior poder.
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

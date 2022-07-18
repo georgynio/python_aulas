@@ -114,4 +114,4 @@ RuntimeError: Que bagunça!
 
 Alternativamente, essa exceção pode ser capturada por um bloco `try-except`, evitando assim que o programa finalize.
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

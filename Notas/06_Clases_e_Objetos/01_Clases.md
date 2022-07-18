@@ -158,4 +158,4 @@ class Jogador:
 
 Se você precisa se referir a um dado ou método de uma classe você tem que fazer uma referência explícita (adicionando o `self`), caso contrário você está se referindo a outra coisa como no exemplo acima.
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

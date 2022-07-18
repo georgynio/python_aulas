@@ -199,4 +199,4 @@ O Zen of Python é uma coleção de princípios de software que influenciam o de
 >Se a implementação for fácil de explicar, pode ser uma boa ideia.\
 >Os namespaces são uma ótima ideia, vamos fazer mais deles!
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

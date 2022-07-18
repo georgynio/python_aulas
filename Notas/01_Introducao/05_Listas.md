@@ -161,12 +161,12 @@ As listas não são vetores ou matrices, como em MATLAB, Octave, R, etc. Para es
 
 Em strings podemos acessar os elementos *code points* usando um índice e a notação variavel[ index ]. O índice varia de 0 até o tamanho da *string* menos 1. Se ele for negativo, a contagem é na ordem inversa. O quadro a seguir ilustra melhor:
 
-~~~
+```bash
 +---+---+---+---+---+---+
 | P | y | t | h | o | n |
 +---+---+---+---+---+---+
   0   1   2   3   4   5   <-- [indice]
  -6  -5  -4  -3  -2  -1   <-- [indice negativo]
-~~~
+```
 
 ## Retono ao [sumario](./00_Resumo.md)

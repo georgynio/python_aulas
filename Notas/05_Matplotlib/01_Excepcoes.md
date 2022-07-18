@@ -256,7 +256,7 @@ Isso permite que você, por exemplo, acompanhe as exceções (*log*) sem manipul
 
 Não capture exceções que você não tratará corretamente. Solte-os ruidosamente. Se for importante, alguém cuidará do problema. Apenas pegue exceções se *você for esse "alguém"*. Ou seja: pegue apenas aqueles erros que você pode gerenciar elegantemente de uma forma que permita que o programa continue rodando.
 
-## A declaração `finally`.
+## A declaração `finally`
 
 `finally` especifica que esse pedaço de código deve ser executado independentemente de uma exceção ter sido capturada ou não.
 
@@ -272,4 +272,4 @@ finally:
 
 Uma estrutura como essa resulta em um gerenciamento seguro dos recursos disponíveis (seguros, arquivos, hardware, etc.)
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

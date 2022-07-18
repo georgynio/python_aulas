@@ -325,4 +325,4 @@ Os códigos de formato `%d`, `%B`, `%Y` representam `day`, `month` (nome complet
 
 Consulte [a documentação](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior) para obter mais detalhes.
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

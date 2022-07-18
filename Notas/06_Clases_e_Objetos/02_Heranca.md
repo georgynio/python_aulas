@@ -159,4 +159,4 @@ class Filho (Mae, Pai):
 
 A classe `Filho` herda características de ambos os pais. 
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

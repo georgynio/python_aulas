@@ -199,4 +199,4 @@ else:
 x = getattr(obj, 'x', None)
 ```
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

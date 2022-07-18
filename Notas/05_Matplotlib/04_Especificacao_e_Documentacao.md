@@ -131,4 +131,4 @@ def index(lista, elemento):
 - A **documentação** tem como objetivo explicar *o que* o código faz, e destina-se a qualquer pessoa que queira utilizar a função ou módulo.
 - Os **comentários** destinam-se a explicar *como* o código funciona e *por que* foi decidido implementá-lo dessa forma, e destinam-se a qualquer pessoa que esteja lendo o código-fonte.
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

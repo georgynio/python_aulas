@@ -211,156 +211,125 @@ Index(['Enseada do Suá', 'Vila Velha - Ibes', 'Cariacica', 'Vitória Centro',
        'Laranjeiras', 'Cidade Continental', 'Jardim Camburi',
        'Vila Velha - Centro', 'Carapina'],
       dtype='object')
+>>> estacoes
+Enseada do Suá         50965
+Vila Velha - Ibes      41997
+Cariacica              33272
+Vitória Centro         29451
+Laranjeiras            25454
+Cidade Continental     19414
+Jardim Camburi         14211
+Vila Velha - Centro     8789
+Carapina                8417
+Name: Estacao, dtype: int64
 
 ```
 
-`cant_ejemplares` es una serie (es como un DataFrame de una sola columna). Tiene los nombres de las especies como índice y sus respectivas cantidades como dato asociado.
-
-Podemos acceder a una fila de un DataFarme o una Serie tanto a través de su posición como a través de su índice. Para acceder con el índice usá `loc[]` como en los siguientes ejemplos:
+Podemos acessar uma linha de um DataFarme ou de uma Serie tanto por sua posição quanto por seu índice. Para acessar com o índice use `loc[]` como nos exemplos a seguir:
 
 ```python
 >>> df.loc[165]
-long                                                   -58.4684
-lat                                                    -34.6648
-id_arbol                                                    166
-altura_tot                                                    5
-diametro                                                     10
-inclinacio                                                    0
-id_especie                                                   11
-nombre_com                                            Jacarandá
-nombre_cie                                Jacarandá mimosifolia
-tipo_folla                        Árbol Latifoliado Caducifolio
-espacio_ve                                        INDOAMERICANO
-ubicacion     LACARRA, Av. - ESCALADA, Av. - CASTAÑARES, Av....
-nombre_fam                                         Bignoniáceas
-nombre_gen                                            Jacarandá
-origen                                         Nativo/Autóctono
-coord_x                                                 99534.3
-coord_y                                                 96061.8
+Data        2020-01-08
+Hora             00:30
+Estacao       Carapina
+Codigo            ES01
+Poluente          MP10
+Valor             13.0
+Unidade          ug/m3
+Tipo        automatica
 Name: 165, dtype: object
-
->>> cant_ejemplares.loc['Eucalipto']
-4112
+>>> estacoes.loc['Carapina']
+8417
 ```
 
-Para acceder por número de posición usá `iloc`, como se muestra a continuación.
+Para acessar por número de posição use `iloc`, conforme mostrado abaixo.
 
 ```python
->>> df_jacarandas.iloc[0]
-altura_tot     5
-diametro      10
-inclinacio     0
-Name: 165, dtype: int64
-```
-
-Observá que esto nos devuelve los datos de la primera fila de `df_jacarandas` que corresponde al índice 165 (lo dice en la última línea). También podemos acceder a rebanadas (slices) usando `iloc`:
-
-```python
->>> cant_ejemplares.iloc[0:3]
-Eucalipto      4112
-Tipa blanca    4031
-Jacarandá      3255
-Name: nombre_com, dtype: int64
+>>> df.iloc[10]
+Data        2020-01-01
+Hora             10:30
+Estacao       Carapina
+Codigo            ES01
+Poluente          MP10
+Valor             14.0
+Unidade          ug/m3
+Tipo        automatica
+Name: 10, dtype: object
 ```
 
 Por otra parte, podemos seleccionar tanto filas como columnas, si separamos con comas las respectivas selecciones:
 
 ```python
->>> df_jacarandas.iloc[-5:,2]
-51104     4
-51172     8
-51180     0
-51207     0
-51375    20
-Name: inclinacio, dtype: int64
+>>> df.iloc[-5:,2]
+231965    Vila Velha - Centro
+231966    Vila Velha - Centro
+231967    Vila Velha - Centro
+231968    Vila Velha - Centro
+231969    Vila Velha - Centro
+Name: Estacao, dtype: object
 ```
 
-Esto nos devuelve los datos correspondientes a las últimas 5 filas y a la tercera columna ('inclinacio'). Fijate que siempre vienen acompañados del índice.
+Isso nos retorna os dados correspondentes às últimas 5 linhas e à terceira coluna ('inclinação'). Observe que eles são sempre acompanhados pelo índice.
 
-### Selección de una columna
+### Selecionando uma coluna
 
-Si queremos seleccionar una sola columna podemos especificarla por medio de su nombre. Recordemos que al tomar una sola columna obtenemos una serie en lugar de un DataFrame:
+Se quisermos selecionar uma única coluna, podemos especificá-la por meio de seu nome. Lembre-se que pegando uma única coluna obtemos uma série em vez de um DataFrame:
 
 ```python
->>> df_jacarandas_diam = df_jacarandas['diametro']
->>> type(df_jacarandas)
-pandas.core.frame.DataFrame
->>> type(df_jacarandas_diam)
-pandas.core.series.Series
+>>> df_novo = df[df['Estacao']=='Carapina']
+>>> type(df_novo)
+<class 'pandas.core.frame.DataFrame'>
+>>> type(df_novo['Codigo'])
+<class 'pandas.core.series.Series'>
+
 ```
 
-## Series temporales en Pandas
+## Series temporales em Pandas
 
-Pandas tiene un gran potencial para el manejo de series temporales. Es muy sencillo crear índices con fechas y frecuencias seleccionadas.
+Pandas tem um grande potencial para lidar com séries temporais. É muito fácil criar índices com datas e frequências selecionadas.
 
 ```python
->>> pd.date_range('20200923', periods = 7)
-DatetimeIndex(['2020-09-23', '2020-09-24', '2020-09-25', '2020-09-26',
-               '2020-09-27', '2020-09-28', '2020-09-29'],
+>>> pd.date_range('20210210', periods=7)
+DatetimeIndex(['2021-02-10', '2021-02-11', '2021-02-12', '2021-02-13',
+               '2021-02-14', '2021-02-15', '2021-02-16'],
+              dtype='datetime64[ns]', freq='D')
+>>> 
+>>> pd.date_range('20210210 10:00', periods=7)
+DatetimeIndex(['2021-02-10 10:00:00', '2021-02-11 10:00:00',
+               '2021-02-12 10:00:00', '2021-02-13 10:00:00',
+               '2021-02-14 10:00:00', '2021-02-15 10:00:00',
+               '2021-02-16 10:00:00'],
               dtype='datetime64[ns]', freq='D')
 
->>> pd.date_range('20200923 14:00', periods = 7)
-DatetimeIndex(['2020-09-23 14:00:00', '2020-09-24 14:00:00',
-               '2020-09-25 14:00:00', '2020-09-26 14:00:00',
-               '2020-09-27 14:00:00', '2020-09-28 14:00:00',
-               '2020-09-29 14:00:00'],
-              dtype='datetime64[ns]', freq='D')
-
->>> pd.date_range('20200923 14:00', periods = 6, freq = 'H')
-DatetimeIndex(['2020-09-23 14:00:00', '2020-09-23 15:00:00',
-               '2020-09-23 16:00:00', '2020-09-23 17:00:00',
-               '2020-09-23 18:00:00', '2020-09-23 19:00:00'],
+>>> 
+>>> pd.date_range('20210210 10:00', periods=7, freq='H')
+DatetimeIndex(['2021-02-10 10:00:00', '2021-02-10 11:00:00',
+               '2021-02-10 12:00:00', '2021-02-10 13:00:00',
+               '2021-02-10 14:00:00', '2021-02-10 15:00:00',
+               '2021-02-10 16:00:00'],
               dtype='datetime64[ns]', freq='H')
-
 ```
 
-Luego, podés usar esos índices junto con datos para armar series temporales o DataFrames:
+Você pode então usar esses índices junto com dados para construir séries temporais ou DataFrames:
 
 ```python
->>> pd.Series([1, 2, 3, 4, 5, 6], index = pd.date_range('20200923 14:00', periods = 6, freq = 'H'))
-2020-09-23 14:00:00    1
-2020-09-23 15:00:00    2
-2020-09-23 16:00:00    3
-2020-09-23 17:00:00    4
-2020-09-23 18:00:00    5
-2020-09-23 19:00:00    6
+>>> pd.Series([1,2,3,4,5,6], index=pd.date_range('20210210 10:00', periods=6, freq='H'))
+2021-02-10 10:00:00    1
+2021-02-10 11:00:00    2
+2021-02-10 12:00:00    3
+2021-02-10 13:00:00    4
+2021-02-10 14:00:00    5
+2021-02-10 15:00:00    6
 Freq: H, dtype: int64
+>>>
+>>> pd.Series([1,2,3,4,5,6], index=pd.date_range('20210210 10:00', periods=7, freq='H'))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/ragy/Envs/python_aulas/lib/python3.10/site-packages/pandas/core/series.py", line 442, in __init__
+    com.require_length_match(data, index)
+  File "/home/ragy/Envs/python_aulas/lib/python3.10/site-packages/pandas/core/common.py", line 557, in require_length_match
+    raise ValueError(
+ValueError: Length of values (6) does not match length of index (7)
 ```
 
-### Caminatas al azar
-
-Volviendo al tema de las caminatas al azar, podemos hacer una caminata de dos horas dando un paso por minuto a partir del comienzo de esta clase con el siguiente comando:
-
-```python
-import numpy as np
-
-idx = pd.date_range('20200923 14:00', periods = 120, freq = 'min')
-s1 = pd.Series(np.random.randint(-1,2,120), index = idx)
-s2 = s1.cumsum()
-```
-
-Observá que estamos usando random del módulo numpy, no de random. La función `np.random.randint(-1,2,120)` genera un array de longitud 120 con valores -1, 0, 1 (no incluye extremo derecho del rango de valores).
-
-Podemos ver el gráfico sencillamente:
-
-```python
-s2.plot()
-```
-
-O usar una [media móvil](https://es.wikipedia.org/wiki/Media_m%C3%B3vil) (rolling mean) para suavizar los datos:
-
-```python
-w = 5 # ancho en minutos de la ventana
-s3 = s2.rolling(w).mean()
-s3.plot()
-```
-
-Podés ver ambas curvas en un mismo gráfico para ver más claramente el efecto del suavizado:
-
-```python
-df_series_23 = pd.DataFrame([s2, s3]).T  # armo un dataframe con ambas series
-df_series_23.plot()
-```
-
-Fijate que los datos de la curva suavizada empiezan más tarde, porque al principio no hay datos sobre los cuales hacer promedio. El parámetro  `min_periods = 1` del método `rolling` te permite controlar esto. Probalo.
-
+## Retorno ao [sumário](./00_Resumo.md)

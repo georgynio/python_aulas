@@ -233,4 +233,4 @@ if __name__ == '__main__':
     f_principal(sys.argv)
 ```
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

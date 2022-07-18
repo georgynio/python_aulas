@@ -103,4 +103,4 @@ Você também pode usar o operador `%`.
 
 Isso requer um único item ou uma tupla à direita. Os códigos também são inspirados no `printf()` de C. Tem a dificuldade que você tem que contar posições e todas as variáveis ​​vão juntas no final.
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)

@@ -7,4 +7,4 @@ Para escrever programas úteis, precisamos aprender a trabalhar com dados. Nesta
 * [Tipos e estruturas de dados](03_TiposDatos.md)
 * [Containers](04_Containers.md)
 
-## Retono ao [sumario do manual](./../Conteudo.md)
+## Retorno ao [sumário do manual](./../Conteudo.md)

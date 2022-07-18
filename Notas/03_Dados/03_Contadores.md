@@ -32,4 +32,4 @@ for nome, n_gavetas, preco in caminhao:
 total_drawers['Orange'] # 150
 ```
 
-## Retono ao [sumario](./00_Resumo.md)
+## Retorno ao [sumário](./00_Resumo.md)
