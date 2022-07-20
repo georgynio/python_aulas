@@ -40,7 +40,7 @@ import urllib.request
 u = urllib.request.urlopen('http://www.python.org/')
 dados = u.read()
 ```
-
+^
 ## Erros e exceções
 
 As funções relatam erros como exceções. Como uma exceção interrompe a execução de uma função, ela pode fazer com que todo o programa pare se não for tratada adequadamente.

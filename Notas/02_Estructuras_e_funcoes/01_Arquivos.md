@@ -11,7 +11,7 @@ f = open('foo.txt', 'rt')     # Abre o arquivo em modo leitura ('r' de read, 't'
 g = open('bar.txt', 'wt')     # Abre o aquivo em modo escritura ('w' de write, 't' de text)
 ```
 
-_Observación: os nomes [foo, bar, foobar](https://es.wikipedia.org/wiki/Foo) são nomes comuns, que se usam gerlamente para se referir a um nome que se ignora, são os equivalente a fulano, mengano e zutano._
+_Observação: os nomes [foo, bar, foobar](https://es.wikipedia.org/wiki/Foo) são nomes comuns, que se usam gerlamente para se referir a um nome que se ignora, são os equivalente a fulano, mengano e zutano._
 
 Para ler o arquivo completo, ou apenas uma parte:
 
@@ -28,7 +28,7 @@ Para escrever um texto no arquivo:
 g.write('alguma coisa')
 ```
 
-Finalmente, devemos fechar os arquivos.
+E. finalmente, fechar os arquivos.
 
 ```python
 f.close()
@@ -39,7 +39,7 @@ Para evitar problemas é muito importante fechar os arquivos, porém, é comum e
 
 ```python
 with open(nome_archivo, 'rt') as file:
-    # Usa o alias do arquivo `file`
+    # Usa o pseudônimo do arquivo `file`
     ...comandos
     # Não precisa colocar "arquivo.close()"
 ...comandos que não interagem com o arquivo
@@ -85,6 +85,6 @@ with open('outfile', 'wt') as out:
     ...
 ```
 
-***Nota:*** Maior informação pode ser encontrada na docomentação[leitura e escrita de arquivos](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) do python.
+***Nota:*** Maior informação pode ser encontrada na docomentação [leitura e escrita de arquivos](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) do python.
 
 ## Retorno ao [sumário](./00_Resumo.md)

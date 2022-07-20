@@ -11,9 +11,9 @@ Os programas geralmente trabalham com muitos objetos.
 
 Em Python existem três opções principais para escolher.
 
-* Listas. Dados ordenados.
-* Dicionários. Dados confusos.
-* Conjuntos. Coleção bagunçada de elementos únicos.
+* Listas: dados ordenados.
+* Dicionários: dados confusos.
+* Conjuntos: coleção bagunçada de elementos únicos.
 
 ## Listas como contêineres
 
@@ -75,7 +75,7 @@ Assim, podemos pesquisar os dados:
 ``` python
 >>> precos['Laranja']
 93,37
->>> precos['pêra']
+>>> precos['Pera']
 513,25
 >>>
 ```
@@ -109,10 +109,10 @@ with open('../Data/prices.csv', 'rt') as f:
 Você pode verificar se existe uma chave:
 
 ``` python
-if digitar in d:
-    # E ISSO É
+if digitar_palavra in dicionario:
+    # Print...
 else:
-    # NÃO
+    # Print...
 ```
 
 ## Teclas compostas
@@ -143,7 +143,7 @@ Então, podemos acessar o dicionário assim:
 Um conjunto é uma coleção de elementos únicos sem ordem e sem repetição.
 
 ``` python
-citrino = { 'Laranja','Limão','Tangerina' }
+citrico = { 'Laranja','Limão','Tangerina' }
 # Alternativamente podemos escrever assim:
 cítrico = set(['Laranja', 'Limão', 'Tangerina'])
 ```
@@ -151,11 +151,11 @@ cítrico = set(['Laranja', 'Limão', 'Tangerina'])
 Os conjuntos são úteis para avaliar a associação.
 
 ``` python
->>> cítrico
+>>> citrico
 set(['Laranja', 'Limão', 'Tangerina'])
->>> 'Laranja' em citrinos
+>>> 'Laranja' em citrico
 Verdadeiro
->>> 'Maçã' em citrinos
+>>> 'Maçã' em citrico
 Falso
 >>>
 ```
@@ -173,7 +173,7 @@ Mais operações em conjuntos:
 
 ``` python
 citrus.add('Banana') # Adiciona um item
-citrus.remove('Lemon') # Remove um elemento
+citrus.remove('Limão') # Remove um elemento
 
 s1 | s2 # União dos conjuntos s1 e s2
 s1 & s2 # Definir interseção

@@ -4,7 +4,7 @@ Esta seção apresenta duas estruturas de dados elementares: tuplas e dicionári
 
 ## Tipos de dados primitivos
 
-Python tem poucos tipos de dados primitivos.
+O Python tem poucos tipos de dados primitivos.
 
 * Números inteiros
 * Números de ponto flutuante
@@ -30,7 +30,7 @@ if email_address:
 Programas reais têm dados mais complexos do que podemos armazenar em tipos primitivos. Por exemplo, informações sobre um pedido de frutas:
 
 ``` código
-100 caixas de maçãs a $ 490,10 cada
+100 caixas de maçãs a R$ 490.10 cada
 ```
 
 Podemos ver isso como um "objeto" com três partes:
@@ -46,7 +46,7 @@ Uma tupla é uma coleção com valores agrupados.
 Exemplo:
 
 ``` python
-s = ('Maçãs', 100, 490,1)
+s = ('Maçãs', 100, 490.1)
 ```
 
 Tuplas são frequentemente usadas para representar registros ou estruturas *simples*.
@@ -55,7 +55,7 @@ Normalmente, uma tupla representa um único *objeto* com várias partes. Uma ana
 O conteúdo de uma tupla é ordenado (como em uma lista).
 
 ``` python
-s = ('Maçã', 100, 490,1)
+s = ('Maçã', 100, 490.1)
 nome = s[0] # 'Apple'
 quantidade = s[1] # 100
 preço = s[2] # 490,1
@@ -120,7 +120,7 @@ Um dicionário é uma função que envia *chaves* para *valores*. As chaves serv
 s = {
     'fruta': 'maçã',
     'gavetas': 100,
-    'preço': 490,1
+    'preço': 490.1
 }
 ```
 
@@ -132,7 +132,7 @@ Para obter o valor armazenado em um dicionário usamos as chaves.
 >>> print(s['fruta'], s['caixas'])
 maçãs 100
 >>> s['preço']
-490,10
+490.10
 >>>
 ```
 
@@ -151,9 +151,9 @@ para deletar um valor, usamos o comando `del`.
 >>>
 ```
 
-## Por que dicionários?
+## Por que usamos dicionários?
 
-Os dicionários são úteis quando existem *muitos* valores diferentes e esses valores podem ser modificados ou manipulados. Como o acesso aos elementos é feito por *chave*, não é necessário lembrar uma posição para determinados dados, o que muitas vezes cumpre um objetivo fundamental: tornar o código mais legível (e, portanto, menos propenso a erros).
+Os dicionários são úteis quando existem *muitos* valores diferentes e esses valores podem ser modificados ou manipulados. Como o acesso aos elementos é feito por *chaves* {}, não é necessário lembrar uma posição para determinados dados, o que muitas vezes cumpre um objetivo fundamental: tornar o código mais legível (e, portanto, menos propenso a erros).
 
 ``` python
 s['price'] # dicionário
