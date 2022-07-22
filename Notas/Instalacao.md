@@ -19,4 +19,17 @@ O interprete do Python pode ser descarregado desde [Python.org](https://www.pyth
 
 Para usuarios Windows é **Altamente Recomendado** o uso do [Anaconda](https://www.anaconda.com/products/individual), um pacote que emula um ambiente virtual, neste já vem instalado o Python e alguns IDE's. Depois poderemos utilizar alguns dos IDE's disponiveis como o [Spyder](https://www.spyder-ide.org/).
 
-Retono à apresentação do [manual](/Notas/README.md)
+> Para o uso do [Visual Studio Code](https://code.visualstudio.com/) o Python deve ser instalado na maquina por separado.
+
+## Instalação de pacotes do Python
+
+> pip install \<nome do pacote>
+
+Exemplo:
+```bash
+>>> pip install numpy
+```
+
+**Se precisar de algum pacote específico este pode ser encontrado neste [link](https://pypi.org/project/pip/)**
+
+## Retorno à apresentação do [manual](/Notas/README.md)
