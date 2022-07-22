@@ -27,9 +27,9 @@ Para usuarios Windows é **Altamente Recomendado** o uso do [Anaconda](https://w
 
 Exemplo:
 ```bash
->>> pip install numpy
+>>> pip install matplotlib
 ```
 
-**Se precisar de algum pacote específico este pode ser encontrado neste [link](https://pypi.org/project/pip/)**
+>Se precisar de algum pacote específico este pode ser encontrado neste [link](https://pypi.org/project/pip/)
 
 ## Retorno à apresentação do [manual](/Notas/README.md)
