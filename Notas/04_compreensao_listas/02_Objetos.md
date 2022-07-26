@@ -1,10 +1,10 @@
 # Objetos
 
-Nesta seção, discutimos alguns problemas relacionados ao gerenciamento de memória, cópias de variáveis ​​e verificação de tipos.
+Nesta seção, discutiremos alguns problemas relacionados ao gerenciamento de memória, cópias de variáveis ​​e verificação de tipos.
 
 ## Atribuições
 
-A atribuição de valores é a passagem de informação a determinada variável. A linguagem Python tem definido que o sinal que conhecemos pelo nome de igual (=) será o operador de atribuição.
+A atribuição de valores é a passagem de informação a determinada variável. A linguagem Python tem definido que o sinal que conhecemos pelo nome de igual (`=`) será o operador de atribuição.
 
 A estrutura de uma atribuição é a seguinte:
 
@@ -47,7 +47,7 @@ Isso significa que modificar um valor modifica *todas* as referências.
 >>>
 ```
 
-Observe como uma mudança na lista original aciona mudanças em todas as outras variáveis ​​(ai!). Isso ocorre porque nenhuma cópia foi feita. Todos são indicadores da mesma coisa.
+Observe como uma mudança na lista original aciona mudanças em todas as outras variáveis. Isso ocorre porque nenhuma cópia foi feita. Todos são indicadores da mesma coisa.
 
 ## Reatribuir valores
 
@@ -62,24 +62,26 @@ print(a) # [4, 5, 6]
 print(b) # [1, 2, 3] Mantém o valor original
 ```
 
-Lembre-se: **Variáveis ​​são nomes, não locais na memória.**
+> Lembre-se: **Variáveis ​​são nomes, não locais na memória.**
 
 ## Perigos
 
-Se eles não explicarem isso para você, mais cedo ou mais tarde isso lhe trará problemas. Um exemplo típico é quando você altera um dado pensando que é uma cópia privada e isso inadvertidamente corrompe os dados em outra parte do programa.
+Se não explicarem isso para você, mais cedo ou mais tarde isso lhe trará problemas.
+
+> Um exemplo típico é quando você altera um dado pensando que é uma cópia privada e isso inadvertidamente corrompe os dados em outra parte do programa.
 
 *Comentário: Esta é uma das razões pelas quais os tipos de dados primitivos (int, float, string) são imutáveis ​​(somente leitura).*
 
 ## Identidade e referências
 
 ```bash
-Em python, uma variável é apenas um NOME que REFERENCIA a um OBJETO.
+No Python, uma variável é apenas um NOME que REFERENCIA um OBJETO.
 ```
 
 Você pode usar o operador `is` para verificar se dois valores correspondem ao mesmo objeto.
 
 ``` python
->>> para = [1,2,3]
+>>> a = [1,2,3]
 >>> b = a
 >>> a is b
 True
@@ -116,7 +118,7 @@ True
 Listas e dicionários têm métodos para fazer cópias (não apenas referências, mas duplicatas):
 
 ``` python
->>> a = [2,3,[100,101],4]
+>>> a = [2, 3, [100, 101], 4]
 >>> b = list(a) # Faça uma cópia
 >>> a is b
 False
@@ -137,7 +139,7 @@ Apesar disso, os elementos de `a` e `b` ainda são compartilhados.
 ``` python
 >>> a[2].append(102)
 >>> b[2]
-[100.101.102]
+[100, 101, 102]
 >>>
 >>> a[2] is b[2]
 True
@@ -156,7 +158,7 @@ A lista interna ainda é compartilhada.
 Às vezes, você precisará fazer uma cópia de um objeto, bem como de todos os objetos que ele contém. Chamamos isso de *cópia profunda*. Você pode usar a função `deepcopy` do módulo `copy` para isso:
 
 ``` python
->>> a = [2,3,[100,101],4]
+>>> a = [2, 3, [100, 101], 4]
 >>> import copy
 >>> b = copy.deepcopy(a)
 >>> a[2].append(102)
@@ -169,7 +171,7 @@ False
 
 ## Nome, valores e tipos
 
-Os nomes de variáveis ​​não têm um tipo associado. São apenas nomes. Mas os valores têm um tipo subjacente.
+Os nomes de variáveis ​​não tem um tipo associado. São apenas nomes. Mas os valores têm.
 
 ``` python
 >>> a = 42
@@ -230,7 +232,7 @@ Aqui, `items` é uma lista que tem uma função, um módulo e uma exceção. Sim
 ``` python
 items[0](-45) # abs
 items[1].sqrt(2) # matemática
-exceto items[2]: # ValueError
+except items[2]: # ValueError
 ```
 
 Com grandes poderes sempre vem grandes responsabilidades. Só porque você pode não significa que você deve fazer esse tipo de coisa.

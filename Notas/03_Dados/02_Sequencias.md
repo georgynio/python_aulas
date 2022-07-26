@@ -1,16 +1,16 @@
 # Sequências
 
-Um tipo `sequencial` é um que suporta o operador de associção (`in`), da função de tamanho (`len()`), fatias (`[]`) e é iterável.
+O dado `sequencial` é um tipo de dado que suporta o operador de associção (`in`), a função de tamanho (`len()`), a maneira de pegar dados em fatias (`[]`) e é iterável.
 
 ## Tipo de sequências
 
-Python tem três tipos de dados que são *sequências*.
+O Python tem três tipos de dados que são *sequências*.
 
 * String: `'Olá'`. Uma string é uma sequência de caracteres.
 * Lista: `[1, 4, 5]`.
 * Tupla: `('Pera', 100, 490,1)`.
 
-Todas as sequências têm uma ordem, indexadas por números inteiros, e têm um comprimento.
+Todas as sequências têm uma ordem (indexadas por números inteiros) e tem um comprimento.
 
 ``` python
 a = 'Hello' # String
@@ -31,53 +31,60 @@ len(c) # 3
 As sequências podem ser replicadas: `s * n`.
 
 ``` python
->>> para = 'Olá'
->>> a *3
-'Ola Ola Ola'
+>>> para = 'Olá '
+>>> a * 3
+'Ola Ola Ola '
 >>> b = [1, 2, 3]
->>> b * 2
+>>> b * 2 
 [1, 2, 3, 1, 2, 3]
+>>> # esta operação não multiplica os elementos da lista por 2, mais sim duplica a lista
 >>>
 ```
 
 Sequências do mesmo tipo também podem ser concatenadas: `s + t`. Porém, não devemos misturar os tipos.
 
 ``` python
->>> para = (1, 2, 3)
+>>> a = (1, 2, 3)
 >>> b = (4, 5)
 >>> a + b
 (1, 2, 3, 4, 5)
 >>>
 >>> c = [1, 5]
 >>> a + c
-Traceback (última chamada mais recente):
-  Arquivo "<stdin>", linha 1, em <module>
-TypeError: só pode concatenar tupla (não "lista") para tupla
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate tuple (not "list") to tuple
+
 ```
+
+> No [capítulo 4, compreensão de listas](./../04_compreensao_listas/01_List_Comprehension.md) serão mostradas operações matemáticas em listas.
 
 ## Fatias (slicing)
 
 Pegar uma fatia é pegar uma subsequência de uma sequência.
 A sintaxe é `s[start:end]`, onde `start` e `end` são os índices da subsequência que você deseja.
 
+* Os índices `start` e `end` devem ser inteiros.
+* **Fatias *não* incluem o valor final**. É como os intervalos semiabertos na matemática.
+* Se os índices forem omitidos, eles assumem seus valores padrão: o início ou o fim da lista.
+
 ``` python
 a = [0,1,2,3,4,5,6,7,8]
 
-a[2:5] # [2,3,4]
-a[-5:] # [4,5,6,7,8]
-a[:3] # [0,1,2]
+a[2:5] # [2,3,4]      --> pega os elementos desde a posição 2 até a 4
+a[-5:] # [4,5,6,7,8]  --> ordem inversa de contagem até a posição -5
+a[:3] # [0,1,2]       --> pega todos os elementos até a posição 3
 ```
 
-* Os índices `start` e `end` devem ser inteiros.
-* Fatias *não* incluem o valor final. É como os intervalos semiabertos na matemática.
-* Se os índices forem omitidos, eles assumem seus valores padrão: o início ou o fim da lista.
+> Não esqueça que o Python começa a contar a partir do zero.
+> Na ordem inversa o Python começa a contar a partir do -1.
 
 ## Reatribuição de fatias
 
 Nas listas, uma fatia pode ser reatribuída ou excluída.
 
 ``` python
-# Reatribuição
+# Reatribuição, identifica as posições e altera os elementos
 a = [0,1,2,3,4,5,6,7,8]
 a[2:4] = [10,11,12] # [0,1,10,11,12,4,5,6,7,8]
 ```
@@ -85,7 +92,7 @@ a[2:4] = [10,11,12] # [0,1,10,11,12,4,5,6,7,8]
 *Observação: a fatia realocada não precisa necessariamente ter o mesmo comprimento.*
 
 ```python
-# Eliminación
+# Eliminação, apaga elementos de uma sequência
 a = [0,1,2,3,4,5,6,7,8]
 del a[2:4]                # [0,1,4,5,6,7,8]
 ```
@@ -124,14 +131,16 @@ Os loops `for` iteram sobre os elementos de uma sequência.
 >>>
 ```
 
-A cada iteração do loop, você obtém um novo elemento para trabalhar. A variável iteradora assumirá esse novo valor. No exemplo a seguir, a variável do iterador é `x`:
+A cada iteração do loop, você obtém um novo elemento para trabalhar. A variável iteradora (`i`) assumirá esse novo valor.
+
+No exemplo a seguir, a variável do iterador é `x`:
 
 ``` python
 for x in s: # `x` é uma variável iteradora
     ...instruções
 ```
 
-A cada iteração, o valor anterior da variável (se houver) é substituído. Depois que o loop termina, a variável iteradora salva o ultimo valor.
+A cada iteração, o valor anterior da variável (se houver) é substituído. Depois que o loop termina, a variável iteradora salva o último valor.
 
 ## O comando break
 
@@ -146,7 +155,7 @@ for nome in lista_nomes:
 instruções
 ```
 
-Quando o comando `break` é executado, ele sai do loop e passa para as próximas `instruções`. O comando `break` só se aplica ao loop mais interno. Se um loop estiver aninhado em outro loop, o comando não interromperá o loop externo.
+Quando o comando `break` é executado, ele sai do loop e passa para as próximas `instruções`. O comando `break` só é aplicado ao loop mais interno. Se um loop estiver aninhado em outro loop, o comando não interromperá o loop externo.
 
 ## O comando continue
 
@@ -160,7 +169,7 @@ for linha in linhas:
     ...
 ```
 
-Isso é útil quando o item encontrado não é de interesse ou precisa ser ignorado no processamento.
+Isso é útil quando o ítem encontrado não é de interesse ou precisa ser ignorado no processamento.
 
 ## Ciclos sobre inteiros
 
@@ -171,7 +180,12 @@ for i in range(100):
     #i = 0,1,...,99
 ```
 
-A sintaxe é `range([start], [end], [step])` (o que está entre colchetes é opcional).
+A sintaxe é `range([start], [end], [step])`, esta função precisa de pelo menos um número.
+
+* O último número da contagem nunca é incluído. É como com as fatias.
+* `start` é opcional. Se não se indica o programa entende que é o padrão '0'.
+* `step` é opcional. Se não se indica o programa entende que é o padrão é `1`.
+* `range()` calcula os valores conforme você precisa deles. Na verdade, ele não armazena todo o intervalo de números na memória.
 
 ``` python
 for i in range(100):
@@ -186,12 +200,7 @@ for k in range(10,50,2):
     ...código
 ```
 
-* O valor final nunca é incluído. É como com as fatias.
-* `start` é opcional. Se não se indica o programa entende que é o padrão '0'.
-* `step` é opcional. Se não se indica o programa entende que é o padrão é `1`.
-* `range()` calcula os valores conforme você precisa deles. Na verdade, ele não armazena todo o intervalo de números na memória.
-
-## A função enumerar()
+## A função enumerate()
 
 A função `enumerate` adiciona um contador extra a uma iteração.
 
@@ -244,13 +253,13 @@ Quando você usa várias variáveis, cada tupla é *descompactada* em um conjunt
 A função `zip` pega várias sequências e as combina em um iterador.
 
 ``` python
-colunas = ['nome', 'gavetas', 'preço']
-valores = ['Pera', 100, 490,1 ]
+colunas = ['nome', 'gavetas', 'preco']
+valores = ['Pera', 100, 490.1 ]
 pares = zip(colunas, valores)
-# ('nome','Pêra'), ('caixas',100), ('preço',490,1)
+# ('nome','Pera'), ('caixas',100), ('preco',490.1)
 ```
 
-Para obter o resultado, você deve iterar. Você pode usar várias variáveis ​​para descompactar as tuplas como mostrado acima.
+Para obter o resultado, você deve iterar (colocá-lo dentro de um `for`). Você pode usar várias variáveis ​​para descompactar as tuplas como mostrado acima.
 
 ``` python
 for coluna, valor in pares:
@@ -261,6 +270,8 @@ Um uso comum de `zip` é criar pares chave/valor e construir dicionários.
 
 ``` python
 d = dict(zip(colunas, valores))
+{'preco': 490.1, 'gavetas': 100, 'nome': 'Pera'}
+
 ```
 
 ## Retorno ao [sumário](./00_Resumo.md)

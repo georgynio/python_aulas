@@ -6,4 +6,4 @@ Nesta seção iremos apresentar alguns exercicios básicos do Python.
 * [Números](./03_numeros.ipynb)
 * [Strings](./04_listas.ipynb)
 
-## Retorno ao [sumário do manual](./Resumo.md)
+## Retorno a [apresentação do manual](./../../README.md)

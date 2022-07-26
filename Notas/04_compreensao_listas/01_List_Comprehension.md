@@ -1,6 +1,5 @@
 # Compreensão da lista
 
-
 *List comprehension* foi concebida na [PEP 202](https://peps.python.org/pep-0202/) e é uma forma concisa de criar e manipular listas. Sua sintaxe básica é:
 
 ```python
@@ -24,21 +23,19 @@ A compreensão de lista cria uma nova lista aplicando uma operação a cada elem
 Outro exemplo:
 
 ``` python
->>> nomes = ['Edmundo', 'Jane']
->>> a = [name.lower() for name in names]
->>> para
-['edmundo', 'juana']
+>>> nomes = ['Edmundo', 'Joana']
+>>> a = [nome.lower() for nome in nomes]
+>>> a
+['edmundo', 'joana']
 >>>
 ```
-
-A sintaxe geral é: `[<expressão> for <variável> in <sequência>]`.
 
 ## Filtros
 
 A compreensão da lista pode ser usada para filtragem.
 
 ``` python
->>> para = [1, -5, 4, 2, -2, 10]
+>>> a = [1, -5, 4, 2, -2, 10]
 >>> b = [2*x for x in a if x > 0]
 >>> b
 [2, 8, 4, 20]
@@ -50,19 +47,19 @@ A compreensão da lista pode ser usada para filtragem.
 A compreensão da lista é extremamente útil. Por exemplo, você pode coletar os valores de um campo específico de um dicionário:
 
 ``` python
-frutas = [s['name'] for s in truck]
+frutas = [s['nome'] for s in caminhao]
 ```
 
 Ou você pode fazer consultas (*consultas*) como se as sequências fossem bancos de dados.
 
 ``` python
-a = [s for s in caminhao if s['price'] > 100 e s['crates'] > 50]
+a = [s for s in caminhao if s['preco'] > 100 e s['caixas'] > 50]
 ```
 
 Você também pode combinar compreensão de lista com redução de sequência:
 
 ``` python
-cost = sum([s['crates']*s['price'] for s in truck])
+custo = sum([s['caixas']*s['preco'] for s in caminhao])
 ```
 
 ## sintaxe geral da compreensão de lista e sequência

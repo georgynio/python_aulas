@@ -1,12 +1,12 @@
 # Erros e exceções
 
-Até agora mensagens de erro foram apenas mencionadas, mas se você testou alungs exemplos, talvez tenha esbarrado em algumas. Existem pelo menos dois tipos distintos de erros: erros de sintaxe e exceções. Podemos encontrar um relatorio completo dos erros no site da [documentação](https://docs.python.org/pt-br/3/tutorial/errors.html).
+Até agora mensagens de erro foram apenas mencionadas, mas se você testou alungs exemplos, talvez tenha esbarrado em algumas. Existem pelo menos dois tipos distintos de erros: erros de sintaxe e exceções. Podemos encontrar um relatório completo dos erros no site da [documentação](https://docs.python.org/pt-br/3/tutorial/errors.html).
 
 ## Três tipos de erros:
 
 Programando podemos encontrar três tipos de erros.
 
-Os *erros sintáticos* são aqueles que ocorrem quando escrevemos incorretamente. Por exemplo, se quisermos escrever `x = (a + b) * c` mas em vez disso escrever `x = (a + b] * c`, o programa não será executado.
+Os *erros sintáticos* são aqueles que ocorrem quando escrevemos incorretamente. Por exemplo, se quisermos escrever `x = (a + b) * c` mas em vez disso escrevemos `x = (a + b] * c`, o programa não será executado.
 
 ```python 
 >>> x = (a + b] * c
@@ -28,7 +28,7 @@ ValueError: invalid literal for int() with base 10: 'vinte'
 
 O terceiro tipo de erro é o mais difícil de encontrar e entender. São os *erros de semântica*, que ocorrem quando o programa não faz o que foi projetado para fazer. Eles têm a ver com o significado das instruções. Nesses casos, o programa é executado, mas apresenta um resultado incorreto ou inesperado. Em geral, a melhor maneira de encontrar esses erros é percorrer o código que gera um resultado inesperado, tentando entender onde está o erro, usando o depurador.
 
-Por exemplo, calcula x = (2+3)*5
+Por exemplo, calcula: `x = (2+3)*5`
 
 ```python
 # solução correta
@@ -71,9 +71,9 @@ A última linha é o motivo específico do erro.
 
 As linhas acima informam o caminho que o programa percorreu para chegar ao erro. Neste caso: o erro ocorreu em `x.append(3)` na linha 4, dentro da função `spam` do módulo `"blah.py"`, que foi chamado pela função `bar` na linha 7 do mesmo arquivo, que foi chamado por... e assim por diante.
 
-No entanto, às vezes isso não fornece informações suficientes (por exemplo, não sabemos o valor de cada parâmetro usado nas chamadas).
+No entanto, as vezes isso não fornece informações suficientes (por exemplo, não sabemos o valor de cada parâmetro usado nas chamadas).
 
-Uma possibilidade que às vezes funciona é copiar o rastreamento para o Google. Se o erro for muito comum encontraremos muitas alternativas de solução. Se recomenda o uso do site da [stackoverflow](https://pt.stackoverflow.com/), de preferencia o site em ingles.
+Uma possibilidade que as vezes funciona é copiar o rastreamento para o Google. Se o erro for muito comum encontraremos muitas alternativas de solução. Recomenda-se o uso do site da [stackoverflow](https://pt.stackoverflow.com/), de preferência o site em ingles.
 
 ### Use o modo [REPL](https://en.wikipedia.org/wiki/REPL) do Python
 
@@ -95,11 +95,11 @@ AttributeError: 'int' object has no attribute 'append'
 
 ```
 
-Este *parâmetro* (o `-i`, que usamos antes) preserva o estado do interpretador no final do script e permite que você o questione sobre o estado das variáveis ​​e obtenha informações que, de outra forma, você perderia. No exemplo, queremos apenas saber o que é `x` e como ele chegou a esse estado.
+Este *parâmetro* (`-i`, que usamos antes) preserva o estado do interpretador no final do script e permite que você o questione sobre o estado das variáveis ​​e obtenha informações que, de outra forma, você perderia. No exemplo, queremos apenas saber o que é `x` e como ele chegou a esse estado.
 
-### Depurar com `print()`
+### Depurar com o comando `print()`
 
-`print()` é uma maneira rápida e fácil de deixar o programa rodar (quase) normalmente enquanto fornece informações sobre o estado das variáveis. Se você escolher as variáveis ​​a serem exibidas com sabedoria, provavelmente dirá "Aha!".
+`print()` é uma maneira rápida e fácil de deixar o programa rodar (quase) normalmente enquanto fornece informações sobre o estado das variáveis. Se você escolher as variáveis ​​a serem exibidas com sabedoria, provavelmente dirá "Aha!, descobri!".
 
 *Dica: É conveniente usar `repr()` para imprimir as variáveis*
 
@@ -125,8 +125,8 @@ Decimal('3,4')
 
 ### Depurar com lápis e papel
 
-Muitas vezes a pessoa *supõe* que o intérprete está fazendo alguma coisa. Se você pegar um lápis e papel e *desempenhar o papel de intérprete* anotando o estado de cada variável e seguindo as instruções do programa passo a passo, você pode entender que as coisas não são como você pensava.
+Muitas vezes a pessoa *supõe* que o interpretador do Python está fazendo alguma coisa. Se você pegar um lápis e papel e *desempenhar o papel de interpretador* anotando o estado de cada variável e seguindo as instruções do programa passo a passo, você pode entender que as coisas não são como você pensava.
 
-Essas alternativas são úteis, mas um pouco primitivas. A melhor maneira de depurar um programa Python é usar o depurador.
+Essa alternativa é útil, mas um pouco primitiva. A melhor maneira de depurar um programa Python é usar o depurador.
 
 ## Retorno ao [sumário](./00_Resumo.md)

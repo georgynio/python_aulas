@@ -1,36 +1,36 @@
 # Impressão com formato
 
-Quando você trabalha com dados, é comum você querer imprimir uma saída estruturada (tabelas, etc.). Por exemplo:
+Quando você trabalha com dados, é comum querer imprimir uma saída estruturada (tabelas, etc.). Por exemplo:
 
 ``` código
-  Preço das gavetas de nome
+  Preco e quantidade de frutas
 ---------- ---------- -----------
- Lima 100 32,20
- Laranja 50 91,10
- Cáqui 150 103,44
- Tangerina 200 51,23
- Pêssego 95 40,37
- Tangerina 50 65,10
- Laranja 100 70,44
+ Lima 100 32.20
+ Laranja 50 91.10
+ Caqui 150 103.44
+ Tangerina 200 51.23
+ Pessego 95 40.37
+ Tangerina 50 65.10
+ Laranja 100 70.44
 ```
 
 ## Formato de string
 
-Uma ótima maneira de formatar uma string em Python (a partir da versão 3.6) é usar `f-strings`.
+Uma ótima maneira de formatar uma string no Python (a partir da versão 3.6) é utilizar `f-strings`.
 
 ``` python
 >>> nome = 'Laranja'
->>> gavetas = 100
->>> preco = 91,1
+>>> caixas = 100
+>>> preco = 91.1
 >>> f'{nome:>10s} {caixas:>10d} {preco:>10.2f}'
-'Laranja 100 91,10'
+'   Laranja        100      91.10'
 >>>
 ```
 
-A parte `{expression:format}` será substituída. Normalmente `f-strings` são usadas com `print`.
+Normalmente `f-strings` são usadas com `print`.
 
 ``` python
-print(f'{nome:>10s} {caixas:>10d} {preço:>10.2f}')
+>>> print(f'{nome:>10s} {caixas:>10d} {preço:>10.2f}')
 ```
 
 ## Códigos de formato
@@ -41,11 +41,11 @@ Os códigos de formato (o que segue o `:` dentro do `{}`) são semelhantes aos u
 d Número inteiro decimal
 b inteiro binário
 x Inteiro Hex
-f Flutuar como [-]m.dddddd
-e Flutuar como [-]m.dddddde+-xx
-g Float, mas com uso seletivo da notação exponencial E.
-s Correntes
-c Caractere (de um inteiro, seu código)
+f Flutuante (decimal) [-]m.dddddd
+e Flutuante (científico) [-]m.dddddde+-xx
+g Flutuante, mas com uso seletivo da notação exponencial E.
+s Strings
+c Caractere
 ```
 
 Os modificadores permitem ajustar a largura a ser impressa ou a precisão decimal (número de dígitos após o ponto). Essa é uma lista parcial:
@@ -64,11 +64,11 @@ Você pode usar o método `format_map()` para aplicar um formato aos valores de 
 ``` python
 >>> s = {
     'nome': 'Laranja',
-    'gavetas': 100,
-    'preço': 91,1
+    'caixas': 100,
+    'preco': 91.1
 }
->>> '{name:>10s} {crates:10d} {price:10.2f}'.format_map(s)
-'Laranja 100 91,10'
+>>> '{nome:>10s} {caixas:10d} {preco:10.2f}'.format_map(s)
+'Laranja 100 91.10'
 >>>
 ```
 
@@ -76,17 +76,17 @@ Ele usa os mesmos códigos das `f-strings` mas pega os valores fornecidos pelo d
 
 ## O método format()
 
-Existe um método `format()` que permite formatar argumentos.
+Existe um método `format()` permite formatar argumentos.
 
 ``` python
->>> '{name:>10s} {crates:10d} {price:10.2f}'.format(name='Orange', crates=100, price=91.1)
-'Laranja 100 91,10'
+>>> '{nome:>10s} {caixas:10d} {preco:10.2f}'.format(nome='Laranja', caixas=100, preco=91.1)
+'Laranja 100 91.10'
 >>> '{:10s} {:10d} {:10.2f}'.format('Laranja', 100, 91,1)
-'Laranja 100 91,10'
+'Laranja 100 91.10'
 >>>
 ```
 
-A verdade é que `format()` é um pouco longo para nós e preferimos usar `f-strings`.
+> Na verdade o método `format()` é um pouco longo e prefere-se utilizar `f-strings`.
 
 ## Formato estilo C
 
@@ -101,6 +101,6 @@ Você também pode usar o operador `%`.
 '3.14'
 ```
 
-Isso requer um único item ou uma tupla à direita. Os códigos também são inspirados no `printf()` de C. Tem a dificuldade que você tem que contar posições e todas as variáveis ​​vão juntas no final.
+Isso requer um único item ou uma tupla à direita. Os códigos também são inspirados no `printf()` de C. Tem a dificuldade de ser necessário contar as posições, e todas as variáveis ​​vão juntas no final.
 
 ## Retorno ao [sumário](./00_Resumo.md)
