@@ -177,9 +177,9 @@ s.strip()              # Apaga (strip) os espaços em branco do início e final
 s.upper()              # Troca para maiúsculas
 ```
 
-## Mutabilidad de strings
+## Alterações nas strings
 
-Os strings são inmutáveis, sendo apenas de leitura.
+Os strings são imutáveis, sendo apenas de leitura.
 Uma vez criados, o seu valor não pode ser alterado.
 
 ```python

@@ -101,18 +101,18 @@ Vamos ver qual seria a solução, **indo apenas até o oitavo quadrado**, pois a
 # xadrez.py
 quadros_tabuleiro = 8  # numero de quadros no tabuleiro
 grao = 1        # primeiro grão de arroz
-posisao = 1
+posicao = 1
 
-print(posisao, grao, posisao-1)
+print(posicao, grao, posicao-1)
 
-while posisao <= quadros_tabuleiro:
+while posicao <= quadros_tabuleiro:
     
     grao = grao * 2
-    posisao = posisao + 1
-    print(posisao, grao, posisao-1)
+    posicao = posicao + 1
+    print(posicao, grao, posicao-1)
 
 print('Quantidade de grãos', grao)
-print('Equivale a elevar 2 à', posisao-1)
+print('Equivale a elevar 2 à', posicao-1)
 ```
 
 Ao executar o programa obtemos:
