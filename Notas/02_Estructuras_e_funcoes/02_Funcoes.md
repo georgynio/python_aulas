@@ -11,8 +11,8 @@ def soma(n):
     '''
     Retorna a soma dos primeiros n inteiros
     '''
-    todos = 0
-    if n > 0:
+    total = 0
+    while n > 0:
         total += n
         n -= 1
     return total
@@ -40,7 +40,6 @@ import urllib.request
 u = urllib.request.urlopen('http://www.python.org/')
 dados = u.read()
 ```
-^
 ## Erros e exceções
 
 As funções relatam erros como exceções. Como uma exceção interrompe a execução de uma função, ela pode fazer com que todo o programa pare se não for tratada adequadamente.
