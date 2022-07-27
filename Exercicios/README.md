@@ -13,4 +13,4 @@ O trabalho final da matéria, gerar um arquivo do tipo `jupyter-notebook`, com o
 * [7. Processamento de dados com Pandas.](./07_Pandas/Resumo.md)
 * [8. Introdução ao netCDF.](./08_Introducao_netCDF/Resumo.md)
 
-## Retorno ao [Inicio](README.md)
+## Retorno ao [Inicio](./../README.md)
