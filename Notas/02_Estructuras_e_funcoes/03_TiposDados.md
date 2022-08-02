@@ -37,7 +37,7 @@ Podemos ver isso como um "objeto" com três partes:
 
 * Nome da mercadoria ("Maçãs", uma string)
 * Número ou quantidade (100, um número inteiro)
-* Preço (490,10, um float)
+* Preço (490.10, um float)
 
 ## Tuplas
 
@@ -58,7 +58,7 @@ O conteúdo de uma tupla é ordenado (como em uma lista).
 s = ('Maçã', 100, 490.1)
 nome = s[0] # 'Apple'
 quantidade = s[1] # 100
-preco = s[2] # 490,1
+preco = s[2] # 490.1
 ```
 
 O conteúdo das tuplas não pode ser modificado.
@@ -79,7 +79,7 @@ s = (s[0], 75, s[2])
 Tuplas são frequentemente usadas para empacotar informações relacionadas em uma única *entidade*.
 
 ``` python
-s = ('Maçãs', 100, 490,1)
+s = ('Maçãs', 100, 490.1)
 ```
 
 Uma tupla pode ser passada de um lugar para outro em um programa como um único objeto.
