@@ -2,6 +2,9 @@
 
 Nesta seção iremos apresentar alguns conceitos básicos do Python, bem como edição e execução de programas simples.
 
+
+
+
 * [Python](01_Python.md)
 * ["Olá mundo!"](02_Hello_world.md)
 * [Números](03_Numeros.md)

@@ -58,7 +58,7 @@ O conteúdo de uma tupla é ordenado (como em uma lista).
 s = ('Maçã', 100, 490.1)
 nome = s[0] # 'Apple'
 quantidade = s[1] # 100
-preço = s[2] # 490,1
+preco = s[2] # 490,1
 ```
 
 O conteúdo das tuplas não pode ser modificado.
@@ -89,8 +89,8 @@ Uma tupla pode ser passada de um lugar para outro em um programa como um único 
 Para usar uma tupla em outro lugar, devemos descompactar seu conteúdo em diferentes variáveis.
 
 ``` python
-frutas, caixas, preço = s
-print('Custo:', gavetas * preço)
+frutas, caixas, preco = s
+print('Custo:', gavetas * preco)
 ```
 
 O número de variáveis ​​à esquerda deve ser consistente com a estrutura da tupla.
