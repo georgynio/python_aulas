@@ -22,13 +22,13 @@ Por exemplo, uma lista de tuplas.
 
 ``` python
 caminhao = [
-    ('Pera', 100, 490,1),
-    ('Laranja', 50, 91,3),
-    ('Limão', 150, 83,44)
+    ('Pera', 100, 490.1),
+    ('Laranja', 50, 91.3),
+    ('Limão', 150, 83.44)
 ]
 
-truck[0] # ('Pera', 100, 490.1)
-truck[2] # ('Limão', 150, 83.44)
+caminhao[0] # ('Pera', 100, 490.1)
+caminhao[2] # ('Limão', 150, 83.44)
 ```
 
 ## Construindo uma lista
