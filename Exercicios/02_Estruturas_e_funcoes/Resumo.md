@@ -7,4 +7,4 @@ Nesta aula apresentaremos: a forma de abrir arquivos, escrita de funções, tipo
 * [Tipos e estruturas de dados](./03_TiposDados.ipynb)
 * [Containers](./04_Containers.ipynb)
 
-## Retorno a [apresentação do manual](./../../README.md)
+## Retorno a [apresentação dos Exercicios](./../README.md)

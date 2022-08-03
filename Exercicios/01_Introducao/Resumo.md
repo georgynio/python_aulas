@@ -7,4 +7,4 @@ Nesta seção iremos apresentar alguns exercicios básicos do Python.
 * [Strings](./04_Strings.ipynb)
 * [Listas](./05_listas.ipynb)
 
-## Retorno a [apresentação do manual](./../../README.md)
+## Retorno a [apresentação dos Exercicios](./../README.md)
