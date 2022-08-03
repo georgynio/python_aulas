@@ -5,7 +5,7 @@ O trabalho final da matéria, gerar um arquivo do tipo `jupyter-notebook`, com o
 ## Conteudos
 
 * [1. Introdução ao Python](./01_Introducao/Resumo.md)
-* [2. Estruturas e funções](./02_Estructuras_e_funcoes/Resumo.md)
+* [2. Estruturas e funções](./02_Estruturas_e_funcoes/Resumo.md)
 * [3. Dados em Python](./03_Dados/Resumo.md)
 * [4. Compreensão de Listas](./04_compreensao_listas/Resumo.md)
 * [5. Graficos em Python (Matplotlib).](./05_Matplotlib/Resumo.md)
