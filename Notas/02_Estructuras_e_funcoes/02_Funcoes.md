@@ -59,7 +59,7 @@ Para entender o que aconteceu (**debug**), a mensagem descreve qual foi o proble
 ## Capturar e manipular exceções
 
 Exceções podem ser capturadas e gerenciadas.
-Para capturar uma exceção, os comandos `try - except` são usados. Você pode tentar o seguinte snippet de código colando-o em um arquivo [foo.py](https://en.wikipedia.org/wiki/Foo):
+Para capturar uma exceção, os comandos `try - except` são usados. Você pode tentar o seguinte snippet de código colando-o em um arquivo [foo.py](https://en.wikipedia.org/wiki/Foobar):
 
 ``` python
 valid_number=False
@@ -73,7 +73,7 @@ if not valid_number:
 print(f'Você digitou {n}.')
 ```
 
-Se neste exemplo o usuário digitar uma letra, por exemplo, o comando `n = int(a)` gera uma exceção do tipo `ValueError`: o comando `number_valid = True` não é executado, a exceção é capturada pelo `exceto ValueError` e o loop se repete. Experimente inserindo letras, números com decimais e números inteiros. Tente também o que acontece se você quiser sair sem digitar nada levantando uma exceção pressionando as teclas `Ctrl+C`. Leia a mensagem que descreve o que aconteceu: `Ctrl+C` lança uma exceção do tipo `KeyboardInterrupt` que não é capturada.
+Se neste exemplo o usuário digitar uma letra, por exemplo, o comando `n = int(a)` gera uma exceção do tipo `ValueError`: o comando `number_valid = True` não é executado, a exceção é capturada pelo `except ValueError` e o loop se repete. Experimente inserindo letras, números com decimais e números inteiros. Tente também o que acontece se você quiser sair sem digitar nada levantando uma exceção pressionando as teclas `Ctrl+C`. Leia a mensagem que descreve o que aconteceu: `Ctrl+C` lança uma exceção do tipo `KeyboardInterrupt` que não é capturada.
 
 Se não especificarmos o tipo de exceção que queremos capturar, acabaremos capturando todas as exceções. Tente o mesmo de antes, mas com este código.
 
