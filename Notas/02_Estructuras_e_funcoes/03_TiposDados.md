@@ -79,7 +79,7 @@ s = (s[0], 75, s[2])
 Tuplas são frequentemente usadas para empacotar informações relacionadas em uma única *entidade*.
 
 ``` python
-s = ('Maçãs', 100, 490.1)
+s = ('Maçãs', 100, 490.1) # "empacotando" um tupla
 ```
 
 Uma tupla pode ser passada de um lugar para outro em um programa como um único objeto.
@@ -89,14 +89,14 @@ Uma tupla pode ser passada de um lugar para outro em um programa como um único 
 Para usar uma tupla em outro lugar, devemos descompactar seu conteúdo em diferentes variáveis.
 
 ``` python
-frutas, caixas, preco = s
+frutas, caixas, preco = s # "desempacotando" uma tupla
 print('Custo:', gavetas * preco)
 ```
 
 O número de variáveis ​​à esquerda deve ser consistente com a estrutura da tupla.
 
 ``` python
-nome, gavetas = s # ERRO
+nome, gavetas = s # ERRO -> se esperam 2 viariaveis e a tupla tem mais do que isso
 Traceback (última chamada mais recente):
 ...
 ValueError: muitos valores para descompactar
@@ -107,8 +107,10 @@ ValueError: muitos valores para descompactar
 Tuplas parecem ser listas somente leitura. No entanto, as tuplas são frequentemente usadas para um único item que consiste em várias partes, enquanto as listas são frequentemente usadas para uma coleção de itens diferentes, geralmente do mesmo tipo.
 
 ``` python
+# itens diferentes
 record = ('Maçãs', 100, 490.1) # Uma tupla representando um registro dentro de um pedido de frutas
 
+# itens do mesmo tipo
 símbolos = [ 'Maçãs', 'Peras', 'Tangerinas' ] # Uma lista representando três frutas diferentes.
 ```
 

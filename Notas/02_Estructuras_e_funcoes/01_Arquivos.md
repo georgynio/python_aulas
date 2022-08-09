@@ -85,6 +85,6 @@ with open('outfile', 'wt') as out:
     ...
 ```
 
-***Nota:*** Maior informação pode ser encontrada na docomentação [leitura e escrita de arquivos](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) do python.
+**Nota:** Maior informação pode ser encontrada na docomentação [leitura e escrita de arquivos](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) do python.
 
 ## Retorno ao [sumário](./00_Resumo.md)
