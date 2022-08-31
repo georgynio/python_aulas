@@ -64,9 +64,9 @@ c = 0,5 * a * b**2
 Lendo essas três linhas de código podemos raciocinar qual o valor final de as variáveis ​​`a`, `b` e `c`, mas não há nada para nos dizer o que elas representam essas variáveis, ou qual é a intenção do código. Uma opção para melhorá-lo seria usar comentários para esclarecer a intenção:
 
 ``` python
-a = 9,81 # Valor da constante G (aceleração gravitacional), em m/s²
+a = 9.81 # Valor da constante G (aceleração gravitacional), em m/s²
 b = 5 # Tempo em segundos
-c = 0,5 * a * b**2 # Deslocamento (em metros)
+c = 0.5 * a * b**2 # Deslocamento (em metros)
 ```
 
 Outra opção, de acordo com a técnica de código autodocumentado, é simplesmente atribuir nomes descritivos para variáveis:
@@ -122,8 +122,8 @@ def index(lista, elemento):
     '''
     for i in range(len(list)):
         if lista[i] == elemento:
-            devolva eu
-    retornar -1
+            return eu
+    return -1
 ```
 
 ## Resumo
