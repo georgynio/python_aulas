@@ -132,7 +132,7 @@ sys.argv # ['informe_final.py, 'camion.csv', 'precios.csv']
 Se precisar de alguma condição específica para a leitura de dados externos, podemos coloca-los dentro de uma condição:
 
 ``` python
-sistema de importação
+import sys
 
 if len(sys.argv) != 3:
     raise SystemExit(f'Uso adecuado: {sys.argv[0]} ' 'archivo_camion archivo_precios')
