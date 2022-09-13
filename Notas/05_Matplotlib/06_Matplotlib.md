@@ -8,6 +8,8 @@ O Matplotlib é provavelmente a biblioteca Python mais usada para criar gráfico
 
 ``` python
 from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
+
 ```
 
 ## Plots simples
